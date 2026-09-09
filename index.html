@@ -1723,20 +1723,32 @@
         </div>
     </div>
 
-    <!-- 3. Redaktions-Tipp der Woche -->
-    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #44a12b; padding: 1.4rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9;">
-        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #44a12b; display: block; margin-bottom: 0.4rem;">💡 Tipp der Redaktion</span>
-        <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1A1A1A; margin: 0 0 0.5rem 0; font-weight: 600;">Heimische Heilkräuter</h5>
-        <p style="font-size: 0.85rem; color: #5A6571; line-height: 1.6; margin: 0;">
-            Schon ein täglicher Aufguss aus frischer Pfefferminze oder Melisse aus Franken wirkt wohltuend auf Magen und Nervensystem.
-        </p>
-    </div>
-
-</aside>
-
-
+        <!-- 3. Aktueller Buchtipp der Redaktion (Automatisch der neueste) -->
+    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #8F7A5C; padding: 1.3rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9; display: flex; flex-direction: column; gap: 0.8rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #8F7A5C; display: inline-flex; align-items: center; gap: 5px;">
+                📚 Aktueller Buchtipp
+            </span>
+            <a href="javascript:void(0);" onclick="return switchView('buchtipps');" style="text-decoration: none; font-size: 0.72rem; font-weight: 700; color: #5A6571; transition: color 0.2s ease;">Alle Buchtipps ›</a>
         </div>
-
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier: Kunst des heilsamen Gesprächs" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
+            </div>
+            <div style="flex: 1;">
+                <span class="cat-badge" style="background: #8f7f8f; font-size: 0.6rem; padding: 1px 6px; margin-bottom: 4px; display: inline-block;">Aktuelles</span>
+                <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #1A1A1A; margin: 0 0 4px 0; font-weight: 600; line-height: 1.25; cursor: pointer;" onclick="return switchView('buchtipps');">
+                    Schamlose Neugier
+                </h5>
+                <div style="font-size: 0.76rem; color: #8F7A5C; font-weight: 600; margin-bottom: 4px;">Astrid Seeberger · Integral</div>
+                <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0;">
+                    Eine Ärztin über Empathie, Zuwendung und die Magie der sprechenden Medizin.
+                </p>
+            </div>
+        </div>
+        <button onclick="return switchView('buchtipps');" style="width: 100%; background: #FAF8F5; border: 1px solid #EAE5D9; color: #8F7A5C; padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#8F7A5C'; this.style.color='#FFF';" onmouseout="this.style.background='#FAF8F5'; this.style.color='#8F7A5C';">
+            Zur Buchtipp-Übersicht →
+        </button>
     </div>
 
     <!-- ==================== VIEW 2: CATEGORY ARCHIVE VIEW ==================== -->
@@ -1926,18 +1938,32 @@
         </div>
     </div>
 
-    <!-- 3. Redaktions-Tipp der Woche -->
-    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #44a12b; padding: 1.4rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9;">
-        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #44a12b; display: block; margin-bottom: 0.4rem;">💡 Tipp der Redaktion</span>
-        <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1A1A1A; margin: 0 0 0.5rem 0; font-weight: 600;">Heimische Heilkräuter</h5>
-        <p style="font-size: 0.85rem; color: #5A6571; line-height: 1.6; margin: 0;">
-            Schon ein täglicher Aufguss aus frischer Pfefferminze oder Melisse aus Franken wirkt wohltuend auf Magen und Nervensystem.
-        </p>
-    </div>
-
-</aside>
-
+        <!-- 3. Aktueller Buchtipp der Redaktion (Automatisch der neueste) -->
+    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #8F7A5C; padding: 1.3rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9; display: flex; flex-direction: column; gap: 0.8rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #8F7A5C; display: inline-flex; align-items: center; gap: 5px;">
+                📚 Aktueller Buchtipp
+            </span>
+            <a href="javascript:void(0);" onclick="return switchView('buchtipps');" style="text-decoration: none; font-size: 0.72rem; font-weight: 700; color: #5A6571; transition: color 0.2s ease;">Alle Buchtipps ›</a>
         </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier: Kunst des heilsamen Gesprächs" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
+            </div>
+            <div style="flex: 1;">
+                <span class="cat-badge" style="background: #8f7f8f; font-size: 0.6rem; padding: 1px 6px; margin-bottom: 4px; display: inline-block;">Aktuelles</span>
+                <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #1A1A1A; margin: 0 0 4px 0; font-weight: 600; line-height: 1.25; cursor: pointer;" onclick="return switchView('buchtipps');">
+                    Schamlose Neugier
+                </h5>
+                <div style="font-size: 0.76rem; color: #8F7A5C; font-weight: 600; margin-bottom: 4px;">Astrid Seeberger · Integral</div>
+                <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0;">
+                    Eine Ärztin über Empathie, Zuwendung und die Magie der sprechenden Medizin.
+                </p>
+            </div>
+        </div>
+        <button onclick="return switchView('buchtipps');" style="width: 100%; background: #FAF8F5; border: 1px solid #EAE5D9; color: #8F7A5C; padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#8F7A5C'; this.style.color='#FFF';" onmouseout="this.style.background='#FAF8F5'; this.style.color='#8F7A5C';">
+            Zur Buchtipp-Übersicht →
+        </button>
     </div>
 
     <!-- ==================== VIEW 3: BUCHTIPPS ARCHIVE VIEW ==================== -->
@@ -2127,18 +2153,32 @@
         </div>
     </div>
 
-    <!-- 3. Redaktions-Tipp der Woche -->
-    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #44a12b; padding: 1.4rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9;">
-        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #44a12b; display: block; margin-bottom: 0.4rem;">💡 Tipp der Redaktion</span>
-        <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1A1A1A; margin: 0 0 0.5rem 0; font-weight: 600;">Heimische Heilkräuter</h5>
-        <p style="font-size: 0.85rem; color: #5A6571; line-height: 1.6; margin: 0;">
-            Schon ein täglicher Aufguss aus frischer Pfefferminze oder Melisse aus Franken wirkt wohltuend auf Magen und Nervensystem.
-        </p>
-    </div>
-
-</aside>
-
+        <!-- 3. Aktueller Buchtipp der Redaktion (Automatisch der neueste) -->
+    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #8F7A5C; padding: 1.3rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9; display: flex; flex-direction: column; gap: 0.8rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #8F7A5C; display: inline-flex; align-items: center; gap: 5px;">
+                📚 Aktueller Buchtipp
+            </span>
+            <a href="javascript:void(0);" onclick="return switchView('buchtipps');" style="text-decoration: none; font-size: 0.72rem; font-weight: 700; color: #5A6571; transition: color 0.2s ease;">Alle Buchtipps ›</a>
         </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier: Kunst des heilsamen Gesprächs" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
+            </div>
+            <div style="flex: 1;">
+                <span class="cat-badge" style="background: #8f7f8f; font-size: 0.6rem; padding: 1px 6px; margin-bottom: 4px; display: inline-block;">Aktuelles</span>
+                <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #1A1A1A; margin: 0 0 4px 0; font-weight: 600; line-height: 1.25; cursor: pointer;" onclick="return switchView('buchtipps');">
+                    Schamlose Neugier
+                </h5>
+                <div style="font-size: 0.76rem; color: #8F7A5C; font-weight: 600; margin-bottom: 4px;">Astrid Seeberger · Integral</div>
+                <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0;">
+                    Eine Ärztin über Empathie, Zuwendung und die Magie der sprechenden Medizin.
+                </p>
+            </div>
+        </div>
+        <button onclick="return switchView('buchtipps');" style="width: 100%; background: #FAF8F5; border: 1px solid #EAE5D9; color: #8F7A5C; padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#8F7A5C'; this.style.color='#FFF';" onmouseout="this.style.background='#FAF8F5'; this.style.color='#8F7A5C';">
+            Zur Buchtipp-Übersicht →
+        </button>
     </div>
 
     <!-- ==================== VIEW 4: HEFTARCHIV VIEW ==================== -->
@@ -2991,18 +3031,32 @@
         </div>
     </div>
 
-    <!-- 3. Redaktions-Tipp der Woche -->
-    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #44a12b; padding: 1.4rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9;">
-        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #44a12b; display: block; margin-bottom: 0.4rem;">💡 Tipp der Redaktion</span>
-        <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1A1A1A; margin: 0 0 0.5rem 0; font-weight: 600;">Heimische Heilkräuter</h5>
-        <p style="font-size: 0.85rem; color: #5A6571; line-height: 1.6; margin: 0;">
-            Schon ein täglicher Aufguss aus frischer Pfefferminze oder Melisse aus Franken wirkt wohltuend auf Magen und Nervensystem.
-        </p>
-    </div>
-
-</aside>
-
+        <!-- 3. Aktueller Buchtipp der Redaktion (Automatisch der neueste) -->
+    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #8F7A5C; padding: 1.3rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9; display: flex; flex-direction: column; gap: 0.8rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #8F7A5C; display: inline-flex; align-items: center; gap: 5px;">
+                📚 Aktueller Buchtipp
+            </span>
+            <a href="javascript:void(0);" onclick="return switchView('buchtipps');" style="text-decoration: none; font-size: 0.72rem; font-weight: 700; color: #5A6571; transition: color 0.2s ease;">Alle Buchtipps ›</a>
         </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier: Kunst des heilsamen Gesprächs" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
+            </div>
+            <div style="flex: 1;">
+                <span class="cat-badge" style="background: #8f7f8f; font-size: 0.6rem; padding: 1px 6px; margin-bottom: 4px; display: inline-block;">Aktuelles</span>
+                <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #1A1A1A; margin: 0 0 4px 0; font-weight: 600; line-height: 1.25; cursor: pointer;" onclick="return switchView('buchtipps');">
+                    Schamlose Neugier
+                </h5>
+                <div style="font-size: 0.76rem; color: #8F7A5C; font-weight: 600; margin-bottom: 4px;">Astrid Seeberger · Integral</div>
+                <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0;">
+                    Eine Ärztin über Empathie, Zuwendung und die Magie der sprechenden Medizin.
+                </p>
+            </div>
+        </div>
+        <button onclick="return switchView('buchtipps');" style="width: 100%; background: #FAF8F5; border: 1px solid #EAE5D9; color: #8F7A5C; padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#8F7A5C'; this.style.color='#FFF';" onmouseout="this.style.background='#FAF8F5'; this.style.color='#8F7A5C';">
+            Zur Buchtipp-Übersicht →
+        </button>
     </div>
 
     <!-- ==================== VIEW 5: RESTORED MEDIATHEK VIEW ==================== -->
@@ -3455,18 +3509,32 @@
         </div>
     </div>
 
-    <!-- 3. Redaktions-Tipp der Woche -->
-    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #44a12b; padding: 1.4rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9;">
-        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #44a12b; display: block; margin-bottom: 0.4rem;">💡 Tipp der Redaktion</span>
-        <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1A1A1A; margin: 0 0 0.5rem 0; font-weight: 600;">Heimische Heilkräuter</h5>
-        <p style="font-size: 0.85rem; color: #5A6571; line-height: 1.6; margin: 0;">
-            Schon ein täglicher Aufguss aus frischer Pfefferminze oder Melisse aus Franken wirkt wohltuend auf Magen und Nervensystem.
-        </p>
-    </div>
-
-</aside>
-
+        <!-- 3. Aktueller Buchtipp der Redaktion (Automatisch der neueste) -->
+    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #8F7A5C; padding: 1.3rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9; display: flex; flex-direction: column; gap: 0.8rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #8F7A5C; display: inline-flex; align-items: center; gap: 5px;">
+                📚 Aktueller Buchtipp
+            </span>
+            <a href="javascript:void(0);" onclick="return switchView('buchtipps');" style="text-decoration: none; font-size: 0.72rem; font-weight: 700; color: #5A6571; transition: color 0.2s ease;">Alle Buchtipps ›</a>
         </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier: Kunst des heilsamen Gesprächs" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
+            </div>
+            <div style="flex: 1;">
+                <span class="cat-badge" style="background: #8f7f8f; font-size: 0.6rem; padding: 1px 6px; margin-bottom: 4px; display: inline-block;">Aktuelles</span>
+                <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #1A1A1A; margin: 0 0 4px 0; font-weight: 600; line-height: 1.25; cursor: pointer;" onclick="return switchView('buchtipps');">
+                    Schamlose Neugier
+                </h5>
+                <div style="font-size: 0.76rem; color: #8F7A5C; font-weight: 600; margin-bottom: 4px;">Astrid Seeberger · Integral</div>
+                <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0;">
+                    Eine Ärztin über Empathie, Zuwendung und die Magie der sprechenden Medizin.
+                </p>
+            </div>
+        </div>
+        <button onclick="return switchView('buchtipps');" style="width: 100%; background: #FAF8F5; border: 1px solid #EAE5D9; color: #8F7A5C; padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#8F7A5C'; this.style.color='#FFF';" onmouseout="this.style.background='#FAF8F5'; this.style.color='#8F7A5C';">
+            Zur Buchtipp-Übersicht →
+        </button>
     </div>
 
     <!-- ==================== VIEW 6: GESUNDHEITSKALENDER VIEW ==================== -->
@@ -6051,18 +6119,32 @@
         </div>
     </div>
 
-    <!-- 3. Redaktions-Tipp der Woche -->
-    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #44a12b; padding: 1.4rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9;">
-        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #44a12b; display: block; margin-bottom: 0.4rem;">💡 Tipp der Redaktion</span>
-        <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1A1A1A; margin: 0 0 0.5rem 0; font-weight: 600;">Heimische Heilkräuter</h5>
-        <p style="font-size: 0.85rem; color: #5A6571; line-height: 1.6; margin: 0;">
-            Schon ein täglicher Aufguss aus frischer Pfefferminze oder Melisse aus Franken wirkt wohltuend auf Magen und Nervensystem.
-        </p>
-    </div>
-
-</aside>
-
+        <!-- 3. Aktueller Buchtipp der Redaktion (Automatisch der neueste) -->
+    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #8F7A5C; padding: 1.3rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9; display: flex; flex-direction: column; gap: 0.8rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #8F7A5C; display: inline-flex; align-items: center; gap: 5px;">
+                📚 Aktueller Buchtipp
+            </span>
+            <a href="javascript:void(0);" onclick="return switchView('buchtipps');" style="text-decoration: none; font-size: 0.72rem; font-weight: 700; color: #5A6571; transition: color 0.2s ease;">Alle Buchtipps ›</a>
         </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier: Kunst des heilsamen Gesprächs" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
+            </div>
+            <div style="flex: 1;">
+                <span class="cat-badge" style="background: #8f7f8f; font-size: 0.6rem; padding: 1px 6px; margin-bottom: 4px; display: inline-block;">Aktuelles</span>
+                <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #1A1A1A; margin: 0 0 4px 0; font-weight: 600; line-height: 1.25; cursor: pointer;" onclick="return switchView('buchtipps');">
+                    Schamlose Neugier
+                </h5>
+                <div style="font-size: 0.76rem; color: #8F7A5C; font-weight: 600; margin-bottom: 4px;">Astrid Seeberger · Integral</div>
+                <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0;">
+                    Eine Ärztin über Empathie, Zuwendung und die Magie der sprechenden Medizin.
+                </p>
+            </div>
+        </div>
+        <button onclick="return switchView('buchtipps');" style="width: 100%; background: #FAF8F5; border: 1px solid #EAE5D9; color: #8F7A5C; padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#8F7A5C'; this.style.color='#FFF';" onmouseout="this.style.background='#FAF8F5'; this.style.color='#8F7A5C';">
+            Zur Buchtipp-Übersicht →
+        </button>
     </div>
 
     <!-- ==================== VIEW 7: KOOPERATIONEN VIEW ==================== -->
@@ -6438,18 +6520,32 @@
         </div>
     </div>
 
-    <!-- 3. Redaktions-Tipp der Woche -->
-    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #44a12b; padding: 1.4rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9;">
-        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #44a12b; display: block; margin-bottom: 0.4rem;">💡 Tipp der Redaktion</span>
-        <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1A1A1A; margin: 0 0 0.5rem 0; font-weight: 600;">Heimische Heilkräuter</h5>
-        <p style="font-size: 0.85rem; color: #5A6571; line-height: 1.6; margin: 0;">
-            Schon ein täglicher Aufguss aus frischer Pfefferminze oder Melisse aus Franken wirkt wohltuend auf Magen und Nervensystem.
-        </p>
-    </div>
-
-</aside>
-
+        <!-- 3. Aktueller Buchtipp der Redaktion (Automatisch der neueste) -->
+    <div style="background: #FAF8F5; border-radius: 10px; border-left: 4px solid #8F7A5C; padding: 1.3rem; border-top: 1px solid #EAE5D9; border-right: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9; display: flex; flex-direction: column; gap: 0.8rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #8F7A5C; display: inline-flex; align-items: center; gap: 5px;">
+                📚 Aktueller Buchtipp
+            </span>
+            <a href="javascript:void(0);" onclick="return switchView('buchtipps');" style="text-decoration: none; font-size: 0.72rem; font-weight: 700; color: #5A6571; transition: color 0.2s ease;">Alle Buchtipps ›</a>
         </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier: Kunst des heilsamen Gesprächs" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
+            </div>
+            <div style="flex: 1;">
+                <span class="cat-badge" style="background: #8f7f8f; font-size: 0.6rem; padding: 1px 6px; margin-bottom: 4px; display: inline-block;">Aktuelles</span>
+                <h5 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #1A1A1A; margin: 0 0 4px 0; font-weight: 600; line-height: 1.25; cursor: pointer;" onclick="return switchView('buchtipps');">
+                    Schamlose Neugier
+                </h5>
+                <div style="font-size: 0.76rem; color: #8F7A5C; font-weight: 600; margin-bottom: 4px;">Astrid Seeberger · Integral</div>
+                <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0;">
+                    Eine Ärztin über Empathie, Zuwendung und die Magie der sprechenden Medizin.
+                </p>
+            </div>
+        </div>
+        <button onclick="return switchView('buchtipps');" style="width: 100%; background: #FAF8F5; border: 1px solid #EAE5D9; color: #8F7A5C; padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#8F7A5C'; this.style.color='#FFF';" onmouseout="this.style.background='#FAF8F5'; this.style.color='#8F7A5C';">
+            Zur Buchtipp-Übersicht →
+        </button>
     </div>
 
         <!-- ==================== FOOTER ==================== -->
