@@ -7970,23 +7970,15 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     };
 
 
-    // FAILSAFE 5X HEARTBEAT VISUAL & AUDIO ENGINE
+    // STRICT AUDIO-LOCKED 5X HEARTBEAT & WIGGLE ENGINE
     (function() {
         var audio = new Audio('herzschlag.mp3?v=5b_' + Math.floor(Date.now() / 60000));
         audio.preload = 'auto';
         window.herzschlagAudio = audio;
         
-        var hasVisualPlayed = false;
         var hasAudioPlayed = false;
-        var startTime = null;
         var animFrameId = null;
 
-        // 5 Heartbeat Peak Timestamps (lub/dub):
-        // Beat 1: 0.70s / 0.86s
-        // Beat 2: 2.20s / 2.36s
-        // Beat 3: 3.70s / 3.86s
-        // Beat 4: 5.15s / 5.35s
-        // Beat 5: 6.65s / 6.85s
         var beats = [0.70, 2.20, 3.70, 5.15, 6.65];
 
         function getHeartbeatTransform(t) {
@@ -8019,14 +8011,15 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             return { scale: scale, tx: tx, ty: ty, rot: rot };
         }
 
-        function renderFrame(now) {
-            if (!startTime) startTime = now;
-            
-            // Prefer actual audio clock if audio is actively playing, else use precision performance clock
-            var t = (audio && !audio.paused && !audio.ended && audio.currentTime > 0) 
-                    ? audio.currentTime 
-                    : (now - startTime) / 1000;
+        function renderAudioLockedFrame() {
+            // STRICT RULE: Wiggle ONLY when audio is actively playing and producing sound
+            if (!audio || audio.paused || audio.ended) {
+                var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+                if (slide) slide.style.transform = 'none';
+                return;
+            }
 
+            var t = audio.currentTime;
             var firstSlide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
             if (firstSlide) {
                 var tr = getHeartbeatTransform(t);
@@ -8038,57 +8031,77 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 }
             }
 
-            if (t < 8.25) {
-                animFrameId = requestAnimationFrame(renderFrame);
+            if (t < 8.25 && !audio.paused && !audio.ended) {
+                animFrameId = requestAnimationFrame(renderAudioLockedFrame);
             } else {
                 if (firstSlide) firstSlide.style.transform = 'none';
             }
         }
 
-        window.start5xHeartbeat = function() {
-            if (hasVisualPlayed) return;
-            hasVisualPlayed = true;
-
-            // 1. Start Visual Animation immediately (never blocked by browser policies)
-            if (animFrameId) cancelAnimationFrame(animFrameId);
-            startTime = null;
-            animFrameId = requestAnimationFrame(renderFrame);
-
-            // 2. Try Audio Playback
-            if (audio && !hasAudioPlayed) {
-                audio.currentTime = 0;
-                var p = audio.play();
-                if (p !== undefined) {
-                    p.then(function() {
-                        hasAudioPlayed = true;
-                    }).catch(function(err) {
-                        console.log('Audio autoplay blocked by browser policy, visual running.');
-                    });
-                }
+        function startAudioAndWiggle() {
+            if (hasAudioPlayed || !audio) return;
+            
+            audio.currentTime = 0;
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                    hasAudioPlayed = true;
+                    removeTriggers();
+                    if (animFrameId) cancelAnimationFrame(animFrameId);
+                    animFrameId = requestAnimationFrame(renderAudioLockedFrame);
+                }).catch(function(err) {
+                    // Audio blocked by browser policy -> DO NOT wiggle at all!
+                    var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+                    if (slide) slide.style.transform = 'none';
+                });
             }
-        };
+        }
 
-        // Trigger on ANY event: DOM ready, scroll, wheel, touch, click
-        var triggers = ['DOMContentLoaded', 'load', 'scroll', 'wheel', 'touchmove', 'touchstart', 'click', 'pointerdown'];
-        
-        function onAnyTrigger() {
-            window.start5xHeartbeat();
-            // If audio was blocked, next click will unlock audio immediately
-            if (!hasAudioPlayed && audio) {
-                var p = audio.play();
-                if (p !== undefined) {
-                    p.then(function() { hasAudioPlayed = true; }).catch(function(){});
-                }
+        audio.addEventListener('play', function() {
+            if (animFrameId) cancelAnimationFrame(animFrameId);
+            animFrameId = requestAnimationFrame(renderAudioLockedFrame);
+        });
+
+        audio.addEventListener('ended', function() {
+            if (animFrameId) cancelAnimationFrame(animFrameId);
+            var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+            if (slide) slide.style.transform = 'none';
+        });
+
+        audio.addEventListener('pause', function() {
+            if (animFrameId) cancelAnimationFrame(animFrameId);
+            var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+            if (slide) slide.style.transform = 'none';
+        });
+
+        var triggers = [
+            'mousemove', 'pointermove', 'mouseenter', 'mouseover', 'focus', 
+            'wheel', 'scroll', 'touchstart', 'touchend', 'touchmove', 
+            'pointerdown', 'click', 'keydown'
+        ];
+
+        function onInteraction() {
+            if (!hasAudioPlayed) {
+                startAudioAndWiggle();
+            }
+        }
+
+        function removeTriggers() {
+            for (var i = 0; i < triggers.length; i++) {
+                window.removeEventListener(triggers[i], onInteraction, { capture: true, passive: true });
+                document.removeEventListener(triggers[i], onInteraction, { capture: true, passive: true });
             }
         }
 
         for (var i = 0; i < triggers.length; i++) {
-            window.addEventListener(triggers[i], onAnyTrigger, { capture: true, passive: true });
-            document.addEventListener(triggers[i], onAnyTrigger, { capture: true, passive: true });
+            window.addEventListener(triggers[i], onInteraction, { capture: true, passive: true });
+            document.addEventListener(triggers[i], onInteraction, { capture: true, passive: true });
         }
 
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            window.start5xHeartbeat();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', startAudioAndWiggle);
+        } else {
+            startAudioAndWiggle();
         }
     })();
 
