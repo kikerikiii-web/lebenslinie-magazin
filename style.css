@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     visibility: hidden;
     transform: translateY(6px);
     transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
-    pointer-events: none;
+    pointer-events: auto;
 }
 .dropdown-item {
     display: flex;
@@ -369,7 +369,7 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
         rgba(0,0,0,0.02) 55%,
         rgba(0,0,0,0.08) 100%);
     z-index: 15;
-    pointer-events: none;
+    pointer-events: auto;
 }
 .magazine-book-spread.is-cover .magazine-spine-shadow {
     display: none;
@@ -410,7 +410,7 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     bottom: 0;
     width: 50px;
     height: 50px;
-    pointer-events: none;
+    pointer-events: auto;
     transition: opacity 0.25s ease;
     opacity: 0;
 }
@@ -436,7 +436,7 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     transform-origin: left center;
     transform-style: preserve-3d;
     z-index: 30;
-    pointer-events: none;
+    pointer-events: auto;
     transition: transform 0.72s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -471,7 +471,7 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
 .leaf-shadow-overlay {
     position: absolute;
     inset: 0;
-    pointer-events: none;
+    pointer-events: auto;
     background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
     opacity: 0;
     transition: opacity 0.36s ease;
