@@ -8014,7 +8014,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     };
 
 
-    // HERZSCHLAG AUDIO & 5X FRAME-PERFECT HARDWARE AUDIO CLOCK SYNC ENGINE
+    // HERZSCHLAG AUDIO & 5X FRAME-PERFECT HARDWARE AUDIO CLOCK SYNC ENGINE (CLICK, TOUCH & SCROLL UNLOCK)
     (function() {
         var audio = new Audio('herzschlag.mp3?v=5b_' + Math.floor(Date.now() / 60000));
         audio.preload = 'auto';
@@ -8097,11 +8097,13 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         audio.addEventListener('ended', stopSyncVisual);
         audio.addEventListener('pause', stopSyncVisual);
 
+        var gestureEvents = ['wheel', 'scroll', 'touchmove', 'touchstart', 'click', 'pointerdown', 'keydown'];
+
         function removeGestureListeners() {
-            document.removeEventListener('click', onUserGesture, true);
-            document.removeEventListener('touchstart', onUserGesture, true);
-            document.removeEventListener('pointerdown', onUserGesture, true);
-            document.removeEventListener('keydown', onUserGesture, true);
+            for (var i = 0; i < gestureEvents.length; i++) {
+                window.removeEventListener(gestureEvents[i], onUserGesture, { capture: true, passive: true });
+                document.removeEventListener(gestureEvents[i], onUserGesture, { capture: true, passive: true });
+            }
         }
 
         window.playHerzschlag = function() {
@@ -8113,7 +8115,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                     hasPlayed = true;
                     removeGestureListeners();
                 }).catch(function(err) {
-                    console.log('Browser autoplay policy active. Awaiting user interaction.');
+                    // Not ready yet, keep listening for next user interaction
                 });
             }
         };
@@ -8124,10 +8126,10 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             }
         }
 
-        document.addEventListener('click', onUserGesture, true);
-        document.addEventListener('touchstart', onUserGesture, true);
-        document.addEventListener('pointerdown', onUserGesture, true);
-        document.addEventListener('keydown', onUserGesture, true);
+        for (var i = 0; i < gestureEvents.length; i++) {
+            window.addEventListener(gestureEvents[i], onUserGesture, { capture: true, passive: true });
+            document.addEventListener(gestureEvents[i], onUserGesture, { capture: true, passive: true });
+        }
 
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', window.playHerzschlag);
