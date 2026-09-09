@@ -8014,61 +8014,68 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     };
 
 
-    // HERZSCHLAG AUDIO & 5X FRAME-PERFECT HARDWARE AUDIO CLOCK SYNC ENGINE (CLICK, TOUCH & SCROLL UNLOCK)
+    // FAILSAFE 5X HEARTBEAT VISUAL & AUDIO ENGINE
     (function() {
         var audio = new Audio('herzschlag.mp3?v=5b_' + Math.floor(Date.now() / 60000));
         audio.preload = 'auto';
         window.herzschlagAudio = audio;
         
-        var hasPlayed = false;
+        var hasVisualPlayed = false;
+        var hasAudioPlayed = false;
+        var startTime = null;
         var animFrameId = null;
 
-        function renderSyncHeartbeat() {
-            if (!audio || audio.paused || audio.ended) {
-                var firstSlide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
-                if (firstSlide) firstSlide.style.transform = 'none';
-                return;
-            }
+        // 5 Heartbeat Peak Timestamps (lub/dub):
+        // Beat 1: 0.70s / 0.86s
+        // Beat 2: 2.20s / 2.36s
+        // Beat 3: 3.70s / 3.86s
+        // Beat 4: 5.15s / 5.35s
+        // Beat 5: 6.65s / 6.85s
+        var beats = [0.70, 2.20, 3.70, 5.15, 6.65];
 
-            var t = audio.currentTime;
+        function getHeartbeatTransform(t) {
             var scale = 1.0;
             var tx = 0.0;
             var ty = 0.0;
             var rot = 0.0;
 
-            // 5 Heartbeat Peak Timestamps (lub/dub):
-            // Beat 1: 0.70s / 0.86s
-            // Beat 2: 2.20s / 2.36s
-            // Beat 3: 3.70s / 3.86s
-            // Beat 4: 5.15s / 5.35s
-            // Beat 5: 6.65s / 6.85s
-            var beats = [0.70, 2.20, 3.70, 5.15, 6.65];
             for (var i = 0; i < beats.length; i++) {
                 var b = beats[i];
                 var dt1 = t - b;
                 if (dt1 >= 0 && dt1 < 0.18) {
                     var p1 = Math.sin((dt1 / 0.18) * Math.PI);
-                    scale = 1.0 + (0.055 * p1);
-                    tx = (i % 2 === 0 ? -4.5 : 4.5) * p1;
-                    ty = 3.0 * p1;
-                    rot = (i % 2 === 0 ? -0.4 : 0.4) * p1;
+                    scale = 1.0 + (0.058 * p1);
+                    tx = (i % 2 === 0 ? -5 : 5) * p1;
+                    ty = 3.5 * p1;
+                    rot = (i % 2 === 0 ? -0.45 : 0.45) * p1;
                     break;
                 }
                 var dt2 = t - (b + 0.15);
                 if (dt2 >= 0 && dt2 < 0.26) {
                     var p2 = Math.sin((dt2 / 0.26) * Math.PI);
-                    scale = 1.0 + (0.070 * p2);
-                    tx = (i % 2 === 0 ? 3.5 : -3.5) * p2;
-                    ty = -4.0 * p2;
-                    rot = (i % 2 === 0 ? 0.35 : -0.35) * p2;
+                    scale = 1.0 + (0.075 * p2);
+                    tx = (i % 2 === 0 ? 4 : -4) * p2;
+                    ty = -4.5 * p2;
+                    rot = (i % 2 === 0 ? 0.4 : -0.4) * p2;
                     break;
                 }
             }
+            return { scale: scale, tx: tx, ty: ty, rot: rot };
+        }
+
+        function renderFrame(now) {
+            if (!startTime) startTime = now;
+            
+            // Prefer actual audio clock if audio is actively playing, else use precision performance clock
+            var t = (audio && !audio.paused && !audio.ended && audio.currentTime > 0) 
+                    ? audio.currentTime 
+                    : (now - startTime) / 1000;
 
             var firstSlide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
             if (firstSlide) {
-                if (scale !== 1.0 || tx !== 0.0) {
-                    firstSlide.style.transform = 'scale(' + scale + ') translate(' + tx + 'px, ' + ty + 'px) rotate(' + rot + 'deg)';
+                var tr = getHeartbeatTransform(t);
+                if (tr.scale !== 1.0 || tr.tx !== 0.0) {
+                    firstSlide.style.transform = 'scale(' + tr.scale + ') translate(' + tr.tx + 'px, ' + tr.ty + 'px) rotate(' + tr.rot + 'deg)';
                     firstSlide.style.willChange = 'transform';
                 } else {
                     firstSlide.style.transform = 'none';
@@ -8076,65 +8083,56 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             }
 
             if (t < 8.25) {
-                animFrameId = requestAnimationFrame(renderSyncHeartbeat);
+                animFrameId = requestAnimationFrame(renderFrame);
             } else {
                 if (firstSlide) firstSlide.style.transform = 'none';
             }
         }
 
-        function startSyncVisual() {
+        window.start5xHeartbeat = function() {
+            if (hasVisualPlayed) return;
+            hasVisualPlayed = true;
+
+            // 1. Start Visual Animation immediately (never blocked by browser policies)
             if (animFrameId) cancelAnimationFrame(animFrameId);
-            animFrameId = requestAnimationFrame(renderSyncHeartbeat);
-        }
+            startTime = null;
+            animFrameId = requestAnimationFrame(renderFrame);
 
-        function stopSyncVisual() {
-            if (animFrameId) cancelAnimationFrame(animFrameId);
-            var firstSlide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
-            if (firstSlide) firstSlide.style.transform = 'none';
-        }
-
-        audio.addEventListener('play', startSyncVisual);
-        audio.addEventListener('ended', stopSyncVisual);
-        audio.addEventListener('pause', stopSyncVisual);
-
-        var gestureEvents = ['wheel', 'scroll', 'touchmove', 'touchstart', 'click', 'pointerdown', 'keydown'];
-
-        function removeGestureListeners() {
-            for (var i = 0; i < gestureEvents.length; i++) {
-                window.removeEventListener(gestureEvents[i], onUserGesture, { capture: true, passive: true });
-                document.removeEventListener(gestureEvents[i], onUserGesture, { capture: true, passive: true });
-            }
-        }
-
-        window.playHerzschlag = function() {
-            if (!audio || hasPlayed) return;
-            audio.currentTime = 0;
-            var playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    hasPlayed = true;
-                    removeGestureListeners();
-                }).catch(function(err) {
-                    // Not ready yet, keep listening for next user interaction
-                });
+            // 2. Try Audio Playback
+            if (audio && !hasAudioPlayed) {
+                audio.currentTime = 0;
+                var p = audio.play();
+                if (p !== undefined) {
+                    p.then(function() {
+                        hasAudioPlayed = true;
+                    }).catch(function(err) {
+                        console.log('Audio autoplay blocked by browser policy, visual running.');
+                    });
+                }
             }
         };
 
-        function onUserGesture() {
-            if (!hasPlayed) {
-                window.playHerzschlag();
+        // Trigger on ANY event: DOM ready, scroll, wheel, touch, click
+        var triggers = ['DOMContentLoaded', 'load', 'scroll', 'wheel', 'touchmove', 'touchstart', 'click', 'pointerdown'];
+        
+        function onAnyTrigger() {
+            window.start5xHeartbeat();
+            // If audio was blocked, next click will unlock audio immediately
+            if (!hasAudioPlayed && audio) {
+                var p = audio.play();
+                if (p !== undefined) {
+                    p.then(function() { hasAudioPlayed = true; }).catch(function(){});
+                }
             }
         }
 
-        for (var i = 0; i < gestureEvents.length; i++) {
-            window.addEventListener(gestureEvents[i], onUserGesture, { capture: true, passive: true });
-            document.addEventListener(gestureEvents[i], onUserGesture, { capture: true, passive: true });
+        for (var i = 0; i < triggers.length; i++) {
+            window.addEventListener(triggers[i], onAnyTrigger, { capture: true, passive: true });
+            document.addEventListener(triggers[i], onAnyTrigger, { capture: true, passive: true });
         }
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', window.playHerzschlag);
-        } else {
-            window.playHerzschlag();
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            window.start5xHeartbeat();
         }
     })();
 
