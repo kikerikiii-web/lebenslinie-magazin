@@ -1,61 +1,14 @@
-<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","alignItems":"center"},"style":{"spacing":{"padding":{"top":"1.6rem","bottom":"1.2rem","left":"4%","right":"4%"},"margin":{"bottom":"0px"}},"color":{"background":"var(--wp--preset--color--cream-bg)"}},"className":"site-header-container"} -->
-<div class="wp-block-group site-header-container" style="border-bottom: 1px solid rgba(0,0,0,0.08); background: #FDFBF7; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.9rem;">
-    <!-- Centered Logo -->
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <a href="/" style="display: block; text-decoration: none;">
-            <img src="LL-Logo.png" alt="Lebenslinie Magazin Logo" style="height: 105px; max-height: 115px; width: auto; display: block; object-fit: contain; transition: height 0.3s ease;" />
-        </a>
-    </div>
-
-    <!-- Top Right: Continuous Marquee Ticker (No border, 350px, Category Dots, +++) -->
-    <div class="header-ticker-marquee" style="width: 350px; max-width: 350px; overflow: hidden; white-space: nowrap; position: relative; background: transparent; border: none; padding: 0;">
-        <div class="header-ticker-track" style="display: inline-flex; align-items: center; white-space: nowrap; animation: marqueeAnimation 55s linear infinite;">
-            <a href="#" class="ticker-item open-article-btn" data-article-title="Besser Kommunizieren in der Onkologie: Neues Modul am UKW" data-article-cat="Schulmedizin" data-article-color="#00766e" style="color: #00766e; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center;">
-                <span class="ticker-dot" style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: #00766e; margin-right: 7px; flex-shrink: 0;"></span>Besser Kommunizieren in der Onkologie: Neues Modul am UKW
-            </a>
-            <span class="ticker-sep" style="margin: 0 14px; color: #8F7A5C; font-weight: 700; font-size: 0.86rem;">+++</span>
-
-            <a href="#" class="ticker-item open-article-btn" data-article-title="Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt" data-article-cat="Naturheilkunde & Komplementärmedizin" data-article-color="#44a12b" style="color: #44a12b; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center;">
-                <span class="ticker-dot" style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: #44a12b; margin-right: 7px; flex-shrink: 0;"></span>Heilpflanzen neu entdeckt: Heimische Kräuter im Porträt
-            </a>
-            <span class="ticker-sep" style="margin: 0 14px; color: #8F7A5C; font-weight: 700; font-size: 0.86rem;">+++</span>
-
-            <a href="#" class="ticker-item open-article-btn" data-article-title="Seelische Gesundheit: Wege aus der Erschöpfung" data-article-cat="Psyche" data-article-color="#9d3c8c" style="color: #9d3c8c; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center;">
-                <span class="ticker-dot" style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: #9d3c8c; margin-right: 7px; flex-shrink: 0;"></span>Seelische Gesundheit: Wege aus der Erschöpfung
-            </a>
-            <span class="ticker-sep" style="margin: 0 14px; color: #8F7A5C; font-weight: 700; font-size: 0.86rem;">+++</span>
-
-            <a href="#" class="ticker-item open-article-btn" data-article-title="Die Heilkraft des Waldes: Warum Achtsamkeit in der Natur schützt" data-article-cat="Prävention & Reha" data-article-color="#006b8d" style="color: #006b8d; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center;">
-                <span class="ticker-dot" style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: #006b8d; margin-right: 7px; flex-shrink: 0;"></span>Die Heilkraft des Waldes: Achtsamkeit in der Natur
-            </a>
-            <span class="ticker-sep" style="margin: 0 14px; color: #8F7A5C; font-weight: 700; font-size: 0.86rem;">+++</span>
-
-            <a href="#" class="ticker-item open-article-btn" data-article-title="Der Körper als „Gebäckträger“: Zucker, Mehl & Stoffwechsel" data-article-cat="Ernährung & Umwelt" data-article-color="#a4ae00" style="color: #a4ae00; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center;">
-                <span class="ticker-dot" style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: #a4ae00; margin-right: 7px; flex-shrink: 0;"></span>Zucker, Mehl & Stoffwechsel: Gesunde Balance
-            </a>
-            <span class="ticker-sep" style="margin: 0 14px; color: #8F7A5C; font-weight: 700; font-size: 0.86rem;">+++</span>
-
-            <a href="#" class="ticker-item open-article-btn" data-article-title="Bewegung, Begegnung, Lebensfreude: Aktiv älter werden in Würzburg" data-article-cat="Alter" data-article-color="#41a3bd" style="color: #41a3bd; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center;">
-                <span class="ticker-dot" style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: #41a3bd; margin-right: 7px; flex-shrink: 0;"></span>Aktiv älter werden in Würzburg: Vitalität & Freude
-            </a>
-            <span class="ticker-sep" style="margin: 0 14px; color: #8F7A5C; font-weight: 700; font-size: 0.86rem;">+++</span>
-
-            <!-- Duplicate loop items for seamless infinite marquee -->
-            <a href="#" class="ticker-item open-article-btn" data-article-title="Besser Kommunizieren in der Onkologie: Neues Modul am UKW" data-article-cat="Schulmedizin" data-article-color="#00766e" style="color: #00766e; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center;">
-                <span class="ticker-dot" style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: #00766e; margin-right: 7px; flex-shrink: 0;"></span>Besser Kommunizieren in der Onkologie: Neues Modul am UKW
-            </a>
-            <span class="ticker-sep" style="margin: 0 14px; color: #8F7A5C; font-weight: 700; font-size: 0.86rem;">+++</span>
-
-            <a href="#" class="ticker-item open-article-btn" data-article-title="Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt" data-article-cat="Naturheilkunde & Komplementärmedizin" data-article-color="#44a12b" style="color: #44a12b; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: inline-flex; align-items: center;">
-                <span class="ticker-dot" style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: #44a12b; margin-right: 7px; flex-shrink: 0;"></span>Heilpflanzen neu entdeckt: Heimische Kräuter im Porträt
-            </a>
-            <span class="ticker-sep" style="margin: 0 14px; color: #8F7A5C; font-weight: 700; font-size: 0.86rem;">+++</span>
-        </div>
-    </div>
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","alignItems":"center"},"style":{"spacing":{"padding":{"top":"2.2rem","bottom":"1.8rem","left":"4%","right":"4%"},"margin":{"bottom":"0px"}},"color":{"background":"var(--wp--preset--color--cream-bg)"}},"className":"site-header-container"} -->
+<div class="wp-block-group site-header-container" style="border-bottom: 1px solid rgba(0,0,0,0.08); background: #FFFFFF; display: flex; justify-content: center; align-items: center;">
+    <!-- Centered Large Logo -->
+    <a href="/" style="display: block; text-decoration: none;">
+        <img src="LL-Logo.png" alt="Lebenslinie Magazin Logo" style="height: 145px; max-height: 160px; width: auto; display: block; object-fit: contain; transition: height 0.3s ease;" />
+    </a>
 </div>
 <!-- /wp:group -->
 
 <!-- Secondary Navigation Bar (Komplett zentriert) -->
+<div style="background: #FFFFFF; border-bottom: 1px solid #EAE5D9; padding: 0.85rem 4%; position: relative; z-index: 100;"> (Komplett zentriert) -->
 <div style="background: #FFFFFF; border-bottom: 1px solid #EAE5D9; padding: 0.85rem 4%; position: relative; z-index: 100;">
     <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative;">
         <nav style="display: flex; justify-content: center; align-items: center; gap: 2.2rem; font-size: 0.95rem; font-weight: 600; font-family: var(--wp--preset--font-family--sans);">

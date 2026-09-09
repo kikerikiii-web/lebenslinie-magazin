@@ -714,3 +714,25 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     transform-origin: center center;
     will-change: transform;
 }
+
+
+/* Floating Issue Card in Hero Slider */
+.hero-floating-issue-card {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 270px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.32);
+    padding: 1.2rem 1.4rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+@media (max-width: 1024px) {
+    .hero-floating-issue-card {
+        display: none !important;
+    }
+}

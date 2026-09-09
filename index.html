@@ -225,83 +225,39 @@
     will-change: transform;
 }
 
+
+
+/* Floating Issue Card in Hero Slider */
+.hero-floating-issue-card {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 270px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.32);
+    padding: 1.2rem 1.4rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+@media (max-width: 1024px) {
+    .hero-floating-issue-card {
+        display: none !important;
+    }
+}
+
 </style>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #FAF8F5; color: #2B2B2B;">
 
     <!-- TOP HEADER: GROSSES LOGO LINKS + DURCHLAUFENDER TICKER RECHTS -->
-    <header style="background: #FFFFFF; border-bottom: 1px solid #EAE5D9; padding: 1.6rem 4% 1.2rem 4%;">
-        <div style="max-width: 1380px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.9rem;">
-            
-            <!-- 1. GROSSES ZENTRIERTES LEBENSLINIE LOGO -->
-            <a href="javascript:void(0);" onclick="return switchView('home');" style="text-decoration: none; display: flex; justify-content: center; align-items: center;">
-                <img src="LL-Logo.png" alt="Lebenslinie Magazin" style="height: 96px; max-height: 105px; width: auto; object-fit: contain; transition: transform 0.2s ease;">
+    <header style="background: #FFFFFF; border-bottom: 1px solid #EAE5D9; padding: 2.2rem 4% 1.8rem 4%; text-align: center;">
+        <div style="max-width: 1380px; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
+            <a href="javascript:void(0);" onclick="return switchView('home');" style="text-decoration: none; display: inline-flex; justify-content: center; align-items: center;">
+                <img src="LL-Logo.png" alt="Lebenslinie Magazin" style="height: 145px; max-height: 160px; width: auto; object-fit: contain; transition: transform 0.2s ease;">
             </a>
-
-            <!-- 2. DURCHLAUFENDER TICKER (OHNE KASTEN, 350PX, RUBRIK-PUNKTE, +++) -->
-            <div class="header-ticker-marquee">
-                <div class="header-ticker-track">
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Besser Kommunizieren in der Onkologie: Neues Modul am UKW" data-article-cat="Schulmedizin" data-article-color="#00766e" data-article-img="page_imgs/schulmedizin_hero_1787167055209.jpg" style="color: #00766e;">
-                    <span class="ticker-dot" style="background-color: #00766e;"></span>Besser Kommunizieren in der Onkologie: Neues Modul am UKW
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt" data-article-cat="Naturheilkunde & Komplementärmedizin" data-article-color="#44a12b" data-article-img="page_imgs/naturheilkunde_hero_1787167067231.jpg" style="color: #44a12b;">
-                    <span class="ticker-dot" style="background-color: #44a12b;"></span>Heilpflanzen neu entdeckt: Heimische Kräuter im Porträt
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Seelische Gesundheit: Wege aus der Erschöpfung" data-article-cat="Psyche" data-article-color="#9d3c8c" data-article-img="page_imgs/psyche_hero_1787167080351.jpg" style="color: #9d3c8c;">
-                    <span class="ticker-dot" style="background-color: #9d3c8c;"></span>Seelische Gesundheit: Wege aus der Erschöpfung
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Die Heilkraft des Waldes: Warum Achtsamkeit in der Natur schützt" data-article-cat="Prävention & Reha" data-article-color="#006b8d" data-article-img="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80" style="color: #006b8d;">
-                    <span class="ticker-dot" style="background-color: #006b8d;"></span>Die Heilkraft des Waldes: Warum Achtsamkeit in der Natur schützt
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Der Körper als „Gebäckträger“: Zucker, Mehl & Stoffwechsel" data-article-cat="Ernährung & Umwelt" data-article-color="#a4ae00" data-article-img="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=80" style="color: #a4ae00;">
-                    <span class="ticker-dot" style="background-color: #a4ae00;"></span>Zucker, Mehl & Stoffwechsel: Gesunde Balance
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Bewegung, Begegnung, Lebensfreude: Aktiv älter werden in Würzburg" data-article-cat="Alter" data-article-color="#41a3bd" data-article-img="page_imgs/alter_hero_1787168608259.jpg" style="color: #41a3bd;">
-                    <span class="ticker-dot" style="background-color: #41a3bd;"></span>Aktiv älter werden in Würzburg: Vitalität & Freude
-                </a>
-                <span class="ticker-sep">+++</span>
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Besser Kommunizieren in der Onkologie: Neues Modul am UKW" data-article-cat="Schulmedizin" data-article-color="#00766e" data-article-img="page_imgs/schulmedizin_hero_1787167055209.jpg" style="color: #00766e;">
-                    <span class="ticker-dot" style="background-color: #00766e;"></span>Besser Kommunizieren in der Onkologie: Neues Modul am UKW
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt" data-article-cat="Naturheilkunde & Komplementärmedizin" data-article-color="#44a12b" data-article-img="page_imgs/naturheilkunde_hero_1787167067231.jpg" style="color: #44a12b;">
-                    <span class="ticker-dot" style="background-color: #44a12b;"></span>Heilpflanzen neu entdeckt: Heimische Kräuter im Porträt
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Seelische Gesundheit: Wege aus der Erschöpfung" data-article-cat="Psyche" data-article-color="#9d3c8c" data-article-img="page_imgs/psyche_hero_1787167080351.jpg" style="color: #9d3c8c;">
-                    <span class="ticker-dot" style="background-color: #9d3c8c;"></span>Seelische Gesundheit: Wege aus der Erschöpfung
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Die Heilkraft des Waldes: Warum Achtsamkeit in der Natur schützt" data-article-cat="Prävention & Reha" data-article-color="#006b8d" data-article-img="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80" style="color: #006b8d;">
-                    <span class="ticker-dot" style="background-color: #006b8d;"></span>Die Heilkraft des Waldes: Warum Achtsamkeit in der Natur schützt
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Der Körper als „Gebäckträger“: Zucker, Mehl & Stoffwechsel" data-article-cat="Ernährung & Umwelt" data-article-color="#a4ae00" data-article-img="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=80" style="color: #a4ae00;">
-                    <span class="ticker-dot" style="background-color: #a4ae00;"></span>Zucker, Mehl & Stoffwechsel: Gesunde Balance
-                </a>
-                <span class="ticker-sep">+++</span>
-
-                <a href="javascript:void(0);" class="ticker-item open-article-btn" data-article-title="Bewegung, Begegnung, Lebensfreude: Aktiv älter werden in Würzburg" data-article-cat="Alter" data-article-color="#41a3bd" data-article-img="page_imgs/alter_hero_1787168608259.jpg" style="color: #41a3bd;">
-                    <span class="ticker-dot" style="background-color: #41a3bd;"></span>Aktiv älter werden in Würzburg: Vitalität & Freude
-                </a>
-                <span class="ticker-sep">+++</span>
-                </div>
-            </div>
-
         </div>
     </header>
 
@@ -536,10 +492,24 @@
     <!-- ==================== VIEW 1: HOME VIEW ==================== -->
     <div id="view-home">
         
-        <!-- KINFOLK HERO SLIDER -->
-        <section class="hero-slider-container">
+                <!-- KINFOLK HERO SLIDER -->
+        <section class="hero-slider-container" style="position: relative;">
             <button class="slider-nav-btn slider-nav-prev" aria-label="Vorheriger Artikel" onclick="if(window.prevSlide) window.prevSlide();">&#10094;</button>
             <button class="slider-nav-btn slider-nav-next" aria-label="Nächster Artikel" onclick="if(window.nextSlide) window.nextSlide();">&#10095;</button>
+
+            <!-- FLOATING AKTUELLE AUSGABE CARD AUF HOMEPAGE SLIDER -->
+            <div class="hero-floating-issue-card">
+                <span style="background: #6B8272; color: #FFFFFF; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 8px; border-radius: 3px; display: inline-block; margin-bottom: 0.6rem;">Aktuelle Ausgabe</span>
+                <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1A1A1A; margin: 0 0 0.8rem 0; font-weight: 600;">
+                    Lebenslinie 1 / 2026
+                </h3>
+                <div style="height: 250px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.1rem auto; cursor: pointer; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2026', 'LL-1-2026-web.pdf');">
+                    <img src="LL-1-2026-Titel.png" alt="Lebenslinie 1/2026" style="height: 100%; max-height: 250px; width: auto; object-fit: contain; box-shadow: 0 8px 24px rgba(0,0,0,0.2); border-radius: 4px;" />
+                </div>
+                <button onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2026', 'LL-1-2026-web.pdf');" style="width: 100%; background: #6B8272; color: #FFF; border: none; padding: 10px 14px; font-weight: 700; border-radius: 4px; font-size: 0.82rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#556b5b';" onmouseout="this.style.background='#6B8272';">
+                    📖 E-Paper jetzt lesen
+                </button>
+            </div>
 
             <div class="hero-slide active" style="background-image: url('page_imgs/naturheilkunde_hero_1787167067231.jpg');">
             <div class="hero-slide-overlay">
@@ -1615,20 +1585,6 @@
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <aside class="magazin-sidebar" style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 2rem;">
     
-    <!-- 1. Aktuelle Ausgabe E-Paper Box -->
-    <div style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.5rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04); text-align: center;">
-        <span class="cat-badge" style="background: #768A76; margin-bottom: 0.8rem; display: inline-block;">Aktuelle Ausgabe</span>
-        <h4 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 1rem 0; font-weight: 600;">
-            Lebenslinie 1 / 2026
-        </h4>
-        <div style="height: 380px; display: flex; align-items: center; justify-content: center; margin: 0.5rem 0 1.4rem 0; cursor: pointer; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2026', 'LL-1-2026-web.pdf');">
-            <img src="LL-1-2026-Titel.png" alt="Lebenslinie 1/2026" style="height: 100%; max-height: 380px; width: auto; max-width: 100%; object-fit: contain; box-shadow: 0 14px 32px rgba(0,0,0,0.22); border-radius: 6px;" />
-        </div>
-        <button onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2026', 'LL-1-2026-web.pdf');" style="width: 100%; background: #768A76; color: #FFF; border: none; padding: 10px 16px; font-weight: 700; border-radius: 6px; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
-            📖 E-Paper jetzt lesen
-        </button>
-    </div>
-
     <!-- 2. Kooperationspartner der Region (KLEINER INTERAKTIVER SLIDER) -->
     <div class="partner-slider-sidebar-box" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.4rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
