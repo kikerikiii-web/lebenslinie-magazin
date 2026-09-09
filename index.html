@@ -8016,7 +8016,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
 
     // HERZSCHLAG AUDIO & 5X FRAME-PERFECT HARDWARE AUDIO CLOCK SYNC ENGINE
     (function() {
-        var audio = new Audio('herzschlag.mp3?v=5beats_' + Date.now());
+        var audio = new Audio('herzschlag.mp3?v=5b_' + Math.floor(Date.now() / 60000));
         audio.preload = 'auto';
         window.herzschlagAudio = audio;
         
@@ -8097,39 +8097,42 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         audio.addEventListener('ended', stopSyncVisual);
         audio.addEventListener('pause', stopSyncVisual);
 
+        function removeGestureListeners() {
+            document.removeEventListener('click', onUserGesture, true);
+            document.removeEventListener('touchstart', onUserGesture, true);
+            document.removeEventListener('pointerdown', onUserGesture, true);
+            document.removeEventListener('keydown', onUserGesture, true);
+        }
+
         window.playHerzschlag = function() {
-            if (!audio) return;
+            if (!audio || hasPlayed) return;
             audio.currentTime = 0;
             var playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.then(function() {
                     hasPlayed = true;
+                    removeGestureListeners();
                 }).catch(function(err) {
-                    console.log('Safari / Browser policy prevented autoplay, listening for interaction.');
+                    console.log('Browser autoplay policy active. Awaiting user interaction.');
                 });
             }
         };
 
-        // 1. Immediate Autoplay Attempt
+        function onUserGesture() {
+            if (!hasPlayed) {
+                window.playHerzschlag();
+            }
+        }
+
+        document.addEventListener('click', onUserGesture, true);
+        document.addEventListener('touchstart', onUserGesture, true);
+        document.addEventListener('pointerdown', onUserGesture, true);
+        document.addEventListener('keydown', onUserGesture, true);
+
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', window.playHerzschlag);
         } else {
             window.playHerzschlag();
-        }
-
-        // 2. Safari Fallback: First User Gesture
-        var unlockEvents = ['click', 'touchstart', 'pointerdown', 'keydown', 'scroll'];
-        function unlockAudio() {
-            if (!hasPlayed && audio.paused) {
-                window.playHerzschlag();
-            }
-            for (var i = 0; i < unlockEvents.length; i++) {
-                document.removeEventListener(unlockEvents[i], unlockAudio, { passive: true });
-            }
-        }
-
-        for (var i = 0; i < unlockEvents.length; i++) {
-            document.addEventListener(unlockEvents[i], unlockAudio, { passive: true, once: true });
         }
     })();
 
