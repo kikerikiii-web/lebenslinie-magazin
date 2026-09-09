@@ -249,6 +249,104 @@
 }
 
 </style>
+    <!-- CORE ROUTING ENGINE (LOADED IN HEAD FOR IMMEDIATE AVAILABILITY) -->
+    <script>
+    window.switchView = function(viewId, catName, catColor, catDesc) {
+        try {
+            if (window.closeSearchOverlay) window.closeSearchOverlay();
+
+            var views = {
+                'home': document.getElementById('view-home'),
+                'category': document.getElementById('view-category-archive'),
+                'buchtipps': document.getElementById('view-buchtipps-archive'),
+                'heftarchiv': document.getElementById('view-heftarchiv'),
+                'mediathek': document.getElementById('view-mediathek'),
+                'kalender': document.getElementById('view-gesundheitskalender'),
+                'kooperationen': document.getElementById('view-kooperationen')
+            };
+
+            for (var key in views) {
+                if (views[key]) views[key].style.display = 'none';
+            }
+
+            // Target view activation
+            var targetView = views[viewId];
+            if (targetView) {
+                targetView.style.display = 'block';
+            } else if (views['home']) {
+                views['home'].style.display = 'block';
+            }
+
+            // Update active state in Navigation
+            var navLinks = document.querySelectorAll('.main-nav-link');
+            navLinks.forEach(function(link) {
+                if (link) link.classList.remove('active');
+            });
+
+            if (viewId === 'home') {
+                var el = document.querySelector('.nav-go-home');
+                if (el) el.classList.add('active');
+            } else if (viewId === 'category') {
+                var el = document.querySelector('.rubrik-all-btn');
+                if (el) el.classList.add('active');
+
+                catName = catName || 'Aktuelles';
+                catColor = catColor || '#768A76';
+                catDesc = catDesc || 'Alle veröffentlichten Beiträge dieser Rubrik im Überblick.';
+
+                var archiveTitle = document.getElementById('archive-title-text');
+                var archiveBadge = document.getElementById('archive-badge-text');
+                var archiveDesc = document.getElementById('archive-desc-text');
+                var archiveBox = document.getElementById('archive-header-box');
+                var archiveBreadcrumb = document.getElementById('archive-breadcrumb-cat');
+
+                if (archiveTitle) archiveTitle.textContent = catName;
+                if (archiveBreadcrumb) archiveBreadcrumb.textContent = catName;
+                if (archiveDesc) archiveDesc.textContent = catDesc;
+                if (archiveBadge) {
+                    archiveBadge.textContent = catName;
+                    archiveBadge.style.backgroundColor = catColor;
+                }
+                if (archiveBox) archiveBox.style.borderLeftColor = catColor;
+
+                if (typeof window.renderCategoryArchive === 'function') {
+                    window.renderCategoryArchive(catName, catColor);
+                }
+            } else if (viewId === 'buchtipps') {
+                var el = document.querySelector('.buchtipp-all-btn');
+                if (el) el.classList.add('active');
+
+                if (typeof window.showBuchtippsArchive === 'function') {
+                    window.showBuchtippsArchive(catName, catColor || '#8F7A5C', catDesc || '');
+                }
+            } else if (viewId === 'heftarchiv') {
+                var el = document.querySelector('.nav-go-archiv');
+                if (el) el.classList.add('active');
+            } else if (viewId === 'mediathek') {
+                var el = document.querySelector('.mediathek-all-btn');
+                if (el) el.classList.add('active');
+            } else if (viewId === 'kalender') {
+                var el = document.querySelector('.nav-go-kalender');
+                if (el) el.classList.add('active');
+            } else if (viewId === 'kooperationen') {
+                var el = document.querySelector('.nav-go-kooperationen');
+                if (el) el.classList.add('active');
+            }
+
+            if (document.activeElement && typeof document.activeElement.blur === 'function') {
+                document.activeElement.blur();
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch(err) {
+            console.error('switchView error:', err);
+        }
+        return false;
+    };
+    function switchView(viewId, catName, catColor, catDesc) {
+        return window.switchView(viewId, catName, catColor, catDesc);
+    }
+    </script>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #FAF8F5; color: #2B2B2B;">
 
@@ -270,7 +368,7 @@
                 <a href="javascript:void(0);" onclick="return switchView('home');" class="main-nav-link nav-go-home active">Home</a>
                 
                 <div class="nav-item-dropdown">
-                    <a href="javascript:void(0);" onclick="return switchView('home');" class="main-nav-link rubrik-all-btn">
+                    <a href="javascript:void(0);" onclick="return switchView('category', 'Aktuelles', '#8f7f8f', 'Neueste Nachrichten, Berichte und Entwicklungen im Gesundheitswesen Mainfrankens.');" class="main-nav-link rubrik-all-btn">
                         Rubriken
                     </a>
                     <div class="dropdown-menu">
