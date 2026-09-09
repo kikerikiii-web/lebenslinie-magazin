@@ -1,0 +1,722 @@
+[
+  {
+    "title": "Schamlose Neugier: Kunst des heilsamen Gesprächs",
+    "author": "Astrid Seeberger",
+    "publisher": "Integral Verlag",
+    "cat": "Aktuelles",
+    "color": "#8f7f8f",
+    "desc": "Eine Ärztin über Empathie, Zuwendung und die Magie der sprechenden Medizin.",
+    "img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2026/04/Buch-Cover-Gebrochen-1-194x300.jpg"
+  },
+  {
+    "title": "Gesundheit 4.0: Die digitale Medizinrevolution",
+    "author": "Prof. Dr. Jörg Debatin",
+    "publisher": "Springer Medizin",
+    "cat": "Aktuelles",
+    "color": "#8f7f8f",
+    "desc": "Chancen und Risiken von KI, Telemedizin und Gesundheits-Apps.",
+    "img": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=2",
+    "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Medizin ohne Menschlichkeit?",
+    "author": "Dr. med. Matthias Thöns",
+    "publisher": "Westend Verlag",
+    "cat": "Aktuelles",
+    "color": "#8f7f8f",
+    "desc": "Kritische Analyse über Ökonomisierung und Patientenwohl.",
+    "img": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80&sig=3",
+    "cover": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Das System Krankenhaus durchschauen",
+    "author": "Prof. Dr. Heinz Lohmann",
+    "publisher": "Medizinisch Wissenschaftliche Verlagsgesellschaft",
+    "cat": "Aktuelles",
+    "color": "#8f7f8f",
+    "desc": "Ratgeber für Patienten vor planbaren Operationen.",
+    "img": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=800&q=80&sig=4",
+    "cover": "https://images.unsplash.com/photo-1532012164546-f432f2e3edd4?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Patientenrechte leicht gemacht",
+    "author": "Sabine Ridder",
+    "publisher": "Verbraucherzentrale NRW",
+    "cat": "Aktuelles",
+    "color": "#8f7f8f",
+    "desc": "Rechtliche Sicherheit bei Arztfehlern, Behandlungsverträgen und Kassenleistungen.",
+    "img": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80&sig=5",
+    "cover": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Digitale Pflegewelt: Zukunft der Altenpflege",
+    "author": "Dr. Stefan Arend",
+    "publisher": "Vincentz Network",
+    "cat": "Aktuelles",
+    "color": "#8f7f8f",
+    "desc": "Technologische Assistenzsysteme im Pflegealltag.",
+    "img": "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80&sig=6",
+    "cover": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Der kranke Patient Krankenhaus",
+    "author": "Dr. med. Bernd Hauf",
+    "publisher": "Campus Verlag",
+    "cat": "Ökonomie & Fürsorge",
+    "color": "#574a6d",
+    "desc": "Zwischen Wirtschaftlichkeitsdruck und menschlicher Fürsorge im modernen Klinikwesen.",
+    "img": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80&sig=7",
+    "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Fürsorge als Haltung in Gesellschaft & Gesundheit",
+    "author": "Prof. Dr. Elisabeth Conradi",
+    "publisher": "Campus Verlag",
+    "cat": "Ökonomie & Fürsorge",
+    "color": "#574a6d",
+    "desc": "Ethik der Pflege und soziale Verantwortung neu gedacht.",
+    "img": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80&sig=8",
+    "cover": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Wirtschaftlichkeit contra Ethik in der Pflege",
+    "author": "Michael Isfort",
+    "publisher": "Mabuse-Verlag",
+    "cat": "Ökonomie & Fürsorge",
+    "color": "#574a6d",
+    "desc": "Empirische Studie zur Belastungsgrenze von Pflegekräften.",
+    "img": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80&sig=9",
+    "cover": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Gesundheitssystem im Wandel",
+    "author": "Prof. Dr. Lauterbach",
+    "publisher": "Schattauer Verlag",
+    "cat": "Ökonomie & Fürsorge",
+    "color": "#574a6d",
+    "desc": "Strukturreformen, Krankenhausplanung und ambulante Netze.",
+    "img": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&w=800&q=80&sig=10",
+    "cover": "https://images.unsplash.com/photo-1532012164546-f432f2e3edd4?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Häusliche Pflege organisieren",
+    "author": "Gisela Biringer",
+    "publisher": "Stiftung Warentest",
+    "cat": "Ökonomie & Fürsorge",
+    "color": "#574a6d",
+    "desc": "Schritt-für-Schritt-Anleitung von Pflegegrad bis Pflegedienst.",
+    "img": "https://images.unsplash.com/photo-1491841573634-28140fc7ced7?auto=format&fit=crop&w=800&q=80&sig=11",
+    "cover": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Mensch vor Marge: Ethik in der Medizin",
+    "author": "Prof. Dr. Giovanni Maio",
+    "publisher": "Herder Verlag",
+    "cat": "Ökonomie & Fürsorge",
+    "color": "#574a6d",
+    "desc": "Plädoyer für eine Rückbesinnung auf die heilende Beziehung.",
+    "img": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=800&q=80&sig=12",
+    "cover": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Alzheimer & Demenzen verstehen",
+    "author": "Prof. Dr. Wolfgang Maier & Prof. Dr. Frank Jessen",
+    "publisher": "Trias Verlag",
+    "cat": "Schulmedizin",
+    "color": "#00766e",
+    "desc": "Ursachen, Vorbeugung und Therapiemöglichkeiten bei Gedächtnisstörungen.",
+    "img": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80&sig=13",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2025/10/71ErJhpigZL-221x300.jpg"
+  },
+  {
+    "title": "Das Herz-Buch: Kardiologie für Patienten",
+    "author": "Dr. med. Thomas Weber",
+    "publisher": "Springer Medizin",
+    "cat": "Schulmedizin",
+    "color": "#00766e",
+    "desc": "Verständliche Aufklärung über Herz-Kreislauf-Erkrankungen und Herzchirurgie.",
+    "img": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80&sig=14",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2025/10/Cover-179x300.png"
+  },
+  {
+    "title": "Das Knie: Schmerzen verstehen und behandeln",
+    "author": "Prof. Dr. med. Philip Schoettle",
+    "publisher": "Zabert Sandmann",
+    "cat": "Schulmedizin",
+    "color": "#00766e",
+    "desc": "Diagnostik, Meniskustherapie und Gelenkersatz im Überblick.",
+    "img": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=80&sig=15",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2023/10/3D-1-897-5_3A_M-261x300.jpg"
+  },
+  {
+    "title": "Schlaganfall: Jede Minute zählt",
+    "author": "Prof. Dr. Otto Busse",
+    "publisher": "Trias Verlag",
+    "cat": "Schulmedizin",
+    "color": "#00766e",
+    "desc": "Symptome erkennen, Notfallkette aktivieren und Neuro-Reha gestalten.",
+    "img": "https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?auto=format&fit=crop&w=800&q=80&sig=16",
+    "cover": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Moderne Augenheilkunde: Sehkraft erhalten",
+    "author": "Prof. Dr. med. Norbert Schrage",
+    "publisher": "Karger Verlag",
+    "cat": "Schulmedizin",
+    "color": "#00766e",
+    "desc": "Grauer Star, Grüner Star und Makuladegeneration wirksam behandeln.",
+    "img": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=800&q=80&sig=17",
+    "cover": "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Die Schilddrüse: Kleine Drüse, große Wirkung",
+    "author": "Dr. med. Leveke Brakebusch",
+    "publisher": "Zuckschwerdt Verlag",
+    "cat": "Schulmedizin",
+    "color": "#00766e",
+    "desc": "Hashimoto, Über- und Unterfunktion verständlich erklärt.",
+    "img": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80&sig=18",
+    "cover": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Pflanzenheilkunde der Kräutermedizin",
+    "author": "Dr. Eva Maria Krüger",
+    "publisher": "Karger Verlag",
+    "cat": "Naturheilkunde & Komplementärmedizin",
+    "color": "#44a12b",
+    "desc": "Die Heilkraft heimischer Pflanzen: Rezepturen, Tinkturen und Anwendung.",
+    "img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=19",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2026/04/Bildschirmfoto-2026-04-03-um-07.45.01-186x300.png"
+  },
+  {
+    "title": "Traditionelle Chinesische Medizin im Alltag",
+    "author": "Dr. med. Christian Schmincke",
+    "publisher": "Systemische Medizin Verlag",
+    "cat": "Naturheilkunde & Komplementärmedizin",
+    "color": "#44a12b",
+    "desc": "Ganzheitliche Heilung mit Akupunktur und 5-Elemente-Ernährung.",
+    "img": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=20",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2025/03/36448998_9783432109671_xl-255x300.jpg"
+  },
+  {
+    "title": "Der Wald als Apotheke",
+    "author": "Dr. Markus Strauß",
+    "publisher": "Kneipp Verlag",
+    "cat": "Naturheilkunde & Komplementärmedizin",
+    "color": "#44a12b",
+    "desc": "Wilde Heilpflanzen, Bäume und Sträucher vor der Haustür nutzen.",
+    "img": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80&sig=21",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2023/10/Buchcover-Heilen-mit-pflanzlichen-Antibiotika_CMYK-211x300.jpg"
+  },
+  {
+    "title": "Die Heilkraft der Gewürze",
+    "author": "Prof. Dr. Bharat B. Aggarwal",
+    "publisher": "Nymphenburger",
+    "cat": "Naturheilkunde & Komplementärmedizin",
+    "color": "#44a12b",
+    "desc": "Kurkuma, Ingwer und Zimt als natürliche Entzündungshemmer.",
+    "img": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=800&q=80&sig=22",
+    "cover": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Schüßler-Salze für die Familie",
+    "author": "Margit Müller-Frahling",
+    "publisher": "Haug Verlag",
+    "cat": "Naturheilkunde & Komplementärmedizin",
+    "color": "#44a12b",
+    "desc": "Mineralstofftherapie zur sanften Unterstützung der Gesundheit.",
+    "img": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80&sig=23",
+    "cover": "https://images.unsplash.com/photo-1608248597263-0057e43a4524?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Heilende Tees & Dekokte",
+    "author": "Ursel Bühring",
+    "publisher": "Freya Verlag",
+    "cat": "Naturheilkunde & Komplementärmedizin",
+    "color": "#44a12b",
+    "desc": "Kräutertees selbst mischen für Magen, Bronchien und Nerven.",
+    "img": "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80&sig=24",
+    "cover": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Die Waldbaden-Methode: Prävention durch Natur",
+    "author": "Dr. Qing Li",
+    "publisher": "Irisiana Verlag",
+    "cat": "Prävention & Reha",
+    "color": "#006b8d",
+    "desc": "Wie Shinrin-Yoku das Immunsystem stärkt und Blutdruck senkt.",
+    "img": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80&sig=25",
+    "cover": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Arthrose & Gelenkschmerz effektiv vorbeugen",
+    "author": "Prof. Dr. med. Peter Liebers",
+    "publisher": "Südwest Verlag",
+    "cat": "Prävention & Reha",
+    "color": "#006b8d",
+    "desc": "Ganzheitliches Bewegungsprogramm und Gelenkschutz.",
+    "img": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80&sig=26",
+    "cover": "https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Faszientraining für Schmerzfreiheit",
+    "author": "Dr. Robert Schleip",
+    "publisher": "riva Verlag",
+    "cat": "Prävention & Reha",
+    "color": "#006b8d",
+    "desc": "Bindegewebe gezielt kräftigen und Verspannungen lösen.",
+    "img": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80&sig=27",
+    "cover": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Das 15-Minuten-Rückenprogramm",
+    "author": "Prof. Dr. Ingo Froböse",
+    "publisher": "BLV Verlag",
+    "cat": "Prävention & Reha",
+    "color": "#006b8d",
+    "desc": "Einfache Übungen gegen Schreibtischhaltung und Hexenschuss.",
+    "img": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&w=800&q=80&sig=28",
+    "cover": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Reha nach Sportverletzungen",
+    "author": "Dr. med. Markus Klingenberg",
+    "publisher": "Meyer & Meyer Verlag",
+    "cat": "Prävention & Reha",
+    "color": "#006b8d",
+    "desc": "Wiederaufbautraining für Sehnen, Bänder und Muskeln.",
+    "img": "https://images.unsplash.com/photo-1491841573634-28140fc7ced7?auto=format&fit=crop&w=800&q=80&sig=29",
+    "cover": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Herzgesund durch Prävention",
+    "author": "Prof. Dr. Helmut Gohlke",
+    "publisher": "Deutsche Herzstiftung",
+    "cat": "Prävention & Reha",
+    "color": "#006b8d",
+    "desc": "Ernährung, Ausdauersport und Cholesterinkontrolle.",
+    "img": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=800&q=80&sig=30",
+    "cover": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Würzburger Medizingeschichte",
+    "author": "Prof. Dr. Robert Jütte",
+    "publisher": "Schöningh Verlag",
+    "cat": "Forschung & Geschichte",
+    "color": "#0053a0",
+    "desc": "Von Julius Echter bis Wilhelm Conrad Röntgen: Die Meilensteine der Heilkunst.",
+    "img": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80&sig=31",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2019/01/978-3-404-17646-5-Weiss-Die-Arznei-der-Koenige-org-202x300.jpg"
+  },
+  {
+    "title": "Die Entdeckung der X-Strahlen",
+    "author": "Dr. Klaus-Peter Becker",
+    "publisher": "Universitätsverlag Würzburg",
+    "cat": "Forschung & Geschichte",
+    "color": "#0053a0",
+    "desc": "Die faszinierende Geschichte der Röntgenstrahlen und ihre Medizinrevolution.",
+    "img": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80&sig=32",
+    "cover": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Geschichte der Chirurgie",
+    "author": "Prof. Dr. Ferdinand Sauerbruch",
+    "publisher": "Springer Verlag",
+    "cat": "Forschung & Geschichte",
+    "color": "#0053a0",
+    "desc": "Von der Narkose-Erfindung bis zur minimalinvasiven Chirurgie.",
+    "img": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=80&sig=33",
+    "cover": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Meilensteine der Penicillin-Forschung",
+    "author": "Dr. Alexander Fleming",
+    "publisher": "Reclam Verlag",
+    "cat": "Forschung & Geschichte",
+    "color": "#0053a0",
+    "desc": "Der Sieg über bakterielle Infektionskrankheiten.",
+    "img": "https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?auto=format&fit=crop&w=800&q=80&sig=34",
+    "cover": "https://images.unsplash.com/photo-1507842229451-7f01be7f70d3?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Biomaterialbanken der Zukunft",
+    "author": "Prof. Dr. Thomas Illig",
+    "publisher": "De Gruyter",
+    "cat": "Forschung & Geschichte",
+    "color": "#0053a0",
+    "desc": "Wie Biobanken die personalisierte Krebstherapie revolutionieren.",
+    "img": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=800&q=80&sig=35",
+    "cover": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Die großen Seuchen der Menschheit",
+    "author": "Prof. Dr. Stefan Lechner",
+    "publisher": "C.H. Beck",
+    "cat": "Forschung & Geschichte",
+    "color": "#0053a0",
+    "desc": "Pest, Cholera und Pocken im historischen Wandel der Hygiene.",
+    "img": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80&sig=36",
+    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Das Mikrobiom-Kochbuch",
+    "author": "Dr. Anne Fleck",
+    "publisher": "Wunderlich Verlag",
+    "cat": "Ernährung & Umwelt",
+    "color": "#a4ae00",
+    "desc": "Darmgesunde Ernährung mit ballaststoffreichen regionalen Zutaten.",
+    "img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=37",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2025/03/BUCHCOVER-Was-kann-ich-ueberhaupt-noch-essen-RGB-Farben-209x300.jpg"
+  },
+  {
+    "title": "Purinarm & Genussvoll essen",
+    "author": "Sabine Stein",
+    "publisher": "Trias Verlag",
+    "cat": "Ernährung & Umwelt",
+    "color": "#a4ae00",
+    "desc": "Leckere Rezepte zur Gichtprävention und Harnsäuresenkung.",
+    "img": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=38",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2025/03/kochbuch-alles-vom-gemuese-cover-222x300.jpg"
+  },
+  {
+    "title": "Spießrutenlauf Essen: Umwelt & Ernährung",
+    "author": "Dr. Christiane Högermann",
+    "publisher": "Klima- & Umweltschutz Verlag",
+    "cat": "Ernährung & Umwelt",
+    "color": "#a4ae00",
+    "desc": "Wie Pestizide und Zusatzstoffe unsere Nahrung belasten.",
+    "img": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80&sig=39",
+    "cover": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Keine fade Resteküche: Nachhaltig kochen",
+    "author": "Dagmar von Cramm",
+    "publisher": "Stiftung Warentest",
+    "cat": "Ernährung & Umwelt",
+    "color": "#a4ae00",
+    "desc": "Nahrungsverschwendung stoppen und Reste lecker verwerten.",
+    "img": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=800&q=80&sig=40",
+    "cover": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Picky Eater & Gemüsemuffel überzeugen",
+    "author": "Dr. Edith Gätjen",
+    "publisher": "Trias Verlag",
+    "cat": "Ernährung & Umwelt",
+    "color": "#a4ae00",
+    "desc": "Entspannte Kinderernährung ohne Zwang und Stress am Esstisch.",
+    "img": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80&sig=41",
+    "cover": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Superfoods aus der Region",
+    "author": "Dr. Nicolai Worm",
+    "publisher": "Systemed Verlag",
+    "cat": "Ernährung & Umwelt",
+    "color": "#a4ae00",
+    "desc": "Leinsamen, Beeren und Buchweizen als heimische Kraftpakete.",
+    "img": "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80&sig=42",
+    "cover": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Heilende Orte in Mainfranken",
+    "author": "Sabine Steinmüller",
+    "publisher": "Echter Verlag Würzburg",
+    "cat": "Entspannung & Reisen",
+    "color": "#a69dc9",
+    "desc": "Wandern, Thermalbäder und Kraftorte zwischen Rhön, Spessart und Steigerwald.",
+    "img": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80&sig=43",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2026/04/Cover-201x300.png"
+  },
+  {
+    "title": "Der Geschmack von Dolce Vita",
+    "author": "Claudio Del Faro",
+    "publisher": "Hallwag Verlag",
+    "cat": "Entspannung & Reisen",
+    "color": "#a69dc9",
+    "desc": "Kulinarische Entspannungsreise von der Toskana bis nach Sizilien.",
+    "img": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80&sig=44",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2024/10/coverVon-der-Kunst-Leere-in-Fuelle-zu-verwandeln-198x300.jpg"
+  },
+  {
+    "title": "Schweigen & Genießen: Klosterheilkunde",
+    "author": "Pater Anselm Grün",
+    "publisher": "Vier-Türme-Verlag",
+    "cat": "Entspannung & Reisen",
+    "color": "#a69dc9",
+    "desc": "Innere Ruhe und Auszeit in benediktinischen Gastheimen.",
+    "img": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80&sig=45",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2024/10/GrueneHausapothekefuerHunde-211x300.jpg"
+  },
+  {
+    "title": "Progressive Muskelentspannung nach Jacobson",
+    "author": "Dr. Bernstein",
+    "publisher": "Gemsberg Verlag",
+    "cat": "Entspannung & Reisen",
+    "color": "#a69dc9",
+    "desc": "Systematisches An- und Entspannen gegen Muskelverspannungen.",
+    "img": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&w=800&q=80&sig=46",
+    "cover": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Das Anti-Stress-Buch für Vielbeschäftigte",
+    "author": "Dr. Mirriam Prieß",
+    "publisher": "Südwest Verlag",
+    "cat": "Entspannung & Reisen",
+    "color": "#a69dc9",
+    "desc": "Wie Sie im hektischen Alltag eigene Ruheoasen schaffen.",
+    "img": "https://images.unsplash.com/photo-1491841573634-28140fc7ced7?auto=format&fit=crop&w=800&q=80&sig=47",
+    "cover": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Wanderführer Fränkisches Weinland",
+    "author": "Dieter Popp",
+    "publisher": "Stürtz Verlag Würzburg",
+    "cat": "Entspannung & Reisen",
+    "color": "#a69dc9",
+    "desc": "Die schönsten Panoramawege entlang des Mains.",
+    "img": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=800&q=80&sig=48",
+    "cover": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Poesie als Pflaster: Kunst in der Klinik",
+    "author": "Dr. Julia Wagner",
+    "publisher": "Wallstein Verlag",
+    "cat": "Sprache & Kultur",
+    "color": "#ac0527",
+    "desc": "Wie Literatur, Malerei und Musik den Genesungsprozess unterstützen.",
+    "img": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80&sig=49",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2026/04/9783471360859-184x300.jpg"
+  },
+  {
+    "title": "Mitgemeint gleich mitgedacht?",
+    "author": "Prof. Dr. Luise F. Pusch",
+    "publisher": "Suhrkamp Verlag",
+    "cat": "Sprache & Kultur",
+    "color": "#ac0527",
+    "desc": "Kritische Sprachbetrachtung zur geschlechtergerechten Kommunikation.",
+    "img": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80&sig=50",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2026/04/TdZ_Hell_ist_die_Nacht_RGB_U1_mit-Sticker-227x300.webp"
+  },
+  {
+    "title": "Die Heilkraft der Musik",
+    "author": "Prof. Dr. Stefan Koelsch",
+    "publisher": "Ullstein Verlag",
+    "cat": "Sprache & Kultur",
+    "color": "#ac0527",
+    "desc": "Wie Melodien das Gehirn verändern und Emotionen heilen.",
+    "img": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=80&sig=51",
+    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Bibliotherapie: Bücher für die Seele",
+    "author": "Ella Berthoud",
+    "publisher": "Insel Verlag",
+    "cat": "Sprache & Kultur",
+    "color": "#ac0527",
+    "desc": "Der literarische Notfallapotheken-Ratgeber bei Lebenskrisen.",
+    "img": "https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?auto=format&fit=crop&w=800&q=80&sig=52",
+    "cover": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Kulturgeschichte der Medizin",
+    "author": "Prof. Dr. Roy Porter",
+    "publisher": "Spektrum Akademischer Verlag",
+    "cat": "Sprache & Kultur",
+    "color": "#ac0527",
+    "desc": "Der Mensch und seine Krankheiten in der Weltliteratur.",
+    "img": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=800&q=80&sig=53",
+    "cover": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Sprachlos vor Schmerz? Worte finden",
+    "author": "Dr. med. Christoph Student",
+    "publisher": "Gütersloher Verlagshaus",
+    "cat": "Sprache & Kultur",
+    "color": "#ac0527",
+    "desc": "Kommunikationshilfen in der Trauer- und Palliativebegleitung.",
+    "img": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80&sig=54",
+    "cover": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Gut, dass es dir schlecht geht",
+    "author": "Dr. Bodo Deletz",
+    "publisher": "J.Kamphausen Verlag",
+    "cat": "Psyche",
+    "color": "#9d3c8c",
+    "desc": "Warum negative Gefühle wichtige Wegweiser für seelisches Wachstum sind.",
+    "img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=55",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2024/04/glueck-rezepte-fuer-mehr-lebensfreude-pressphoto-2022-05-24-130212-213x300.jpg"
+  },
+  {
+    "title": "Das Kind in dir muss Heimat finden",
+    "author": "Stefanie Stahl",
+    "publisher": "Kailash Verlag",
+    "cat": "Psyche",
+    "color": "#9d3c8c",
+    "desc": "Der Schlüssel zur Lösung fast aller seelischen Probleme.",
+    "img": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=56",
+    "cover": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Depression überwinden",
+    "author": "Prof. Dr. Martin Hautzinger",
+    "publisher": "Beltz Verlag",
+    "cat": "Psyche",
+    "color": "#9d3c8c",
+    "desc": "Kognitive Verhaltenstherapie und Selbsthilfe bei Stimmungstiefs.",
+    "img": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80&sig=57",
+    "cover": "https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Die Psychologie des Weinens",
+    "author": "Prof. Dr. Ad Vingerhoets",
+    "publisher": "Klett-Cotta",
+    "cat": "Psyche",
+    "color": "#9d3c8c",
+    "desc": "Warum Tränen den Körper entlasten und Bindungen stärken.",
+    "img": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=800&q=80&sig=58",
+    "cover": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Wenn der Körper die Seele spiegelt",
+    "author": "Dr. med. Alexander Kugelstadt",
+    "publisher": "DTV Verlag",
+    "cat": "Psyche",
+    "color": "#9d3c8c",
+    "desc": "Psychosomatik verständlich erklärt für Betroffene.",
+    "img": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80&sig=59",
+    "cover": "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Resilienz: Das Geheimnis der psychischen Kraft",
+    "author": "Christina Berndt",
+    "publisher": "dtv Verlagsgesellschaft",
+    "cat": "Psyche",
+    "color": "#9d3c8c",
+    "desc": "Was uns stark macht gegen Belastungen und Krisen.",
+    "img": "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80&sig=60",
+    "cover": "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Kinder verstehen: Born to be wild",
+    "author": "Dr. Herbert Renz-Polster",
+    "publisher": "Kösel Verlag",
+    "cat": "Kindheit",
+    "color": "#eb78a9",
+    "desc": "Was Kinder für eine gesunde Entwicklung und ein starkes Abwehrsystem brauchen.",
+    "img": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80&sig=61",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2026/04/Bildschirmfoto-2026-04-03-um-12.32.46-208x300.png"
+  },
+  {
+    "title": "Für Picky Eater und Gemüsemuffel",
+    "author": "Dr. Edith Gätjen",
+    "publisher": "Trias Verlag",
+    "cat": "Kindheit",
+    "color": "#eb78a9",
+    "desc": "Gesunde Kinderernährung von Anfang an ohne Zwang am Esstisch.",
+    "img": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80&sig=62",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2023/06/Bruecke--293x300.jpg"
+  },
+  {
+    "title": "Das gewünschteste Wunschkind treibt mich in den Wahnsinn",
+    "author": "Danielle Graf",
+    "publisher": "Beltz Verlag",
+    "cat": "Kindheit",
+    "color": "#eb78a9",
+    "desc": "Der gelassene Umgang mit der Autonomiephase von 1 bis 5 Jahren.",
+    "img": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80&sig=63",
+    "cover": "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Starke Kinder durch Bewegung",
+    "author": "Prof. Dr. Renate Zimmer",
+    "publisher": "Herder Verlag",
+    "cat": "Kindheit",
+    "color": "#eb78a9",
+    "desc": "Motorische Förderung und Koordination von Kleinkindern.",
+    "img": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&w=800&q=80&sig=64",
+    "cover": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Schlaf gut, mein kleines Kind",
+    "author": "Dr. med. Alfred Wiater",
+    "publisher": "Gräfe und Unzer",
+    "cat": "Kindheit",
+    "color": "#eb78a9",
+    "desc": "Sanfte Schlafberatung für Säuglinge und Kleinkinder.",
+    "img": "https://images.unsplash.com/photo-1491841573634-28140fc7ced7?auto=format&fit=crop&w=800&q=80&sig=65",
+    "cover": "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Kinderängste meistern",
+    "author": "Dr. Jan-Uwe Rogge",
+    "publisher": "Rowohlt Verlag",
+    "cat": "Kindheit",
+    "color": "#eb78a9",
+    "desc": "Wie Eltern Kindern Mut machen und Selbstvertrauen schenken.",
+    "img": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=800&q=80&sig=66",
+    "cover": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Pflege ohne Burnout: Für pflegende Angehörige",
+    "author": "Maria Hoffmann",
+    "publisher": "Mabuse-Verlag",
+    "cat": "Alter",
+    "color": "#41a3bd",
+    "desc": "Selbstfürsorge, Entlastungsmöglichkeiten und rechtliche Begleitung in der Pflege.",
+    "img": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80&sig=67",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2024/11/Cover_Zurueck-ins-Leben-finden_Stelzner-Muerkoster_300dpi-188x300.jpg"
+  },
+  {
+    "title": "Alt werden ist ein hochinteressantes Geschäft",
+    "author": "Prof. Dr. Ursula Lehr",
+    "publisher": "Herder Verlag",
+    "cat": "Alter",
+    "color": "#41a3bd",
+    "desc": "Aktive Gerontologie, Lebensfreude und Gesundheit im Alter.",
+    "img": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80&sig=68",
+    "cover": "https://www.lebenslinie-magazin.de/wp-content/uploads/2023/06/9783747401415-193x300.png"
+  },
+  {
+    "title": "Vergiss Mein Nicht: Leben mit Demenz",
+    "author": "David Sieveking",
+    "publisher": "Herder Verlag",
+    "cat": "Alter",
+    "color": "#41a3bd",
+    "desc": "Ein berührender Erfahrungsbericht über liebevolle Begleitung.",
+    "img": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=80&sig=69",
+    "cover": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Fit und beweglich ab 60",
+    "author": "Dr. Michi Schreiber",
+    "publisher": "blv Verlag",
+    "cat": "Alter",
+    "color": "#41a3bd",
+    "desc": "Gelenkschonendes Kraft- und Gleichgewichtstraining für Senioren.",
+    "img": "https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?auto=format&fit=crop&w=800&q=80&sig=70",
+    "cover": "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Ernährung im höheren Lebensalter",
+    "author": "Prof. Dr. Dorothee Volkert",
+    "publisher": "Ernährungs Umschau",
+    "cat": "Alter",
+    "color": "#41a3bd",
+    "desc": "Mangelernährung vorbeugen und Vitalstoffbedarf im Alter decken.",
+    "img": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=800&q=80&sig=71",
+    "cover": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Wohnen im Alter: Barrierefrei & Selbstbestimmt",
+    "author": "Sabine Kölbl",
+    "publisher": "Blottner Verlag",
+    "cat": "Alter",
+    "color": "#41a3bd",
+    "desc": "Umbautipps für Haus und Wohnung sowie alternative Wohnformen.",
+    "img": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80&sig=72",
+    "cover": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+  }
+]

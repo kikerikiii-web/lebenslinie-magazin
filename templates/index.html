@@ -1,0 +1,51 @@
+<!-- wp:template-part {"slug":"header","theme":"lebenslinie-magazin","tagName":"header"} /-->
+
+<!-- KINFOLK HERO SLIDER PATTERN -->
+<!-- wp:pattern {"slug":"lebenslinie-magazin/hero-slider"} /-->
+
+<!-- MAIN CONTENT AREA WITH RIGHT SIDEBAR -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"2.5rem","bottom":"4rem","left":"4%","right":"4%"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="max-width: 1340px; margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; gap: 3rem;">
+    
+    <!-- LEFT MAIN COLUMN: ALL 13 CATEGORIES IN COMPACT 3-COLUMN GRID -->
+    <main id="rubriken">
+        <!-- wp:pattern {"slug":"lebenslinie-magazin/category-grid"} /-->
+    </main>
+
+    <!-- RIGHT SIDEBAR: LATEST ISSUE (Ausgabe 1 / 2026) -->
+    <aside style="display: flex; flex-direction: column; gap: 2rem; padding-top: 2rem;">
+        <!-- Latest Issue Card -->
+        <div style="background: #FFFFFF; border-radius: 12px; padding: 1.8rem; border: 1px solid #EAE5D9; box-shadow: 0 4px 20px rgba(0,0,0,0.04); text-align: center; position: sticky; top: 20px;">
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: #8F7A5C; font-weight: 700; display: block; margin-bottom: 0.4rem;">Aktuelle E-Paper Ausgabe</span>
+            
+            <!-- SIDEBAR TITLE: Ausgabe 1 / 2026 -->
+            <h3 style="font-family: var(--wp--preset--font-family--serif); font-size: 1.45rem; color: #1A1A1A; margin-bottom: 1rem;">Ausgabe 1 / 2026</h3>
+            
+            <!-- Cover Image LL-1-2026-Titel.png -->
+            <div class="open-flipbook-btn" style="position: relative; cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.15); margin-bottom: 1.2rem;">
+                <img src="LL-1-2026-Titel.png" alt="Ausgabe 1/2026 Titelbild" style="width: 100%; height: auto; display: block;" />
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+                    <span style="background: #FFFFFF; color: #1A1A1A; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">📖 Durchblättern</span>
+                </div>
+            </div>
+
+            <p style="font-size: 0.88rem; color: #5A6571; margin-bottom: 1.2rem; line-height: 1.5;">
+                Lesen Sie die neueste Print-Ausgabe (1/2026) digital im aufgeschlagenen E-Paper Doppelseiten-Flipbook.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <button class="open-flipbook-btn" style="width: 100%; background: #768A76; color: #FFFFFF; border: none; padding: 12px; font-weight: 600; border-radius: 6px; cursor: pointer; font-size: 0.9rem;">
+                    📖 Magazin durchblättern (Flipbook)
+                </button>
+                <a href="LL-1-2026-web.pdf" target="_blank" style="display: block; width: 100%; background: transparent; color: #5A6571; border: 1px solid #CBD5E0; padding: 9px; font-weight: 600; border-radius: 6px; font-size: 0.82rem; text-decoration: none; box-sizing: border-box;">
+                    📥 PDF-Ausgabe herunterladen
+                </a>
+            </div>
+        </div>
+
+        <!-- wp:pattern {"slug":"partner-slider"} /-->
+    </aside>
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"lebenslinie-magazin","tagName":"footer"} /-->

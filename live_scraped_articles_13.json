@@ -1,0 +1,808 @@
+{
+  "Aktuelles": [
+    {
+      "title": "Die Sonnenfinsternis sicher betrachten",
+      "url": "https://www.lebenslinie-magazin.de/artikel/die-sonnenfinsternis-sicher-betrachten/",
+      "cat": "Aktuelles",
+      "color": "#8f7f8f",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "12. August 2026",
+      "desc": ""
+    },
+    {
+      "title": "Würzburg gibt den Startschuss für bundesweites Kommunikationsprogramm in der Krebsmedizin",
+      "url": "https://www.lebenslinie-magazin.de/artikel/wuerzburg-gibt-den-startschuss-fuer-bundesweites-kommunikationsprogramm-in-der-krebsmedizin/",
+      "cat": "Aktuelles",
+      "color": "#8f7f8f",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "30. Juli 2026",
+      "desc": ""
+    },
+    {
+      "title": "Interaktive Ausstellung „In Würde Abschied nehmen“ – erleben, reflektieren, gestärkt begleiten",
+      "url": "https://www.lebenslinie-magazin.de/artikel/interaktive-ausstellung-in-wuerde-abschied-nehmen-erleben-reflektieren-gestaerkt-begleiten/",
+      "cat": "Aktuelles",
+      "color": "#8f7f8f",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "24. Juli 2026",
+      "desc": ""
+    },
+    {
+      "title": "Spendenübergabe an Forschungsprojekt: 70.000 Euro für die Forschung zur CAR -T-Zell Therapie",
+      "url": "https://www.lebenslinie-magazin.de/artikel/spendenuebergabe-an-forschungsprojekt-70-000-euro-fuer-die-forschung-zur-car-t-zell-therapie/",
+      "cat": "Aktuelles",
+      "color": "#8f7f8f",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "06. Juli 2026",
+      "desc": ""
+    },
+    {
+      "title": "Zum Tag des Schlafes: „Dauerhafte Müdigkeit ist kein Zustand, den man einfach hinnehmen sollte“",
+      "url": "https://www.lebenslinie-magazin.de/artikel/zum-tag-des-schlafes-dauerhafte-muedigkeit-ist-kein-zustand-den-man-einfach-hinnehmen-sollte/",
+      "cat": "Aktuelles",
+      "color": "#8f7f8f",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "19. Juni 2026",
+      "desc": ""
+    },
+    {
+      "title": "„Mode.Bewusst.Sein“–Festival in Würzburg: Warum unsere Kleidung mehr erzählt, als wir denken, !Festival wird aufgrund der zu erwartenden Temperaturen auf 26.9.2026 verschoben!",
+      "url": "https://www.lebenslinie-magazin.de/artikel/mode-bewusst-sein-festival-in-wuerzburg-warum-unsere-kleidung-mehr-erzaehlt-als-wir-denken/",
+      "cat": "Aktuelles",
+      "color": "#8f7f8f",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "26.9.2026",
+      "desc": ""
+    }
+  ],
+  "Ökonomie & Fürsorge": [
+    {
+      "title": "Leben ist keine Ware!",
+      "url": "https://www.lebenslinie-magazin.de/artikel/leben-ist-keine-ware/",
+      "cat": "Ökonomie & Fürsorge",
+      "color": "#574a6d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Schwimmende Stadt",
+      "url": "https://www.lebenslinie-magazin.de/artikel/schwimmende-stadt/",
+      "cat": "Ökonomie & Fürsorge",
+      "color": "#574a6d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Neu: Obdachlosen-Ambulanz",
+      "url": "https://www.lebenslinie-magazin.de/artikel/neu-obdachlosen-ambulanz/",
+      "cat": "Ökonomie & Fürsorge",
+      "color": "#574a6d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "2. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Zwischen Versorgung und Verdrängung",
+      "url": "https://www.lebenslinie-magazin.de/artikel/zwischen-versorgung-und-verdraengung/",
+      "cat": "Ökonomie & Fürsorge",
+      "color": "#574a6d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "17. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": ",, Ich bin eine XY- Frau ,,",
+      "url": "https://www.lebenslinie-magazin.de/artikel/ich-bin-eine-xy-frau/",
+      "cat": "Ökonomie & Fürsorge",
+      "color": "#574a6d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "17. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": "Was, wenn bei uns Krieg wäre?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/was-wenn-bei-uns-krieg-waere/",
+      "cat": "Ökonomie & Fürsorge",
+      "color": "#574a6d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "17. Oktober 2025",
+      "desc": ""
+    }
+  ],
+  "Schulmedizin": [
+    {
+      "title": "Klare Sicht voraus!",
+      "url": "https://www.lebenslinie-magazin.de/artikel/klare-sicht-voraus/",
+      "cat": "Schulmedizin",
+      "color": "#00766e",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Kryoablation: Tumore, die zum Eisball werden",
+      "url": "https://www.lebenslinie-magazin.de/artikel/kryoablation-tumore-die-zum-eisball-werden/",
+      "cat": "Schulmedizin",
+      "color": "#00766e",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Neuroplastizität des Gehirns",
+      "url": "https://www.lebenslinie-magazin.de/artikel/neuroplastizitaet-des-gehirns/",
+      "cat": "Schulmedizin",
+      "color": "#00766e",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Dem Gehirn auf die Sprünge helfen",
+      "url": "https://www.lebenslinie-magazin.de/artikel/dem-gehirn-auf-die-spruenge-helfen/",
+      "cat": "Schulmedizin",
+      "color": "#00766e",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Endlich wieder Kaffee trinken",
+      "url": "https://www.lebenslinie-magazin.de/artikel/endlich-wieder-kaffee-trinken/",
+      "cat": "Schulmedizin",
+      "color": "#00766e",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "2. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Zehenspitzengefühl",
+      "url": "https://www.lebenslinie-magazin.de/artikel/zehenspitzengefuehl/",
+      "cat": "Schulmedizin",
+      "color": "#00766e",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    }
+  ],
+  "Naturheilkunde & Komplementärmedizin": [
+    {
+      "title": "Von der Locke bis zur Socke",
+      "url": "https://www.lebenslinie-magazin.de/artikel/von-der-locke-bis-zur-socke/",
+      "cat": "Naturheilkunde & Komplementärmedizin",
+      "color": "#44a12b",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Alte Frucht, neue Kraft?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/alte-frucht-neue-kraft/",
+      "cat": "Naturheilkunde & Komplementärmedizin",
+      "color": "#44a12b",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Gesundheit: Verbundenheit & Beziehung",
+      "url": "https://www.lebenslinie-magazin.de/artikel/gesundheit-verbundenheit-beziehung/",
+      "cat": "Naturheilkunde & Komplementärmedizin",
+      "color": "#44a12b",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Selbstheilungsreize setzen",
+      "url": "https://www.lebenslinie-magazin.de/artikel/selbstheilungsreize-setzen/",
+      "cat": "Naturheilkunde & Komplementärmedizin",
+      "color": "#44a12b",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": "Wie sich die Zwiebel in Schale wirft",
+      "url": "https://www.lebenslinie-magazin.de/artikel/wie-sich-die-zwiebel-in-schale-wirft/",
+      "cat": "Naturheilkunde & Komplementärmedizin",
+      "color": "#44a12b",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": "Sanft, verlässlich & unaufgeregt",
+      "url": "https://www.lebenslinie-magazin.de/artikel/sanft-verlaesslich-unaufgeregt/",
+      "cat": "Naturheilkunde & Komplementärmedizin",
+      "color": "#44a12b",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "18. Oktober 2025",
+      "desc": ""
+    }
+  ],
+  "Prävention & Reha": [
+    {
+      "title": "Ein Streichholz, das von beiden Seiten abbrennt",
+      "url": "https://www.lebenslinie-magazin.de/artikel/ein-streichholz-das-von-beiden-seiten-abbrennt/",
+      "cat": "Prävention & Reha",
+      "color": "#006b8d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Frühwarnsystem für Pandemien",
+      "url": "https://www.lebenslinie-magazin.de/artikel/fruehwarnsystem-fuer-pandemien/",
+      "cat": "Prävention & Reha",
+      "color": "#006b8d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Dehnen oder nicht dehnen?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/dehnen-oder-nicht-dehnen/",
+      "cat": "Prävention & Reha",
+      "color": "#006b8d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Venenpumpe Wade – das zweite Herz",
+      "url": "https://www.lebenslinie-magazin.de/artikel/venenpumpe-wade-das-zweite-herz/",
+      "cat": "Prävention & Reha",
+      "color": "#006b8d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Damit der Schuh am Ende passt",
+      "url": "https://www.lebenslinie-magazin.de/artikel/damit-der-schuh-am-ende-passt/",
+      "cat": "Prävention & Reha",
+      "color": "#006b8d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Wenn dem Körper die Kraft ausgeht",
+      "url": "https://www.lebenslinie-magazin.de/artikel/wenn-dem-koerper-die-kraft-ausgeht/",
+      "cat": "Prävention & Reha",
+      "color": "#006b8d",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    }
+  ],
+  "Forschung & Geschichte": [
+    {
+      "title": "Als Heilkunde noch ein Handwerk war",
+      "url": "https://www.lebenslinie-magazin.de/artikel/als-heilkunde-noch-ein-handwerk-war/",
+      "cat": "Forschung & Geschichte",
+      "color": "#0053a0",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Teenager erfinden Salz-Kühlschrank",
+      "url": "https://www.lebenslinie-magazin.de/artikel/teenager-erfinden-salz-kuehlschrank/",
+      "cat": "Forschung & Geschichte",
+      "color": "#0053a0",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": "Wie intelligent ist unser Gehirn?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/wie-intelligent-ist-unser-gehirn/",
+      "cat": "Forschung & Geschichte",
+      "color": "#0053a0",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "1. April 2025",
+      "desc": ""
+    },
+    {
+      "title": "Quitt mit der Quitte?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/quitt-mit-der-quitte/",
+      "cat": "Forschung & Geschichte",
+      "color": "#0053a0",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. Oktober 2024",
+      "desc": ""
+    },
+    {
+      "title": "Lebenserwartung: 140 Jahre?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/lebenserwartung-140-jahre/",
+      "cat": "Forschung & Geschichte",
+      "color": "#0053a0",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. Oktober 2024",
+      "desc": ""
+    },
+    {
+      "title": "Phagen als neue Hoffnung?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/phagen-als-neue-hoffnung/",
+      "cat": "Forschung & Geschichte",
+      "color": "#0053a0",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. Oktober 2024",
+      "desc": ""
+    }
+  ],
+  "Ernährung & Umwelt": [
+    {
+      "title": "Der Körper als „ Gebäckträger “",
+      "url": "https://www.lebenslinie-magazin.de/artikel/der-koerper-als-gebaecktraeger/",
+      "cat": "Ernährung & Umwelt",
+      "color": "#a4ae00",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Gehirn-Boost: Walnüsse & Blaubeeren",
+      "url": "https://www.lebenslinie-magazin.de/artikel/gehirn-boost-walnuesse-blaubeeren/",
+      "cat": "Ernährung & Umwelt",
+      "color": "#a4ae00",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Purzeln die Pfunde beim Frühjahrsputz?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/purzeln-die-pfunde-beim-fruehjahrsputz/",
+      "cat": "Ernährung & Umwelt",
+      "color": "#a4ae00",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Den Garten nach Süden ausrichten",
+      "url": "https://www.lebenslinie-magazin.de/artikel/den-garten-nach-sueden-ausrichten/",
+      "cat": "Ernährung & Umwelt",
+      "color": "#a4ae00",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Nahrhaftes aus der Baumkrone",
+      "url": "https://www.lebenslinie-magazin.de/artikel/nahrhaftes-aus-der-baumkrone/",
+      "cat": "Ernährung & Umwelt",
+      "color": "#a4ae00",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Nicht jedem Trend nachjagen",
+      "url": "https://www.lebenslinie-magazin.de/artikel/nicht-jedem-trend-nachjagen/",
+      "cat": "Ernährung & Umwelt",
+      "color": "#a4ae00",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    }
+  ],
+  "Entspannung & Reisen": [
+    {
+      "title": "Warum der „ Hug “ ambivalent ist",
+      "url": "https://www.lebenslinie-magazin.de/artikel/warum-der-hug-ambivalent-ist/",
+      "cat": "Entspannung & Reisen",
+      "color": "#a69dc9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Die grüne Schneewittchenstadt",
+      "url": "https://www.lebenslinie-magazin.de/artikel/die-gruene-schneewittchenstadt/",
+      "cat": "Entspannung & Reisen",
+      "color": "#a69dc9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Schweden auf Rezept",
+      "url": "https://www.lebenslinie-magazin.de/artikel/schweden-auf-rezept/",
+      "cat": "Entspannung & Reisen",
+      "color": "#a69dc9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Machen oder Lassen: Nachahmen erlaubt!",
+      "url": "https://www.lebenslinie-magazin.de/artikel/machen-oder-lassen-nachahmen-erlaubt/",
+      "cat": "Entspannung & Reisen",
+      "color": "#a69dc9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Einladung zum Loslassen",
+      "url": "https://www.lebenslinie-magazin.de/artikel/einladung-zum-loslassen/",
+      "cat": "Entspannung & Reisen",
+      "color": "#a69dc9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Aus dem Bauch heraus",
+      "url": "https://www.lebenslinie-magazin.de/artikel/aus-dem-bauch-heraus/",
+      "cat": "Entspannung & Reisen",
+      "color": "#a69dc9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    }
+  ],
+  "Sprache & Kultur": [
+    {
+      "title": "Nähe, Vertrauen & Resonanz",
+      "url": "https://www.lebenslinie-magazin.de/artikel/naehe-vertrauen-resonanz/",
+      "cat": "Sprache & Kultur",
+      "color": "#ac0527",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Buch zum Fest",
+      "url": "https://www.lebenslinie-magazin.de/artikel/buch-zum-fest/",
+      "cat": "Sprache & Kultur",
+      "color": "#ac0527",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Mitgemeint gleich mitgedacht?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/mitgemeint-gleich-mitgedacht/",
+      "cat": "Sprache & Kultur",
+      "color": "#ac0527",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Was, wenn wir einfach singen?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/was-wenn-wir-einfach-singen/",
+      "cat": "Sprache & Kultur",
+      "color": "#ac0527",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Ein geliebter Mensch, verliert sein Ich",
+      "url": "https://www.lebenslinie-magazin.de/artikel/ein-geliebter-mensch-verliert-sein-ich/",
+      "cat": "Sprache & Kultur",
+      "color": "#ac0527",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Das Potenzial von Fußtheater",
+      "url": "https://www.lebenslinie-magazin.de/artikel/das-potenzial-von-fusstheater/",
+      "cat": "Sprache & Kultur",
+      "color": "#ac0527",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    }
+  ],
+  "Psyche": [
+    {
+      "title": "Apropos Depressionen …",
+      "url": "https://www.lebenslinie-magazin.de/artikel/apropos-depressionen/",
+      "cat": "Psyche",
+      "color": "#9d3c8c",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Weinen schützt, reinigt & entlastet",
+      "url": "https://www.lebenslinie-magazin.de/artikel/weinen-schuetzt-reinigt-entlastet/",
+      "cat": "Psyche",
+      "color": "#9d3c8c",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Wenn Gefühle unbeachtet bleiben",
+      "url": "https://www.lebenslinie-magazin.de/artikel/wenn-gefuehle-unbeachtet-bleiben/",
+      "cat": "Psyche",
+      "color": "#9d3c8c",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Stabilisierung, Orientierung & Schutz",
+      "url": "https://www.lebenslinie-magazin.de/artikel/stabilisierung-orientierung-schutz/",
+      "cat": "Psyche",
+      "color": "#9d3c8c",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Tierische Türöffnerin",
+      "url": "https://www.lebenslinie-magazin.de/artikel/tierische-tueroeffnerin/",
+      "cat": "Psyche",
+      "color": "#9d3c8c",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": "Freund und Feind?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/freund-und-feind/",
+      "cat": "Psyche",
+      "color": "#9d3c8c",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    }
+  ],
+  "Kindheit": [
+    {
+      "title": "Was Kinder stark macht!",
+      "url": "https://www.lebenslinie-magazin.de/artikel/was-kinder-stark-macht/",
+      "cat": "Kindheit",
+      "color": "#eb78a9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "In der eigenen Kraft bleiben",
+      "url": "https://www.lebenslinie-magazin.de/artikel/in-der-eigenen-kraft-bleiben/",
+      "cat": "Kindheit",
+      "color": "#eb78a9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Impulskontrolle & Selbstwirksamkeit",
+      "url": "https://www.lebenslinie-magazin.de/artikel/impulskontrolle-selbstwirksamkeit/",
+      "cat": "Kindheit",
+      "color": "#eb78a9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": "Die ersten Schritte",
+      "url": "https://www.lebenslinie-magazin.de/artikel/die-ersten-schritte/",
+      "cat": "Kindheit",
+      "color": "#eb78a9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": "Suchtprävention an Schulen forcieren",
+      "url": "https://www.lebenslinie-magazin.de/artikel/suchtpraevention-an-schulen-forcieren/",
+      "cat": "Kindheit",
+      "color": "#eb78a9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "17. Oktober 2025",
+      "desc": ""
+    },
+    {
+      "title": "High-Tech-Kuscheln",
+      "url": "https://www.lebenslinie-magazin.de/artikel/high-tech-kuscheln/",
+      "cat": "Kindheit",
+      "color": "#eb78a9",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "17. Oktober 2025",
+      "desc": ""
+    }
+  ],
+  "Alter": [
+    {
+      "title": "Bewegung, Begegnung, Lebensfreude",
+      "url": "https://www.lebenslinie-magazin.de/artikel/bewegung-begegnung-lebensfreude/",
+      "cat": "Alter",
+      "color": "#41a3bd",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Therapie dort, wo das Leben stattfindet",
+      "url": "https://www.lebenslinie-magazin.de/artikel/therapie-dort-wo-das-leben-stattfindet/",
+      "cat": "Alter",
+      "color": "#41a3bd",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Mit Frühstück nach Wunsch",
+      "url": "https://www.lebenslinie-magazin.de/artikel/mit-fruehstueck-nach-wunsch/",
+      "cat": "Alter",
+      "color": "#41a3bd",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Trinken, trinken, trinken?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/trinken-trinken-trinken/",
+      "cat": "Alter",
+      "color": "#41a3bd",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Zu viele Pillen?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/zu-viele-pillen/",
+      "cat": "Alter",
+      "color": "#41a3bd",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Demenz – der leise Abschied?",
+      "url": "https://www.lebenslinie-magazin.de/artikel/demenz-der-leise-abschied/",
+      "cat": "Alter",
+      "color": "#41a3bd",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "20. Oktober 2025",
+      "desc": ""
+    }
+  ],
+  "Medizin & Gesellschaft": [
+    {
+      "title": "Die leise Kraft, die trägt",
+      "url": "https://www.lebenslinie-magazin.de/artikel/die-leise-kraft-die-traegt/",
+      "cat": "Medizin & Gesellschaft",
+      "color": "#768A76",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Hoffnung auf Heilung",
+      "url": "https://www.lebenslinie-magazin.de/artikel/hoffnung-auf-heilung/",
+      "cat": "Medizin & Gesellschaft",
+      "color": "#768A76",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Die Hoffnung stirbt zuletzt",
+      "url": "https://www.lebenslinie-magazin.de/artikel/die-hoffnung-stirbt-zuletzt/",
+      "cat": "Medizin & Gesellschaft",
+      "color": "#768A76",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "4. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Großzügigkeit als Geschäftsmodell",
+      "url": "https://www.lebenslinie-magazin.de/artikel/grosszuegigkeit-als-geschaeftsmodell/",
+      "cat": "Medizin & Gesellschaft",
+      "color": "#768A76",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "3. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Hoffnung auf Vertrautheit & Selbstliebe",
+      "url": "https://www.lebenslinie-magazin.de/artikel/hoffnung-auf-vertrautheit-selbstliebe/",
+      "cat": "Medizin & Gesellschaft",
+      "color": "#768A76",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "2. April 2026",
+      "desc": ""
+    },
+    {
+      "title": "Verliebt ins Gelingen …",
+      "url": "https://www.lebenslinie-magazin.de/artikel/verliebt-ins-gelingen/",
+      "cat": "Medizin & Gesellschaft",
+      "color": "#768A76",
+      "full_paras": [],
+      "img": "https://www.lebenslinie-magazin.de/wp-content/uploads/2018/06/lebenslinie-titel.png",
+      "date": "2. April 2026",
+      "desc": ""
+    }
+  ]
+}

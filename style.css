@@ -1,0 +1,716 @@
+/*
+Theme Name: Lebenslinie Magazin
+Theme URI: https://www.lebenslinie-magazin.de
+Author: Antigravity & Piet
+Description: Modernes, zukunftssicheres WordPress Block-Theme für Lebenslinie — Gesundheits- & Lifestyle-Magazin für Mainfranken.
+Version: 2.5.0
+Text Domain: lebenslinie-magazin
+*/
+
+/* Core Layout resets & smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--wp--preset--color--cream-bg, #FDFBF7);
+    color: var(--wp--preset--color--text-dark, #2B2B2B);
+    font-family: var(--wp--preset--font-family--sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+/* HarabaraHand Headings with Fallback */
+/* Editorial Serif Headings */
+h1, h2, h3, h4, h5, h6, .editorial-heading {
+    font-family: var(--wp--preset--font-family--serif, "Cormorant Garamond", "Playfair Display", Georgia, serif);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+
+
+/* Category Accent Badges */
+.cat-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    border-radius: 3px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.cat-badge:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+/* Category Colors */
+.cat-aktuelles { background-color: #8f7f8f; }
+.cat-spezial { background-color: #8f7a5c; }
+.cat-oekonomie { background-color: #574a6d; }
+.cat-schulmedizin { background-color: #00766e; }
+.cat-naturheilkunde { background-color: #44a12b; }
+.cat-praevention { background-color: #006b8d; }
+.cat-ernaehrung { background-color: #a4ae00; }
+.cat-psyche { background-color: #9d3c8c; }
+.cat-forschung { background-color: #0053a0; }
+.cat-entspannung { background-color: #a69dc9; }
+.cat-sprache { background-color: #ac0527; }
+.cat-kindheit { background-color: #eb78a9; }
+.cat-alter { background-color: #41a3bd; }
+
+/* NAV DROPDOWN SUBMENU FOR RUBRIKEN */
+.nav-item-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.nav-item-dropdown:hover .dropdown-menu {
+    display: flex !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 320px;
+    flex-direction: column;
+    gap: 3px;
+    background: #FFFFFF;
+    padding: 0.6rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+    border: 1px solid #EAE5D9;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: #1A1A1A !important;
+    background: transparent !important;
+    text-decoration: none;
+    line-height: 1.3;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+.dropdown-item:hover {
+    background-color: #F8F6F0;
+}
+
+/* MAIN NAVIGATION LINK ACTIVE & UNDERLINE STYLES */
+.main-nav-link {
+    color: #2B2B2B !important;
+    text-decoration: none !important;
+    padding-bottom: 4px !important;
+    border-bottom: 2px solid transparent !important;
+    transition: border-color 0.25s ease, color 0.25s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.main-nav-link:hover,
+.main-nav-link.active {
+    border-bottom-color: #8F7A5C !important;
+}
+
+.dropdown-square {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+.dropdown-text {
+    color: #1A1A1A !important;
+}
+
+/* CONTINUOUS MARQUEE TICKER */
+.marquee-ticker-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    align-items: center;
+}
+.marquee-track {
+    display: inline-flex;
+    gap: 1.2rem;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marqueeScroll 25s linear infinite;
+}
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.ticker-news-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+.ticker-delimiter {
+    color: #8F7A5C;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    user-select: none;
+    padding: 0 0.2rem;
+}
+
+/* Kinfolk Hero Slider Styling */
+.hero-slider-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 520px;
+    max-height: 750px;
+    overflow: hidden;
+    background-color: #1A1A1A;
+}
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+    background-size: cover;
+    background-position: center;
+}
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+.hero-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem 8%;
+    color: #FFFFFF;
+}
+.hero-slide-content {
+    max-width: 800px;
+    animation: fadeInUp 0.7s ease-out forwards;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.slider-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: none;
+    color: #FFF;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+.slider-nav-btn:hover { background: rgba(255, 255, 255, 0.4); }
+.slider-nav-prev { left: 24px; }
+.slider-nav-next { right: 24px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    right: 8%;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+.slider-dot.active {
+    background: #FFFFFF;
+    transform: scale(1.3);
+}
+
+.editorial-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.editorial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ECHTES DIN A4 E-PAPER FLIPBOOK & 3D PAGE TURN ENGINE (UNGEKÜRZT & FLÜSSIG) */
+.magazine-viewport {
+    width: 100%;
+    height: calc(100vh - 180px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2400px;
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient(ellipse at center, #222730 0%, #090b0e 100%);
+    padding: 1rem 3rem;
+    box-sizing: border-box;
+}
+
+#flipbook-book-stage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Book Spread Container matching DIN A4 proportions (1:1.4142 per page, 2:1.4142 per double spread) */
+.magazine-book-spread {
+    display: flex;
+    position: relative;
+    height: min(calc(100vh - 210px), 640px);
+    max-height: 92vh;
+    max-width: 95vw;
+    aspect-ratio: 2 / 1.4142;
+    width: auto;
+    background: #FFFFFF;
+    box-shadow: 
+        0 25px 65px rgba(0, 0, 0, 0.7), 
+        0 4px 15px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    transform-style: preserve-3d;
+    transition: transform 0.35s cubic-bezier(0.2, 0, 0.2, 1), aspect-ratio 0.35s ease;
+    margin: 0 auto;
+}
+
+/* Cover & Back Cover Mode (Single A4 Page) */
+.magazine-book-spread.is-cover {
+    aspect-ratio: 1 / 1.4142;
+    width: auto;
+    height: min(calc(100vh - 210px), 640px);
+    box-shadow: 
+        12px 25px 50px rgba(0, 0, 0, 0.65), 
+        2px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Dezent-natürlicher Buchfalz in der Mitte */
+.magazine-spine-shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 20px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, 
+        rgba(0,0,0,0.08) 0%, 
+        rgba(0,0,0,0.02) 45%,
+        rgba(0,0,0,0.02) 55%,
+        rgba(0,0,0,0.08) 100%);
+    z-index: 15;
+    pointer-events: none;
+}
+.magazine-book-spread.is-cover .magazine-spine-shadow {
+    display: none;
+}
+
+/* Page Halves with Exact DIN A4 Image Containment (Nichts wird abgeschnitten!) */
+.magazine-page-half {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #FFFFFF;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.magazine-page-half.left-half {
+    box-shadow: inset -6px 0 10px -4px rgba(0,0,0,0.09);
+}
+
+.magazine-page-half.right-half {
+    box-shadow: inset 6px 0 10px -4px rgba(0,0,0,0.09);
+}
+
+.magazine-page-half img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garantiert 100% vollständige A4-Seite ohne Beschneidung! */
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    background-color: #FFFFFF;
+}
+
+.magazine-page-half::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    opacity: 0;
+}
+.magazine-page-half.left-half::after {
+    left: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 70%);
+}
+.magazine-page-half.right-half::after {
+    right: 0;
+    background: linear-gradient(-135deg, rgba(0,0,0,0.1) 0%, transparent 70%);
+}
+.magazine-page-half:hover::after {
+    opacity: 1;
+}
+
+/* REAL 3D TWO-SIDED LEAF PAGE TURN ENGINE (UNGEKÜRZT & EXAKT A4) */
+.magazine-3d-leaf {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    z-index: 30;
+    pointer-events: none;
+    transition: transform 0.72s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.magazine-3d-leaf.leaf-from-left {
+    left: 0;
+    right: auto;
+    transform-origin: right center;
+}
+
+.leaf-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    background: #FFFFFF;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+}
+
+.leaf-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #FFFFFF;
+}
+
+.leaf-face-back {
+    transform: rotateY(180deg);
+}
+
+/* Dynamic shading overlays during 3D page turn */
+.leaf-shadow-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transition: opacity 0.36s ease;
+}
+
+/* YUMPU FLOATING SIDE ARROW NAVIGATION BUTTONS */
+.yumpu-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    background: rgba(26, 32, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 100;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    user-select: none;
+}
+.yumpu-nav-arrow:hover {
+    background: #768A76;
+    border-color: #768A76;
+    transform: translateY(-50%) scale(1.12);
+    box-shadow: 0 10px 30px rgba(118, 138, 118, 0.5);
+}
+.yumpu-nav-arrow.prev-arrow {
+    left: 20px;
+}
+.yumpu-nav-arrow.next-arrow {
+    right: 20px;
+}
+
+/* YUMPU BOTTOM THUMBNAIL SCROLLER BAR */
+.yumpu-thumbnail-strip {
+    background: rgba(14, 18, 24, 0.96);
+    backdrop-filter: blur(12px);
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: flex-start;
+    scrollbar-width: thin;
+    scrollbar-color: #574a6d #181818;
+}
+.yumpu-thumbnail-strip::-webkit-scrollbar {
+    height: 6px;
+}
+.yumpu-thumbnail-strip::-webkit-scrollbar-thumb {
+    background: #574a6d;
+    border-radius: 3px;
+}
+
+.yumpu-thumb-card {
+    flex-shrink: 0;
+    width: 48px;
+    height: 68px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    background: #222;
+}
+.yumpu-thumb-card:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+.yumpu-thumb-card.active {
+    opacity: 1;
+    border: 2px solid #D9A05B;
+    transform: scale(1.08);
+    box-shadow: 0 4px 15px rgba(217, 160, 91, 0.5);
+}
+.yumpu-thumb-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #FFF;
+}
+.yumpu-thumb-card .thumb-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.78);
+    color: #FFF;
+    font-size: 0.62rem;
+    text-align: center;
+    padding: 1px 0;
+    font-weight: 600;
+}
+
+
+/* CONTINUOUS TICKER ANIMATION (1 ZEILE, ANIMIERT, 350PX, KEIN KASTEN) */
+.header-ticker-marquee {
+    width: 480px;
+    max-width: 90vw;
+    height: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+.header-ticker-track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    width: max-content;
+    flex-shrink: 0;
+    animation: marqueeAnimation 55s linear infinite;
+}
+.header-ticker-marquee:hover .header-ticker-track {
+    animation-play-state: paused;
+}
+@keyframes marqueeAnimation {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.ticker-item:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+.ticker-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 7px;
+    flex-shrink: 0;
+}
+.ticker-sep {
+    display: inline-block;
+    margin: 0 14px;
+    color: #8F7A5C;
+    font-weight: 700;
+    font-size: 0.86rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+        /* NAVIGATION & SEARCH IN NAV (ZENTRIERT, KEIN BUTTON UM DIE SUCHE) */
+        .search-box-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #D5CEBF;
+            padding: 3px 6px;
+            width: 180px;
+            transition: all 0.25s ease;
+            margin-left: 0.5rem;
+        }
+        .search-box-nav:focus-within {
+            border-bottom: 1.5px solid #768A76;
+            width: 220px;
+        }
+        .search-input-nav {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 0.88rem;
+            width: 100%;
+            color: #1A1A1A;
+            font-family: inherit;
+        }
+        .search-input-nav::placeholder {
+            color: #8F7A5C;
+        }
+
+/* HERZSCHLAG 5X BEAT WIGGLE ANIMATION (8.05s) */
+@keyframes heartbeatWiggle {
+    0% { transform: scale(1) translate(0, 0); }
+    
+    /* 1. HERZSCHLAG (t ~ 0.70s) */
+    8.0% { transform: scale(1) translate(0, 0); }
+    9.0% { transform: scale(1.055) translate(-4px, -3px) rotate(-0.4deg); }
+    10.5% { transform: scale(1.025) translate(4px, 2px) rotate(0.3deg); }
+    12.0% { transform: scale(1.060) translate(-3px, 4px) rotate(-0.3deg); }
+    14.5% { transform: scale(1.010) translate(1px, -1px); }
+    16.0% { transform: scale(1) translate(0, 0); }
+
+    /* 2. HERZSCHLAG (t ~ 2.20s) */
+    26.5% { transform: scale(1) translate(0, 0); }
+    27.5% { transform: scale(1.055) translate(4px, -3px) rotate(0.4deg); }
+    29.0% { transform: scale(1.025) translate(-4px, 2px) rotate(-0.3deg); }
+    30.5% { transform: scale(1.060) translate(3px, 4px) rotate(0.3deg); }
+    33.0% { transform: scale(1.010) translate(-1px, -1px); }
+    34.5% { transform: scale(1) translate(0, 0); }
+
+    /* 3. HERZSCHLAG (t ~ 3.70s) */
+    45.0% { transform: scale(1) translate(0, 0); }
+    46.0% { transform: scale(1.055) translate(-4px, -3px) rotate(-0.4deg); }
+    47.5% { transform: scale(1.025) translate(4px, 2px) rotate(0.3deg); }
+    49.0% { transform: scale(1.060) translate(-3px, 4px) rotate(-0.3deg); }
+    51.5% { transform: scale(1.010) translate(1px, -1px); }
+    53.0% { transform: scale(1) translate(0, 0); }
+
+    /* 4. HERZSCHLAG (t ~ 5.15s) */
+    63.0% { transform: scale(1) translate(0, 0); }
+    64.0% { transform: scale(1.055) translate(4px, -3px) rotate(0.4deg); }
+    65.5% { transform: scale(1.025) translate(-4px, 2px) rotate(-0.3deg); }
+    67.0% { transform: scale(1.060) translate(3px, 4px) rotate(0.3deg); }
+    69.5% { transform: scale(1.010) translate(-1px, -1px); }
+    71.0% { transform: scale(1) translate(0, 0); }
+
+    /* 5. HERZSCHLAG (t ~ 6.65s) */
+    81.5% { transform: scale(1) translate(0, 0); }
+    82.5% { transform: scale(1.055) translate(-4px, -3px) rotate(-0.4deg); }
+    84.0% { transform: scale(1.025) translate(4px, 2px) rotate(0.3deg); }
+    85.5% { transform: scale(1.060) translate(-3px, 4px) rotate(-0.3deg); }
+    88.0% { transform: scale(1.010) translate(1px, -1px); }
+    89.5% { transform: scale(1) translate(0, 0); }
+    
+    100% { transform: scale(1) translate(0, 0); }
+}
+
+.hero-slide.heartbeat-pulse {
+    animation: heartbeatWiggle 8.05s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards !important;
+    transform-origin: center center;
+    will-change: transform;
+}

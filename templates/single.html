@@ -1,0 +1,33 @@
+<!-- wp:template-part {"slug":"header","theme":"lebenslinie-magazin","tagName":"header"} /-->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"3rem","bottom":"4rem","left":"8%","right":"8%"}}},"layout":{"type":"constrained","contentSize":"820px"}} -->
+<article class="wp-block-group single-article">
+    
+    <!-- Category Badge & Date -->
+    <div style="text-align: center; margin-bottom: 1.2rem;">
+        <!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"0.85rem","fontWeight":"600"}}} /-->
+        <!-- wp:post-date {"style":{"typography":{"fontSize":"0.85rem"}},"textColor":"slate-muted"} /-->
+    </div>
+
+    <!-- Article Title -->
+    <!-- wp:post-title {"level":1,"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--serif)","fontSize":"calc(2.2rem + 1vw)","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"1.5rem"}}},"className":"has-text-align-center"} /-->
+
+    <!-- Featured Image -->
+    <div style="margin-bottom: 2.5rem; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.06);">
+        <!-- wp:post-featured-image /-->
+    </div>
+
+    <!-- Article Body Content -->
+    <div style="font-size: 1.125rem; line-height: 1.8; color: #2B2B2B;">
+        <!-- wp:post-content /-->
+    </div>
+
+    <!-- Author & Share Box -->
+    <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #EAE5D9; display: flex; align-items: center; justify-content: space-between;">
+        <!-- wp:post-author {"showAvatar":true,"showBio":true} /-->
+    </div>
+
+</article>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"lebenslinie-magazin","tagName":"footer"} /-->

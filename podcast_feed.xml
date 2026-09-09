@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:psc="http://podlove.org/simple-chapters" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:fh="http://purl.org/syndication/history/1.0" xmlns:podcast="https://podcastindex.org/namespace/1.0" >
+
+<channel>
+	<title>Entlang der Lebenslinie</title>
+	<link>https://www.lebenslinie-magazin.de/podcast</link>
+	<description><![CDATA[Der Podcast des Gesundheitsmagazins für Mainfranken]]></description>
+	<lastBuildDate>Thu, 13 Aug 2026 04:55:07 +0000</lastBuildDate>
+	
+<image><url>https://www.lebenslinie-magazin.de/wp-content/uploads/2023/02/ll-cover.jpg</url><title>Entlang der Lebenslinie</title><link>https://www.lebenslinie-magazin.de/podcast</link></image>
+<atom:link rel="self" type="application/rss+xml" title="Entlang der Lebenslinie (MP3 Feed)" href="https://www.lebenslinie-magazin.de/feed/mp3/" />
+	<atom:link rel="first" href="https://www.lebenslinie-magazin.de/feed/mp3/" />
+	<language>de-DE</language><generator>Podlove Podcast Publisher v4.5.3</generator>
+	<podcast:guid>dc97a21b-e579-4a42-ae8d-5296998684b3</podcast:guid>
+	<copyright>(cc) 2023 Lebenslinie Magazin</copyright>
+	<itunes:author>Lebenslinie Magazin</itunes:author>
+	<itunes:type>episodic</itunes:type>
+	<itunes:summary><![CDATA[Das Gesundheitsmagazin Lebenslinie informiert über Themen aus Schulmedizin und der Naturheilkunde sowie über Rubriken wie Psyche, Kinder, Alter, Sprache und Reisen. Mit Brennpunkten in Prävention und Reha, Forschung, Entspannung, Ernährung und Umwelt. Lebenslinie führt Hintergrund-Gespräche mit Expert:innen der verschiedensten Disziplinen, zu den unterschiedlichsten Themen und recherchiert Tipps rund um die Gesundheit. Um allen Leser:innen die Teilhabe zu ermöglichen, liegt das Premium-Magazin kostenfrei an ausgewählten Stellen vornehmlich im Gesundheitsbereich aus und ist unter www.lebenslinie-magazin.de auch online kostenlos abrufbar. Zu den Verteilerstellen der Printausgabe zählen Apotheken, Arztpraxen, Bioläden, Buchhandlungen, Gesundheitszentren, Heilpraktiker:innen, Kliniken, Physio- und Ergotherapeut:innen, Sanitätshäuer, Senior:innen- und Sporteinrichtungen, Rathäuser etc. Vertriebsregionen sind Bad Kissingen (Stadt), Bamberg (Stadt/Landkreis), Hassberge, Kitzingen (Stadt), Lohr (Stadt), Landkreis Main-Spessart, Bad Neustadt an der Saale (Stadt), Landkreis Rhön-Grabfeld, Schweinfurt (Stadt/Landkreis) und Würzburg (Stadt/Landkreis). Zusätzlich erfolgt der Vertrieb über den Lesezirkel. Das Magazin erscheint seit 2015 zwei Mal im Jahr, am 1. April und am 1. Oktober. Nun wird es im neunten Jahr seines Erscheinens durch den Podcast „Entlang der Lebenslinie“ flankiert. 
+
+Hier unterhält sich Lebenslinie-Chefredakteurin Susanna Khoury mit Akteur:innen aus dem Gesundheitsbereich und geht dahin, wo es wehtut und Gesprächsbedarf besteht. Wenn man den Finger in die Wunden der Zeit legt, kann es passieren, dass Hörer:innen oder Gesprächspartner:innen schon 
+mal Puls bekommen. Aber so ist es eben ... das Leben entlang der Lebenslinie!]]></itunes:summary>
+<itunes:category text="Health &amp; Fitness"><itunes:category text="Medicine"></itunes:category></itunes:category>
+
+	
+	<itunes:owner>
+		<itunes:name>Susanna Khoury</itunes:name>
+		<itunes:email>s.khoury@lebenslinie-magazin.de</itunes:email>
+	</itunes:owner>
+	<itunes:image href="https://www.lebenslinie-magazin.de/wp-content/uploads/2023/02/ll-cover.jpg"/>
+	<itunes:subtitle>Der Podcast des Gesundheitsmagazins für Mainfranken</itunes:subtitle>
+	<itunes:block>no</itunes:block>
+	<itunes:explicit>false</itunes:explicit>
+	
+	<podcast:license url="http://creativecommons.org/licenses/by-nc-sa/4.0">cc-by-nc-sa-4.0</podcast:license>
+
+	
+	<item>
+        <title>LL005 Freundschaft</title>
+		<link>https://www.lebenslinie-magazin.de/artikel/ll005-freundschaft/</link>
+		<pubDate>Mon, 02 Jun 2025 09:53:42 +0000</pubDate>
+		<guid isPermaLink="false">89b0e739-6ad2-43dc-b7a5-b337483363e4</guid>
+    	<description><![CDATA[In der aktuellen Episode des Lebenslinie-Podcasts nähern wir uns dem Thema „Freundschaft“ mit drei Gesprächspartnerinnen aus unterschiedlichen Perspektiven. Für eine Studie der Michigan State University wurden über 320.000 Teilnehmerinnen und Teilnehmer aus 99 Ländern zum Thema „Freundschaft“ befragt. Das Ergebnis: Wer Freundschaften pflegt, lebt 20 Prozent länger! Warum sind Freundschaften unserer Herzgesundheit so zuträglich? Warum machen sie uns resilient? Warum muss „Freundschaft“ in Echtzeit stattfinden? Und was macht Freundschaft mit dem Ich und dem Wir? Auf all diese Fragen und noch ein paar mehr, geben Resilienz-Trainerin Isabelle Meid, die Intendantin des Würzburger Mozartfestes Evelyn Meining und die Künstlerin Hanni Liang Antworten.]]></description>
+		<atom:link rel="http://podlove.org/deep-link" href="https://www.lebenslinie-magazin.de/artikel/ll005-freundschaft/#" />
+		
+<enclosure url="https://www.lebenslinie-magazin.de/podlove/file/9/s/feed/c/mp3/ll005-freundschaft.mp3" length="23547624" type="audio/mpeg"/>
+
+		<itunes:duration>00:14:22</itunes:duration>
+		<itunes:author>Lebenslinie Magazin</itunes:author>
+		<itunes:subtitle>Susanna Khoury, Chefredakteurin des Magazins Lebenslinie im Gespräch mit Resilienz-Trainerin Isabelle Meid, mit der Intendantin des Würzburger Mozartfestes Evelyn Meining und der Künstlerin Hanni Liang.</itunes:subtitle>
+		<itunes:title>Freundschaft</itunes:title>
+		<itunes:episode>5</itunes:episode>
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:summary><![CDATA[In der aktuellen Episode des Lebenslinie-Podcasts nähern wir uns dem Thema „Freundschaft“ mit drei Gesprächspartnerinnen aus unterschiedlichen Perspektiven. Für eine Studie der Michigan State University wurden über 320.000 Teilnehmerinnen und Teilnehmer aus 99 Ländern zum Thema „Freundschaft“ befragt. Das Ergebnis: Wer Freundschaften pflegt, lebt 20 Prozent länger! Warum sind Freundschaften unserer Herzgesundheit so zuträglich? Warum machen sie uns resilient? Warum muss „Freundschaft“ in Echtzeit stattfinden? Und was macht Freundschaft mit dem Ich und dem Wir? Auf all diese Fragen und noch ein paar mehr, geben Resilienz-Trainerin Isabelle Meid, die Intendantin des Würzburger Mozartfestes Evelyn Meining und die Künstlerin Hanni Liang Antworten.]]></itunes:summary>
+		
+		<content:encoded><![CDATA[
+]]></content:encoded>
+<podcast:chapters url="https://www.lebenslinie-magazin.de/artikel/ll005-freundschaft/?chapters_format=pijson" type="application/json+chapters"/>	</item>
+	
+	<item>
+        <title>LL004 Spezial - Silver Society</title>
+		<link>https://www.lebenslinie-magazin.de/artikel/ll004-ll004-spezial-silver-society/</link>
+		<pubDate>Sun, 25 Aug 2024 11:22:21 +0000</pubDate>
+		<guid isPermaLink="false">podlove-2024-08-25t10:59:52+00:00-ba13255fb253c8a</guid>
+    	<description><![CDATA[In der aktuellen Episode des Lebenslinie-Podcasts geht es um eine Gesellschaft mit silbergrauen Haaren, die „Silver Society“. Prognosen zufolge werden im Jahr 2050 rund zwei Milliarden Menschen rund um den Globus 60 Jahre und älter sein. Hinzukommt, dass Alter vielfach nicht mehr negativ besetzt ist. Eine immer bessere Gesundheitsversorgung, Prävention und bewusster Lebensstil führen dazu, dass 50 das neue 30 und 60 das neue 40 ist. „Downaging“ heißt das Phänomen, was die „Silver Society“ ausweist. Die „jungen Alten“ sind aktiv und fit, sie nehmen Freizeitaktivitäten wahr und gehen auf Reisen. Sie sind finanziell unabhängig und geben das Geld, dass sie verdient haben, auch aus, statt es zu vererben. Was diese Generation ausmacht und warum sie so resilient ist, darüber sprechen wir mit dem Geriater Dr. Michael Schwab aus Würzburg.]]></description>
+		<atom:link rel="http://podlove.org/deep-link" href="https://www.lebenslinie-magazin.de/artikel/ll004-ll004-spezial-silver-society/#" />
+		
+<enclosure url="https://www.lebenslinie-magazin.de/podlove/file/8/s/feed/c/mp3/ll004-spezial-silver-society.mp3" length="9035595" type="audio/mpeg"/>
+
+		<itunes:duration>00:10:53</itunes:duration>
+		<itunes:author>Lebenslinie Magazin</itunes:author>
+		<itunes:subtitle>Susanna Khoury, Chefredakteurin des Magazins Lebenslinie im Gespräch mit dem Altersmediziner Dr. Michael Schwab aus Würzburg.</itunes:subtitle>
+		<itunes:title>Spezial - Silver Society</itunes:title>
+		<itunes:episode>4</itunes:episode>
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:summary><![CDATA[In der aktuellen Episode des Lebenslinie-Podcasts geht es um eine Gesellschaft mit silbergrauen Haaren, die „Silver Society“. Prognosen zufolge werden im Jahr 2050 rund zwei Milliarden Menschen rund um den Globus 60 Jahre und älter sein. Hinzukommt, dass Alter vielfach nicht mehr negativ besetzt ist. Eine immer bessere Gesundheitsversorgung, Prävention und bewusster Lebensstil führen dazu, dass 50 das neue 30 und 60 das neue 40 ist. „Downaging“ heißt das Phänomen, was die „Silver Society“ ausweist. Die „jungen Alten“ sind aktiv und fit, sie nehmen Freizeitaktivitäten wahr und gehen auf Reisen. Sie sind finanziell unabhängig und geben das Geld, dass sie verdient haben, auch aus, statt es zu vererben. Was diese Generation ausmacht und warum sie so resilient ist, darüber sprechen wir mit dem Geriater Dr. Michael Schwab aus Würzburg.]]></itunes:summary>
+		
+		<content:encoded><![CDATA[
+]]></content:encoded>
+<podcast:chapters url="https://www.lebenslinie-magazin.de/artikel/ll004-ll004-spezial-silver-society/?chapters_format=pijson" type="application/json+chapters"/>	</item>
+	
+	<item>
+        <title>LL003 Ökonomie &amp; Fürsorge</title>
+		<link>https://www.lebenslinie-magazin.de/artikel/ll003-oekonomie-fuersorge/</link>
+		<pubDate>Tue, 13 Feb 2024 10:14:15 +0000</pubDate>
+		<guid isPermaLink="false">podlove-2024-02-13t10:13:15+00:00-3e4af76cec39f35</guid>
+    	<description><![CDATA[In der dritten Episode des Lebenslinie-Podcasts geht es um die geplante Krankenhausreform von Bundesgesundheitsminister Karl Lauterbach und die fehlende Begleitung der Transformationsprozesse bis die Reform umgesetzt ist. Die Folge: Zwei Drittel der Kliniken schreiben rote Zahlen und erste Häuser sind bereits insolvent. Das hat weitreichende Folgen auch für die Patient:innen.]]></description>
+		<atom:link rel="http://podlove.org/deep-link" href="https://www.lebenslinie-magazin.de/artikel/ll003-oekonomie-fuersorge/#" />
+		
+<enclosure url="https://www.lebenslinie-magazin.de/podlove/file/6/s/feed/c/mp3/ll003-oekonomie-fuersorge.mp3" length="24895830" type="audio/mpeg"/>
+
+		<itunes:duration>00:00:00</itunes:duration>
+		<itunes:author>Lebenslinie Magazin</itunes:author>
+		<itunes:subtitle>Susanna Khoury, Chefredakteurin des Magazins Lebenslinie im Gespräch mit Walter Herberth. Leiter der Stiftung Juliusspital und Gesellschaftsvertreter des Klinikum Würzburg Mitte und Jürgen Winter, Geschäftsführer des Leopoldina Krankenhaus Schweinfur</itunes:subtitle>
+		<itunes:title>Ökonomie &amp; Fürsorge</itunes:title>
+		<itunes:episode>3</itunes:episode>
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:summary><![CDATA[In der dritten Episode des Lebenslinie-Podcasts geht es um die geplante Krankenhausreform von Bundesgesundheitsminister Karl Lauterbach und die fehlende Begleitung der Transformationsprozesse bis die Reform umgesetzt ist. Die Folge: Zwei Drittel der Kliniken schreiben rote Zahlen und erste Häuser sind bereits insolvent. Das hat weitreichende Folgen auch für die Patient:innen.]]></itunes:summary>
+		
+		<content:encoded><![CDATA[
+]]></content:encoded>
+<podcast:chapters url="https://www.lebenslinie-magazin.de/artikel/ll003-oekonomie-fuersorge/?chapters_format=pijson" type="application/json+chapters"/>	</item>
+	
+	<item>
+        <title>LL002 KI &amp; Medizin</title>
+		<link>https://www.lebenslinie-magazin.de/artikel/ll002-ki-medizin/</link>
+		<pubDate>Mon, 21 Aug 2023 19:10:27 +0000</pubDate>
+		<guid isPermaLink="false">podlove-2023-08-21t19:09:45+00:00-c1da439816b2da8</guid>
+    	<description><![CDATA[In der zweiten Podcast-Episode hat sich Susanna Khoury, Chefredakteurin des Gesundheitsmagazins Lebenslinie, mit dem stellvertretende Direktor der Medizinischen Klinik und Poliklinik II an der Uniklinik darüber unterhalten, inwieweit der Einsatz von Künstlicher Intelligenz in der Medizin bedenklich ist.
+Den Wissenschaftler:innen der Universität Oxford sehen in der nächsten Generation KI-gesteuerter Systeme eine existenzielle Bedrohung für die Menschheit. Haben wir die Büchse der Pandora geöffnet, ohne zu wissen, wie die Geister, die wir riefen, in Schach zu halten sind. Professor Hann, Gastroenterologen mit Programmierkenntnissen möchte die neuen Technologien trotz der augenscheinlichen Gefahren, die sie mit sich bringen können, nicht „verteufeln“, rät aber zum klugen Einsatz und zur Kontrolle durch den Menschen.]]></description>
+		<atom:link rel="http://podlove.org/deep-link" href="https://www.lebenslinie-magazin.de/artikel/ll002-ki-medizin/#" />
+		
+<enclosure url="https://www.lebenslinie-magazin.de/podlove/file/5/s/feed/c/mp3/ll002-ki-medizin.mp3" length="10367667" type="audio/mpeg"/>
+
+		<itunes:duration>00:08:46</itunes:duration>
+		<itunes:author>Lebenslinie Magazin</itunes:author>
+		<itunes:subtitle>Susanna Khoury, Chefredakteurin des Gesundheitsmagazins Lebenslinie, im Gespräch mit Professor Alexander Hann Würzburg, einem Gastroenterologen mit Programmierkenntnissen</itunes:subtitle>
+		<itunes:title>KI &amp; Medizin</itunes:title>
+		<itunes:episode>2</itunes:episode>
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:summary><![CDATA[In der zweiten Podcast-Episode hat sich Susanna Khoury, Chefredakteurin des Gesundheitsmagazins Lebenslinie, mit dem stellvertretende Direktor der Medizinischen Klinik und Poliklinik II an der Uniklinik darüber unterhalten, inwieweit der Einsatz von Künstlicher Intelligenz in der Medizin bedenklich ist.
+Den Wissenschaftler:innen der Universität Oxford sehen in der nächsten Generation KI-gesteuerter Systeme eine existenzielle Bedrohung für die Menschheit. Haben wir die Büchse der Pandora geöffnet, ohne zu wissen, wie die Geister, die wir riefen, in Schach zu halten sind. Professor Hann, Gastroenterologen mit Programmierkenntnissen möchte die neuen Technologien trotz der augenscheinlichen Gefahren, die sie mit sich bringen können, nicht „verteufeln“, rät aber zum klugen Einsatz und zur Kontrolle durch den Menschen.]]></itunes:summary>
+		
+		<content:encoded><![CDATA[
+]]></content:encoded>
+<podcast:chapters url="https://www.lebenslinie-magazin.de/artikel/ll002-ki-medizin/?chapters_format=pijson" type="application/json+chapters"/>	</item>
+	
+	<item>
+        <title>LL001 Klima &amp; Gesundheit</title>
+		<link>https://www.lebenslinie-magazin.de/artikel/ll001-klima-gesundheit/</link>
+		<pubDate>Mon, 06 Feb 2023 08:20:18 +0000</pubDate>
+		<guid isPermaLink="false">podlove-2023-02-07t19:37:20+00:00-d68fb895b77dbc1</guid>
+    	<description><![CDATA[„Entlang der Lebenslinie“ heißt der neue Podcast des Gesundheitsmagazins für Mainfranken. In der ersten Episode hat sich Susanna Khoury, Chefredakteurin des Gesundheitsmagazins Lebenslinie, mit dem Chefarzt der Tropenmedizin im Klinikum Würzburg Mitte, Prof. August Stich, darüber unterhalten, inwieweit der Klimawandel Tropenkrankheiten auch bei uns heimisch werden lässt. Griechenland, Frankreich und Italien meldeten bereits im vergangenen Jahr vermehrt Zika- oder auch Dengue-Fälle. Droht das uns in Deutschland auch und wenn ja, mit welchen Erregern und mit welchem Ausmaß müssen wir rechnen? Das wollten wir vom ehemaligen Leiter der Ebola-Task-Force in Deutschland wissen. Und nicht nur die durch Viren übertragenen Fieber-Erkrankungen nehmen weltweit zu, der ganze Planet hat „Fieber“. Der Tropenmediziner wüsste auch hier Therapieoptionen. „Planetare Gesundheit“ ist als eigenes Fach seit letztem Jahr Bestandteil des Medizinstudiums. Aus gutem Grund. Prof. Stich klärt darüber auf, was geschehen muss, dass am Ende des Tages der Klimawandel nicht den medizinischen Fortschritt und unser aller Gesundheit gefährdet.]]></description>
+		<atom:link rel="http://podlove.org/deep-link" href="https://www.lebenslinie-magazin.de/artikel/ll001-klima-gesundheit/#" />
+		
+<enclosure url="https://www.lebenslinie-magazin.de/podlove/file/1/s/feed/c/mp3/ll001-klima-gesundheit.mp3" length="6259255" type="audio/mpeg"/>
+
+		<itunes:duration>00:04:20</itunes:duration>
+		<itunes:author>Lebenslinie Magazin</itunes:author>
+		<itunes:subtitle>Susanna Khoury, Chefredakteurin des Gesundheitsmagazins Lebenslinie, im Gespräch mit dem Chefarzt der Tropenmedizin im Klinikum Würzburg Mitte, Prof. August Stich</itunes:subtitle>
+		<itunes:title>Klima &amp; Gesundheit</itunes:title>
+		<itunes:episode>1</itunes:episode>
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:summary><![CDATA[„Entlang der Lebenslinie“ heißt der neue Podcast des Gesundheitsmagazins für Mainfranken. In der ersten Episode hat sich Susanna Khoury, Chefredakteurin des Gesundheitsmagazins Lebenslinie, mit dem Chefarzt der Tropenmedizin im Klinikum Würzburg Mitte, Prof. August Stich, darüber unterhalten, inwieweit der Klimawandel Tropenkrankheiten auch bei uns heimisch werden lässt. Griechenland, Frankreich und Italien meldeten bereits im vergangenen Jahr vermehrt Zika- oder auch Dengue-Fälle. Droht das uns in Deutschland auch und wenn ja, mit welchen Erregern und mit welchem Ausmaß müssen wir rechnen? Das wollten wir vom ehemaligen Leiter der Ebola-Task-Force in Deutschland wissen. Und nicht nur die durch Viren übertragenen Fieber-Erkrankungen nehmen weltweit zu, der ganze Planet hat „Fieber“. Der Tropenmediziner wüsste auch hier Therapieoptionen. „Planetare Gesundheit“ ist als eigenes Fach seit letztem Jahr Bestandteil des Medizinstudiums. Aus gutem Grund. Prof. Stich klärt darüber auf, was geschehen muss, dass am Ende des Tages der Klimawandel nicht den medizinischen Fortschritt und unser aller Gesundheit gefährdet.]]></itunes:summary>
+		
+		<content:encoded><![CDATA[
+]]></content:encoded>
+<podcast:chapters url="https://www.lebenslinie-magazin.de/artikel/ll001-klima-gesundheit/?chapters_format=pijson" type="application/json+chapters"/>	</item>
+	</channel>
+</rss>

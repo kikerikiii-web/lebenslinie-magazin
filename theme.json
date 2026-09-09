@@ -1,0 +1,191 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Lebenslinie Magazin",
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "840px",
+      "wideSize": "1280px"
+    },
+    "color": {
+      "palette": [
+        {
+          "name": "Creme Hintergund",
+          "slug": "cream-bg",
+          "color": "#FDFBF7"
+        },
+        {
+          "name": "Soft Warm White",
+          "slug": "warm-white",
+          "color": "#F9F6F0"
+        },
+        {
+          "name": "Dunkles Text-Schwarz",
+          "slug": "text-dark",
+          "color": "#2B2B2B"
+        },
+        {
+          "name": "Muted Slate Gray",
+          "slug": "slate-muted",
+          "color": "#5A6571"
+        },
+        {
+          "name": "Aktuelles",
+          "slug": "cat-aktuelles",
+          "color": "#8F7F8F"
+        },
+        {
+          "name": "Spezial",
+          "slug": "cat-spezial",
+          "color": "#8F7A5C"
+        },
+        {
+          "name": "Zwischen Ökonomie & Fürsorge",
+          "slug": "cat-oekonomie",
+          "color": "#574A6D"
+        },
+        {
+          "name": "Schulmedizin",
+          "slug": "cat-schulmedizin",
+          "color": "#00766E"
+        },
+        {
+          "name": "Naturheilkunde & Komplementärmedizin",
+          "slug": "cat-naturheilkunde",
+          "color": "#44A12B"
+        },
+        {
+          "name": "Prävention & Reha",
+          "slug": "cat-praevention",
+          "color": "#006B8D"
+        },
+        {
+          "name": "Ernährung & Umwelt",
+          "slug": "cat-ernaehrung",
+          "color": "#A4AE00"
+        },
+        {
+          "name": "Psyche",
+          "slug": "cat-psyche",
+          "color": "#9D3C8C"
+        },
+        {
+          "name": "Forschung & Geschichte",
+          "slug": "cat-forschung",
+          "color": "#0053A0"
+        },
+        {
+          "name": "Entspannung & Reisen",
+          "slug": "cat-entspannung",
+          "color": "#A69DC9"
+        },
+        {
+          "name": "Sprache & Kultur",
+          "slug": "cat-sprache",
+          "color": "#AC0527"
+        },
+        {
+          "name": "Kindheit",
+          "slug": "cat-kindheit",
+          "color": "#EB78A9"
+        },
+        {
+          "name": "Alter",
+          "slug": "cat-alter",
+          "color": "#41A3BD"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Playfair Display (Editorial Serif)",
+          "slug": "serif",
+          "fontFamily": "\"Playfair Display\", Georgia, \"Times New Roman\", serif"
+        },
+        {
+          "name": "Clean Sans",
+          "slug": "sans",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "Small",
+          "slug": "small",
+          "size": "0.875rem"
+        },
+        {
+          "name": "Medium",
+          "slug": "medium",
+          "size": "1.0625rem"
+        },
+        {
+          "name": "Large",
+          "slug": "large",
+          "size": "1.5rem"
+        },
+        {
+          "name": "Extra Large",
+          "slug": "x-large",
+          "size": "2.25rem"
+        },
+        {
+          "name": "Hero Title",
+          "slug": "hero-title",
+          "size": "3.5rem"
+        }
+      ]
+    },
+    "spacing": {
+      "units": [
+        "px",
+        "em",
+        "rem",
+        "%",
+        "vw"
+      ],
+      "padding": true,
+      "margin": true
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--cream-bg)",
+      "text": "var(--wp--preset--color--text-dark)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--sans)",
+      "lineHeight": "1.65"
+    },
+    "elements": {
+      "h1": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--serif)",
+          "fontWeight": "600"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--serif)",
+          "fontWeight": "600"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--serif)",
+          "fontWeight": "600"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--text-dark)"
+        },
+        ":hover": {
+          "color": "var(--wp--preset--color--cat-praevention)"
+        }
+      }
+    }
+  }
+}
