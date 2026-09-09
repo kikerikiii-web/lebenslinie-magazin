@@ -8094,5 +8094,11 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
 
 </script>
 
+
+    <!-- FLOATING SOUND PROMPT (ERSCHEINT NUR WENN BROWSER AUDIO BLOCKIERT) -->
+    <button id="sound-prompt-badge" onclick="if(window.triggerSoundFromUser) window.triggerSoundFromUser();" style="display: none; position: fixed; bottom: 24px; right: 24px; z-index: 9999; background: #8F7A5C; color: #FFFFFF; border: none; border-radius: 30px; padding: 10px 18px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,0.25); cursor: pointer; align-items: center; gap: 8px; transition: transform 0.2s ease;">
+        <span>💓</span>
+        <span>Herzschlag-Ton abspielen</span>
+    </button>
 </body>
 </html>
