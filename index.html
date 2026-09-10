@@ -328,6 +328,9 @@
             } else if (viewId === 'kalender') {
                 var el = document.querySelector('.nav-go-kalender');
                 if (el) el.classList.add('active');
+                if (typeof window.initCalendarSearch === 'function') {
+                    window.initCalendarSearch();
+                }
             } else if (viewId === 'kooperationen') {
                 var el = document.querySelector('.nav-go-kooperationen');
                 if (el) el.classList.add('active');
@@ -343,6 +346,111 @@
         }
         return false;
     };
+
+    window.filterCalendarEvents = function(query) {
+        var rawQuery = (query || '').toLowerCase().trim();
+        var cards = document.querySelectorAll('#view-gesundheitskalender .calendar-event-card');
+        var clearBtn = document.getElementById('calendar-search-clear');
+        var countBadge = document.getElementById('calendar-count-badge');
+        var noResultsBox = document.getElementById('calendar-no-results');
+        var noResultsMsg = document.getElementById('calendar-no-results-msg');
+        
+        if (clearBtn) {
+            clearBtn.style.display = rawQuery ? 'block' : 'none';
+        }
+        
+        var terms = rawQuery.split(/\s+/).filter(function(t) { return t.length > 0; });
+        var visibleCount = 0;
+        var totalCount = cards.length;
+        
+        cards.forEach(function(card) {
+            if (terms.length === 0) {
+                card.style.display = 'flex';
+                visibleCount++;
+            } else {
+                var text = (card.textContent || '').toLowerCase();
+                var matchesAll = terms.every(function(term) {
+                    return text.indexOf(term) !== -1;
+                });
+                if (matchesAll) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+        
+        if (countBadge) {
+            if (terms.length === 0) {
+                countBadge.textContent = totalCount + ' Termine gesamt';
+            } else {
+                countBadge.textContent = visibleCount + ' von ' + totalCount + ' Terminen';
+            }
+        }
+        
+        if (noResultsBox) {
+            if (visibleCount === 0 && terms.length > 0) {
+                noResultsBox.style.display = 'block';
+                if (noResultsMsg) {
+                    noResultsMsg.textContent = 'Für „' + (query || '').trim() + '“ wurden leider keine passenden Veranstaltungen gefunden.';
+                }
+            } else {
+                noResultsBox.style.display = 'none';
+            }
+        }
+    };
+
+    window.clearCalendarSearch = function() {
+        var input = document.getElementById('calendar-search-input');
+        if (input) input.value = '';
+        
+        var chips = document.querySelectorAll('#view-gesundheitskalender .cal-chip');
+        chips.forEach(function(chip, idx) {
+            if (idx === 0) {
+                chip.style.background = '#475569';
+                chip.style.color = '#FFF';
+                chip.style.borderColor = '#475569';
+                chip.style.fontWeight = '600';
+            } else {
+                chip.style.background = '#F8FAFC';
+                chip.style.color = '#475569';
+                chip.style.borderColor = '#CBD5E1';
+                chip.style.fontWeight = '500';
+            }
+        });
+        
+        window.filterCalendarEvents('');
+    };
+
+    window.filterCalendarChip = function(query, btnEl) {
+        var input = document.getElementById('calendar-search-input');
+        if (input) input.value = query;
+        
+        var chips = document.querySelectorAll('#view-gesundheitskalender .cal-chip');
+        chips.forEach(function(chip) {
+            chip.style.background = '#F8FAFC';
+            chip.style.color = '#475569';
+            chip.style.borderColor = '#CBD5E1';
+            chip.style.fontWeight = '500';
+        });
+        
+        if (btnEl) {
+            btnEl.style.background = '#475569';
+            btnEl.style.color = '#FFF';
+            btnEl.style.borderColor = '#475569';
+            btnEl.style.fontWeight = '600';
+        }
+        
+        window.filterCalendarEvents(query);
+    };
+
+    window.initCalendarSearch = function() {
+        var input = document.getElementById('calendar-search-input');
+        var val = input ? input.value : '';
+        window.filterCalendarEvents(val);
+    };
+
     function switchView(viewId, catName, catColor, catDesc) {
         return window.switchView(viewId, catName, catColor, catDesc);
     }
@@ -3905,7 +4013,7 @@
                     <span>›</span>
                     <span style="font-weight: 700; color: #1A1A1A;">Gesundheitskalender Mainfranken</span>
                 </div>
-                <div style="background: #FFF; border-left: 8px solid #475569; border-radius: 8px; padding: 2.5rem; margin-bottom: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                <div style="background: #FFF; border-left: 8px solid #475569; border-radius: 8px; padding: 2.5rem; margin-bottom: 1.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
                     <span class="cat-badge" style="background: #475569; margin-bottom: 0.8rem;">Termine & Veranstaltungen</span>
                     <h1 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 2.8rem; color: #1A1A1A; margin: 0 0 0.8rem 0; font-weight: 600;">Gesundheitskalender</h1>
                     <p style="font-size: 1.05rem; color: #5A6571; line-height: 1.6; margin: 0;">
@@ -3913,7 +4021,42 @@
                     </p>
                 </div>
 
-                <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                <!-- KALENDER-SUCHLEISTE & SCHNELLFILTER -->
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 1.4rem 1.6rem; margin-bottom: 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.03);">
+                    <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                        <div style="position: relative; flex: 1; min-width: 260px;">
+                            <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: #64748B; pointer-events: none; line-height: 1;">🔍</span>
+                            <input type="text" id="calendar-search-input" placeholder="Termin, Ort, Thema oder Stichwort suchen (z. B. Würzburg, Yoga, Herz)..." oninput="window.filterCalendarEvents(this.value)" style="width: 100%; box-sizing: border-box; padding: 11px 40px 11px 42px; border: 1.5px solid #CBD5E1; border-radius: 6px; font-size: 0.95rem; font-family: inherit; outline: none; background: #F8FAFC; color: #1E293B; transition: all 0.2s ease;" onfocus="this.style.borderColor='#475569'; this.style.background='#FFFFFF';" onblur="this.style.borderColor='#CBD5E1'; if(!this.value) this.style.background='#F8FAFC';" />
+                            <button type="button" id="calendar-search-clear" onclick="window.clearCalendarSearch();" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.2rem; color: #94A3B8; cursor: pointer; display: none; padding: 4px 8px; line-height: 1;" title="Suche zurücksetzen">✕</button>
+                        </div>
+                        <div id="calendar-count-badge" style="background: #F1F5F9; border: 1px solid #CBD5E1; color: #475569; font-size: 0.85rem; font-weight: 600; padding: 9px 14px; border-radius: 6px; white-space: nowrap;">
+                            101 Termine gesamt
+                        </div>
+                    </div>
+
+                    <!-- SCHNELLFILTER-CHIPS -->
+                    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #F1F5F9; font-size: 0.82rem;">
+                        <span style="color: #64748B; font-weight: 600; margin-right: 4px;">Schnellfilter:</span>
+                        <button type="button" class="cal-chip" onclick="window.filterCalendarChip('', this)" style="background: #475569; color: #FFF; border: 1px solid #475569; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: all 0.15s ease;">Alle</button>
+                        <button type="button" class="cal-chip" onclick="window.filterCalendarChip('Würzburg', this)" style="background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 500; transition: all 0.15s ease;">Würzburg</button>
+                        <button type="button" class="cal-chip" onclick="window.filterCalendarChip('Schweinfurt', this)" style="background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 500; transition: all 0.15s ease;">Schweinfurt</button>
+                        <button type="button" class="cal-chip" onclick="window.filterCalendarChip('Kitzingen', this)" style="background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 500; transition: all 0.15s ease;">Kitzingen</button>
+                        <button type="button" class="cal-chip" onclick="window.filterCalendarChip('Vortrag', this)" style="background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 500; transition: all 0.15s ease;">Vorträge</button>
+                        <button type="button" class="cal-chip" onclick="window.filterCalendarChip('Kurs', this)" style="background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 500; transition: all 0.15s ease;">Kurse & Praxis</button>
+                        <button type="button" class="cal-chip" onclick="window.filterCalendarChip('Ausstellung', this)" style="background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 500; transition: all 0.15s ease;">Ausstellungen</button>
+                        <button type="button" class="cal-chip" onclick="window.filterCalendarChip('Selbsthilfe', this)" style="background: #F8FAFC; color: #475569; border: 1px solid #CBD5E1; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 500; transition: all 0.15s ease;">Selbsthilfe</button>
+                    </div>
+                </div>
+
+                <!-- EMPTY STATE (WENN KEINE TREFFER) -->
+                <div id="calendar-no-results" style="display: none; background: #FFFFFF; border: 1px dashed #CBD5E1; border-radius: 8px; padding: 3rem 2rem; text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">🔍</div>
+                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.6rem; color: #1E293B; margin: 0 0 0.5rem 0;">Keine Termine gefunden</h3>
+                    <p style="font-size: 0.95rem; color: #64748B; margin: 0 0 1.5rem 0;" id="calendar-no-results-msg">Für Ihren Suchbegriff wurden leider keine passenden Veranstaltungen gefunden.</p>
+                    <button type="button" onclick="window.clearCalendarSearch();" style="background: #475569; color: #FFFFFF; border: none; padding: 9px 20px; font-size: 0.88rem; font-weight: 600; border-radius: 6px; cursor: pointer; transition: background 0.2s ease;">Alle Termine anzeigen</button>
+                </div>
+
+                <div id="calendar-cards-container" style="display: flex; flex-direction: column; gap: 1.2rem;">
                     
         <div class="calendar-event-card" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #E2E8F0; padding: 1.4rem; display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
             <div style="display: flex; gap: 1.5rem; align-items: center; min-width: 0; flex: 1;">
