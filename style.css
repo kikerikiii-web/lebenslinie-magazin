@@ -202,14 +202,21 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
 }
 
 /* Kinfolk Hero Slider Styling */
+.hero-slider-wrapper {
+    max-width: 1380px;
+    margin: 2.2rem auto 0 auto;
+    padding: 0 4%;
+}
 .hero-slider-container {
     position: relative;
     width: 100%;
-    height: 70vh;
-    min-height: 520px;
-    max-height: 750px;
+    height: 65vh;
+    min-height: 480px;
+    max-height: 680px;
     overflow: hidden;
     background-color: #1A1A1A;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
 }
 .hero-slide {
     position: absolute;
@@ -234,7 +241,7 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 3rem 8%;
+    padding: 3rem 4rem;
     color: #FFFFFF;
 }
 .hero-slide-content {
@@ -264,8 +271,8 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     z-index: 10;
 }
 .slider-nav-btn:hover { background: rgba(255, 255, 255, 0.4); }
-.slider-nav-prev { left: 24px; }
-.slider-nav-next { right: 24px; }
+.slider-nav-prev { left: 18px; }
+.slider-nav-next { right: 18px; }
 
 .slider-dots {
     position: absolute;
@@ -735,7 +742,7 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
 /* Floating Issue Card in Hero Slider */
 .hero-floating-issue-card {
     position: absolute;
-    right: 85px;
+    right: 36px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;

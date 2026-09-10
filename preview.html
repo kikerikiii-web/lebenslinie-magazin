@@ -227,10 +227,39 @@
 
 
 
+/* Kinfolk Hero Slider Styling (Exakt ausgerichtet an Inhaltsbreite) */
+.hero-slider-wrapper {
+    max-width: 1380px;
+    margin: 2.2rem auto 0 auto;
+    padding: 0 4%;
+}
+.hero-slider-container {
+    position: relative;
+    width: 100%;
+    height: 65vh;
+    min-height: 480px;
+    max-height: 680px;
+    overflow: hidden;
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+.hero-slide-overlay {
+    padding: 3rem 4rem !important;
+}
+@media (max-width: 768px) {
+    .hero-slider-wrapper {
+        margin-top: 1.2rem;
+    }
+    .hero-slide-overlay {
+        padding: 2rem 1.5rem !important;
+    }
+}
+
 /* Floating Issue Card in Hero Slider */
 .hero-floating-issue-card {
     position: absolute;
-    right: 85px;
+    right: 36px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
@@ -698,7 +727,9 @@
     <!-- ==================== VIEW 1: HOME VIEW ==================== -->
     <div id="view-home">
         
-                <!-- KINFOLK HERO SLIDER -->
+                <!-- KINFOLK HERO SLIDER WRAPPER (EXAKT AUF INHALTSBREITE: START BEI TEXT, ENDE BEI SIDEBAR) -->
+        <div class="hero-slider-wrapper">
+        <!-- KINFOLK HERO SLIDER -->
         <section class="hero-slider-container" style="position: relative;">
             <button class="slider-nav-btn slider-nav-prev" aria-label="Vorheriger Artikel" onclick="if(window.prevSlide) window.prevSlide();">&#10094;</button>
             <button class="slider-nav-btn slider-nav-next" aria-label="Nächster Artikel" onclick="if(window.nextSlide) window.nextSlide();">&#10095;</button>
@@ -951,6 +982,8 @@
             </div>
         </div>
         </section>
+
+                </div>
 
         <!-- MAIN HOMEPAGE CONTENT WITH SIDEBAR -->
         <div class="page-content-wrapper">
