@@ -259,7 +259,7 @@
 /* Floating Issue Card in Hero Slider */
 .hero-floating-issue-card {
     position: absolute;
-    right: 36px;
+    right: 88px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
@@ -484,6 +484,179 @@
         return window.switchView(viewId, catName, catColor, catDesc);
     }
     </script>
+<script>
+    /* ==================== REFINED SIDEBAR CONTROLLER ==================== */
+    (function() {
+        window.prevSidebarNews = function(btn) {
+            var box = btn.closest('.sidebar-news-box');
+            if (box) {
+                var slides = box.querySelectorAll('.sidebar-news-slide');
+                var dots = box.querySelectorAll('.sidebar-news-dots span');
+                var cur = 0;
+                slides.forEach(function(s, i){ if(s.style.display !== 'none' && s.classList.contains('active')) cur = i; });
+                var nxt = (cur - 1 + slides.length) % slides.length;
+                slides.forEach(function(s, i){ 
+                    s.style.display = (i === nxt)?'block':'none'; 
+                    if(i===nxt) {
+                        s.classList.add('active');
+                        var ticker = s.querySelector('.news-ticker-text');
+                        if (ticker) {
+                            ticker.style.animation = 'none';
+                            ticker.offsetHeight; // trigger reflow
+                            ticker.style.animation = 'newsTickerScroll 7.5s linear infinite';
+                        }
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+                dots.forEach(function(d, i){ if(i===nxt){ d.classList.add('active'); d.style.background='#8f7f8f'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+
+        window.nextSidebarNews = function(btn) {
+            var box = btn.closest('.sidebar-news-box');
+            if (box) {
+                var slides = box.querySelectorAll('.sidebar-news-slide');
+                var dots = box.querySelectorAll('.sidebar-news-dots span');
+                var cur = 0;
+                slides.forEach(function(s, i){ if(s.style.display !== 'none' && s.classList.contains('active')) cur = i; });
+                var nxt = (cur + 1) % slides.length;
+                slides.forEach(function(s, i){ 
+                    s.style.display = (i === nxt)?'block':'none'; 
+                    if(i===nxt) {
+                        s.classList.add('active');
+                        var ticker = s.querySelector('.news-ticker-text');
+                        if (ticker) {
+                            ticker.style.animation = 'none';
+                            ticker.offsetHeight; // trigger reflow
+                            ticker.style.animation = 'newsTickerScroll 7.5s linear infinite';
+                        }
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+                dots.forEach(function(d, i){ if(i===nxt){ d.classList.add('active'); d.style.background='#8f7f8f'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+
+        // Auto-Slide News after each ticker run (7.5 seconds)
+        setInterval(function() {
+            var visibleBoxes = document.querySelectorAll('.sidebar-news-box');
+            visibleBoxes.forEach(function(box) {
+                if (box.offsetParent !== null) {
+                    var nextBtn = box.querySelector('button[onclick*="nextSidebarNews"]');
+                    if (nextBtn) window.nextSidebarNews(nextBtn);
+                }
+            });
+        }, 7500);
+
+        window.prevSidebarKalender = function(btn) {
+            var box = btn.closest('.sidebar-kalender-box');
+            if (box) {
+                var slides = box.querySelectorAll('.sidebar-kalender-slide');
+                var dots = box.querySelectorAll('.sidebar-kalender-dots span');
+                var cur = 0;
+                slides.forEach(function(s, i){ if(s.style.display !== 'none' && s.classList.contains('active')) cur = i; });
+                var nxt = (cur - 1 + slides.length) % slides.length;
+                slides.forEach(function(s, i){ s.style.display = (i === nxt)?'block':'none'; if(i===nxt) s.classList.add('active'); else s.classList.remove('active'); });
+                dots.forEach(function(d, i){ if(i===nxt){ d.classList.add('active'); d.style.background='#475569'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+        window.nextSidebarKalender = function(btn) {
+            var box = btn.closest('.sidebar-kalender-box');
+            if (box) {
+                var slides = box.querySelectorAll('.sidebar-kalender-slide');
+                var dots = box.querySelectorAll('.sidebar-kalender-dots span');
+                var cur = 0;
+                slides.forEach(function(s, i){ if(s.style.display !== 'none' && s.classList.contains('active')) cur = i; });
+                var nxt = (cur + 1) % slides.length;
+                slides.forEach(function(s, i){ s.style.display = (i === nxt)?'block':'none'; if(i===nxt) s.classList.add('active'); else s.classList.remove('active'); });
+                dots.forEach(function(d, i){ if(i===nxt){ d.classList.add('active'); d.style.background='#475569'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+
+        window.prevSidebarBuchtipps = function(btn) {
+            var box = btn.closest('.sidebar-buchtipps-box');
+            if (box) {
+                var slides = box.querySelectorAll('.sidebar-buchtipps-slide');
+                var dots = box.querySelectorAll('.sidebar-buchtipps-dots span');
+                var cur = 0;
+                slides.forEach(function(s, i){ if(s.style.display !== 'none' && s.classList.contains('active')) cur = i; });
+                var nxt = (cur - 1 + slides.length) % slides.length;
+                slides.forEach(function(s, i){ s.style.display = (i === nxt)?'flex':'none'; if(i===nxt) s.classList.add('active'); else s.classList.remove('active'); });
+                dots.forEach(function(d, i){ if(i===nxt){ d.classList.add('active'); d.style.background='#8F7A5C'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+        window.nextSidebarBuchtipps = function(btn) {
+            var box = btn.closest('.sidebar-buchtipps-box');
+            if (box) {
+                var slides = box.querySelectorAll('.sidebar-buchtipps-slide');
+                var dots = box.querySelectorAll('.sidebar-buchtipps-dots span');
+                var cur = 0;
+                slides.forEach(function(s, i){ if(s.style.display !== 'none' && s.classList.contains('active')) cur = i; });
+                var nxt = (cur + 1) % slides.length;
+                slides.forEach(function(s, i){ s.style.display = (i === nxt)?'flex':'none'; if(i===nxt) s.classList.add('active'); else s.classList.remove('active'); });
+                dots.forEach(function(d, i){ if(i===nxt){ d.classList.add('active'); d.style.background='#8F7A5C'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+
+        // Auto-Slide Buchtipps every 7 seconds
+        setInterval(function() {
+            var visibleBoxes = document.querySelectorAll('.sidebar-buchtipps-box');
+            visibleBoxes.forEach(function(box) {
+                if (box.offsetParent !== null) {
+                    var nextBtn = box.querySelector('button[onclick*="nextSidebarBuchtipps"]');
+                    if (nextBtn) window.nextSidebarBuchtipps(nextBtn);
+                }
+            });
+        }, 7000);
+
+        window.prevPartnerSlide = function(btn) {
+            var box = (btn && btn.closest) ? btn.closest('.partner-slider-sidebar-box') : document.querySelector('.partner-slider-sidebar-box');
+            if (box) {
+                var slides = box.querySelectorAll('.partner-slide');
+                var dots = box.querySelectorAll('.partner-dot');
+                var cur = 0;
+                slides.forEach(function(s, i){ if(s.style.display !== 'none' && s.classList.contains('active')) cur = i; });
+                var nxt = (cur - 1 + slides.length) % slides.length;
+                slides.forEach(function(s, i){ s.style.display = (i === nxt)?'flex':'none'; if(i===nxt) s.classList.add('active'); else s.classList.remove('active'); });
+                dots.forEach(function(d, i){ if(i===nxt){ d.classList.add('active'); d.style.background='#768A76'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+        window.nextPartnerSlide = function(btn) {
+            var box = (btn && btn.closest) ? btn.closest('.partner-slider-sidebar-box') : document.querySelector('.partner-slider-sidebar-box');
+            if (box) {
+                var slides = box.querySelectorAll('.partner-slide');
+                var dots = box.querySelectorAll('.partner-dot');
+                var cur = 0;
+                slides.forEach(function(s, i){ if(s.style.display !== 'none' && s.classList.contains('active')) cur = i; });
+                var nxt = (cur + 1) % slides.length;
+                slides.forEach(function(s, i){ s.style.display = (i === nxt)?'flex':'none'; if(i===nxt) s.classList.add('active'); else s.classList.remove('active'); });
+                dots.forEach(function(d, i){ if(i===nxt){ d.classList.add('active'); d.style.background='#768A76'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+        window.goToPartnerSlide = function(idx, el) {
+            var box = (el && el.closest) ? el.closest('.partner-slider-sidebar-box') : document.querySelector('.partner-slider-sidebar-box');
+            if (box) {
+                var slides = box.querySelectorAll('.partner-slide');
+                var dots = box.querySelectorAll('.partner-dot');
+                slides.forEach(function(s, i){ s.style.display = (i === idx)?'flex':'none'; if(i===idx) s.classList.add('active'); else s.classList.remove('active'); });
+                dots.forEach(function(d, i){ if(i===idx){ d.classList.add('active'); d.style.background='#768A76'; } else { d.classList.remove('active'); d.style.background='#CBD5E1'; } });
+            }
+        };
+
+        // Auto-Slide Partner every 6 seconds
+        setInterval(function() {
+            var visibleBoxes = document.querySelectorAll('.partner-slider-sidebar-box');
+            visibleBoxes.forEach(function(box) {
+                if (box.offsetParent !== null) {
+                    var nextBtn = box.querySelector('.partner-next-btn');
+                    if (nextBtn) window.nextPartnerSlide(nextBtn);
+                }
+            });
+        }, 6000);
+    })();
+</script>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; background-color: #FAF8F5; color: #2B2B2B;">
 
@@ -1823,8 +1996,9 @@
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
+<!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <aside class="magazin-sidebar" style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 2rem;">
-    <!-- 2. NEWS (Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
+    <!-- 2. NEWS (5 Meldungen Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
     <div class="sidebar-news-box" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
             <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #8F7A5C;">
@@ -1836,57 +2010,71 @@
         <div class="sidebar-news-slider-wrapper" style="position: relative; border-radius: 8px; overflow: hidden; height: 190px; background: #1A1A1A; cursor: pointer;">
             
             <!-- Slide 1 -->
-            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
+            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
                 <img src="page_imgs/schulmedizin_hero_1787167055209.jpg" alt="Kardiologie Würzburg" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #00766e; font-size: 0.62rem; padding: 2px 7px;">Schulmedizin</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Telemedizin" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #574a6d; font-size: 0.62rem; padding: 2px 7px;">Ökonomie & Fürsorge</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Videosprechstunden starten für Landarztpraxen in ganz Mainfranken +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Präventionswoche" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #006b8d; font-size: 0.62rem; padding: 2px 7px;">Prävention & Reha</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Präventionswoche Würzburg: Kostenlose Gesundheitschecks vor Ort +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 4 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
                 <img src="page_imgs/naturheilkunde_hero_1787167067231.jpg" alt="Heilkräuter" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #44a12b; font-size: 0.62rem; padding: 2px 7px;">Naturheilkunde</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Würzburger Studie: Heimische Heilkräuter belegen hohe Wirksamkeit +++
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken', 'Psyche', '#9d3c8c', 'page_imgs/psyche_hero_1787167080351.jpg', '10. April 2026');">
+                <img src="page_imgs/psyche_hero_1787167080351.jpg" alt="Seelische Gesundheit" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
+                    <span class="cat-badge" style="background: #9d3c8c; font-size: 0.62rem; padding: 2px 7px;">Psyche</span>
+                </div>
+                <!-- TICKER BANNER UNTEN AUF DEM BILD -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                        +++ Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken +++
                     </div>
                 </div>
             </div>
@@ -1896,6 +2084,7 @@
             <button onclick="if(window.prevSidebarNews) window.prevSidebarNews(this);" style="background: #F4F1EA; border: none; font-size: 0.82rem; cursor: pointer; color: #768A76; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&#10094;</button>
             <div class="sidebar-news-dots" style="display: flex; gap: 5px;">
                 <span class="active" style="width: 6px; height: 6px; border-radius: 50%; background: #8f7f8f; display: inline-block;"></span>
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
@@ -1996,7 +2185,7 @@
         <!-- BUCHTIPPS SLIDER -->
         <div class="sidebar-buchtipps-slider-wrapper" style="position: relative; overflow: hidden; min-height: 120px;">
             <!-- Buch 1 -->
-            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2013,7 +2202,7 @@
             </div>
 
             <!-- Buch 2 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=2" alt="Das Mikrobiom-Geheimnis" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2030,7 +2219,7 @@
             </div>
 
             <!-- Buch 3 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80&sig=3" alt="Die heilende Kraft der Natur" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2047,7 +2236,7 @@
             </div>
 
             <!-- Buch 4 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80&sig=4" alt="Resilienz im Alltag" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2064,7 +2253,7 @@
             </div>
 
             <!-- Buch 5 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=5" alt="Gutes Altern ist keine Kunst" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2216,10 +2405,10 @@
             Lebenslinie frei Haus
         </h4>
         <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0 0 1rem 0;">
-            Das gedruckte Magazin 4x im Jahr per Post bequem direkt in Ihren Briefkasten.
+            Das gedruckte Magazin 2x im Jahr per Post bequem direkt in Ihren Briefkasten.
         </p>
 
-        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
+        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie (2x im Jahr frei Haus) wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
             <input type="text" placeholder="Vor- und Nachname..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="Straße und Hausnummer..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="PLZ und Ort..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
@@ -2388,6 +2577,7 @@
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
+<!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <aside class="magazin-sidebar" style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 2rem;">
     <!-- 1. AKTUELLE AUSGABE (Nur auf Unterseiten, nicht auf Home) -->
     <div class="sidebar-issue-card" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.4rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04); text-align: center;">
@@ -2402,7 +2592,7 @@
             E-Paper jetzt lesen →
         </button>
     </div>
-    <!-- 2. NEWS (Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
+    <!-- 2. NEWS (5 Meldungen Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
     <div class="sidebar-news-box" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
             <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #8F7A5C;">
@@ -2414,57 +2604,71 @@
         <div class="sidebar-news-slider-wrapper" style="position: relative; border-radius: 8px; overflow: hidden; height: 190px; background: #1A1A1A; cursor: pointer;">
             
             <!-- Slide 1 -->
-            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
+            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
                 <img src="page_imgs/schulmedizin_hero_1787167055209.jpg" alt="Kardiologie Würzburg" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #00766e; font-size: 0.62rem; padding: 2px 7px;">Schulmedizin</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Telemedizin" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #574a6d; font-size: 0.62rem; padding: 2px 7px;">Ökonomie & Fürsorge</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Videosprechstunden starten für Landarztpraxen in ganz Mainfranken +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Präventionswoche" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #006b8d; font-size: 0.62rem; padding: 2px 7px;">Prävention & Reha</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Präventionswoche Würzburg: Kostenlose Gesundheitschecks vor Ort +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 4 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
                 <img src="page_imgs/naturheilkunde_hero_1787167067231.jpg" alt="Heilkräuter" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #44a12b; font-size: 0.62rem; padding: 2px 7px;">Naturheilkunde</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Würzburger Studie: Heimische Heilkräuter belegen hohe Wirksamkeit +++
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken', 'Psyche', '#9d3c8c', 'page_imgs/psyche_hero_1787167080351.jpg', '10. April 2026');">
+                <img src="page_imgs/psyche_hero_1787167080351.jpg" alt="Seelische Gesundheit" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
+                    <span class="cat-badge" style="background: #9d3c8c; font-size: 0.62rem; padding: 2px 7px;">Psyche</span>
+                </div>
+                <!-- TICKER BANNER UNTEN AUF DEM BILD -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                        +++ Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken +++
                     </div>
                 </div>
             </div>
@@ -2474,6 +2678,7 @@
             <button onclick="if(window.prevSidebarNews) window.prevSidebarNews(this);" style="background: #F4F1EA; border: none; font-size: 0.82rem; cursor: pointer; color: #768A76; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&#10094;</button>
             <div class="sidebar-news-dots" style="display: flex; gap: 5px;">
                 <span class="active" style="width: 6px; height: 6px; border-radius: 50%; background: #8f7f8f; display: inline-block;"></span>
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
@@ -2574,7 +2779,7 @@
         <!-- BUCHTIPPS SLIDER -->
         <div class="sidebar-buchtipps-slider-wrapper" style="position: relative; overflow: hidden; min-height: 120px;">
             <!-- Buch 1 -->
-            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2591,7 +2796,7 @@
             </div>
 
             <!-- Buch 2 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=2" alt="Das Mikrobiom-Geheimnis" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2608,7 +2813,7 @@
             </div>
 
             <!-- Buch 3 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80&sig=3" alt="Die heilende Kraft der Natur" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2625,7 +2830,7 @@
             </div>
 
             <!-- Buch 4 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80&sig=4" alt="Resilienz im Alltag" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2642,7 +2847,7 @@
             </div>
 
             <!-- Buch 5 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=5" alt="Gutes Altern ist keine Kunst" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -2794,10 +2999,10 @@
             Lebenslinie frei Haus
         </h4>
         <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0 0 1rem 0;">
-            Das gedruckte Magazin 4x im Jahr per Post bequem direkt in Ihren Briefkasten.
+            Das gedruckte Magazin 2x im Jahr per Post bequem direkt in Ihren Briefkasten.
         </p>
 
-        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
+        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie (2x im Jahr frei Haus) wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
             <input type="text" placeholder="Vor- und Nachname..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="Straße und Hausnummer..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="PLZ und Ort..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
@@ -2972,6 +3177,7 @@
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
+<!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <aside class="magazin-sidebar" style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 2rem;">
     <!-- 1. AKTUELLE AUSGABE (Nur auf Unterseiten, nicht auf Home) -->
     <div class="sidebar-issue-card" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.4rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04); text-align: center;">
@@ -2986,7 +3192,7 @@
             E-Paper jetzt lesen →
         </button>
     </div>
-    <!-- 2. NEWS (Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
+    <!-- 2. NEWS (5 Meldungen Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
     <div class="sidebar-news-box" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
             <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #8F7A5C;">
@@ -2998,57 +3204,71 @@
         <div class="sidebar-news-slider-wrapper" style="position: relative; border-radius: 8px; overflow: hidden; height: 190px; background: #1A1A1A; cursor: pointer;">
             
             <!-- Slide 1 -->
-            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
+            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
                 <img src="page_imgs/schulmedizin_hero_1787167055209.jpg" alt="Kardiologie Würzburg" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #00766e; font-size: 0.62rem; padding: 2px 7px;">Schulmedizin</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Telemedizin" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #574a6d; font-size: 0.62rem; padding: 2px 7px;">Ökonomie & Fürsorge</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Videosprechstunden starten für Landarztpraxen in ganz Mainfranken +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Präventionswoche" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #006b8d; font-size: 0.62rem; padding: 2px 7px;">Prävention & Reha</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Präventionswoche Würzburg: Kostenlose Gesundheitschecks vor Ort +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 4 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
                 <img src="page_imgs/naturheilkunde_hero_1787167067231.jpg" alt="Heilkräuter" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #44a12b; font-size: 0.62rem; padding: 2px 7px;">Naturheilkunde</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Würzburger Studie: Heimische Heilkräuter belegen hohe Wirksamkeit +++
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken', 'Psyche', '#9d3c8c', 'page_imgs/psyche_hero_1787167080351.jpg', '10. April 2026');">
+                <img src="page_imgs/psyche_hero_1787167080351.jpg" alt="Seelische Gesundheit" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
+                    <span class="cat-badge" style="background: #9d3c8c; font-size: 0.62rem; padding: 2px 7px;">Psyche</span>
+                </div>
+                <!-- TICKER BANNER UNTEN AUF DEM BILD -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                        +++ Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken +++
                     </div>
                 </div>
             </div>
@@ -3058,6 +3278,7 @@
             <button onclick="if(window.prevSidebarNews) window.prevSidebarNews(this);" style="background: #F4F1EA; border: none; font-size: 0.82rem; cursor: pointer; color: #768A76; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&#10094;</button>
             <div class="sidebar-news-dots" style="display: flex; gap: 5px;">
                 <span class="active" style="width: 6px; height: 6px; border-radius: 50%; background: #8f7f8f; display: inline-block;"></span>
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
@@ -3158,7 +3379,7 @@
         <!-- BUCHTIPPS SLIDER -->
         <div class="sidebar-buchtipps-slider-wrapper" style="position: relative; overflow: hidden; min-height: 120px;">
             <!-- Buch 1 -->
-            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -3175,7 +3396,7 @@
             </div>
 
             <!-- Buch 2 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=2" alt="Das Mikrobiom-Geheimnis" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -3192,7 +3413,7 @@
             </div>
 
             <!-- Buch 3 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80&sig=3" alt="Die heilende Kraft der Natur" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -3209,7 +3430,7 @@
             </div>
 
             <!-- Buch 4 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80&sig=4" alt="Resilienz im Alltag" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -3226,7 +3447,7 @@
             </div>
 
             <!-- Buch 5 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=5" alt="Gutes Altern ist keine Kunst" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -3378,10 +3599,10 @@
             Lebenslinie frei Haus
         </h4>
         <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0 0 1rem 0;">
-            Das gedruckte Magazin 4x im Jahr per Post bequem direkt in Ihren Briefkasten.
+            Das gedruckte Magazin 2x im Jahr per Post bequem direkt in Ihren Briefkasten.
         </p>
 
-        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
+        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie (2x im Jahr frei Haus) wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
             <input type="text" placeholder="Vor- und Nachname..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="Straße und Hausnummer..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="PLZ und Ort..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
@@ -4093,6 +4314,7 @@
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
+<!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <aside class="magazin-sidebar" style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 2rem;">
     <!-- 1. AKTUELLE AUSGABE (Nur auf Unterseiten, nicht auf Home) -->
     <div class="sidebar-issue-card" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.4rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04); text-align: center;">
@@ -4107,7 +4329,7 @@
             E-Paper jetzt lesen →
         </button>
     </div>
-    <!-- 2. NEWS (Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
+    <!-- 2. NEWS (5 Meldungen Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
     <div class="sidebar-news-box" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
             <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #8F7A5C;">
@@ -4119,57 +4341,71 @@
         <div class="sidebar-news-slider-wrapper" style="position: relative; border-radius: 8px; overflow: hidden; height: 190px; background: #1A1A1A; cursor: pointer;">
             
             <!-- Slide 1 -->
-            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
+            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
                 <img src="page_imgs/schulmedizin_hero_1787167055209.jpg" alt="Kardiologie Würzburg" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #00766e; font-size: 0.62rem; padding: 2px 7px;">Schulmedizin</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Telemedizin" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #574a6d; font-size: 0.62rem; padding: 2px 7px;">Ökonomie & Fürsorge</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Videosprechstunden starten für Landarztpraxen in ganz Mainfranken +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Präventionswoche" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #006b8d; font-size: 0.62rem; padding: 2px 7px;">Prävention & Reha</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Präventionswoche Würzburg: Kostenlose Gesundheitschecks vor Ort +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 4 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
                 <img src="page_imgs/naturheilkunde_hero_1787167067231.jpg" alt="Heilkräuter" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #44a12b; font-size: 0.62rem; padding: 2px 7px;">Naturheilkunde</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Würzburger Studie: Heimische Heilkräuter belegen hohe Wirksamkeit +++
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken', 'Psyche', '#9d3c8c', 'page_imgs/psyche_hero_1787167080351.jpg', '10. April 2026');">
+                <img src="page_imgs/psyche_hero_1787167080351.jpg" alt="Seelische Gesundheit" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
+                    <span class="cat-badge" style="background: #9d3c8c; font-size: 0.62rem; padding: 2px 7px;">Psyche</span>
+                </div>
+                <!-- TICKER BANNER UNTEN AUF DEM BILD -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                        +++ Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken +++
                     </div>
                 </div>
             </div>
@@ -4179,6 +4415,7 @@
             <button onclick="if(window.prevSidebarNews) window.prevSidebarNews(this);" style="background: #F4F1EA; border: none; font-size: 0.82rem; cursor: pointer; color: #768A76; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&#10094;</button>
             <div class="sidebar-news-dots" style="display: flex; gap: 5px;">
                 <span class="active" style="width: 6px; height: 6px; border-radius: 50%; background: #8f7f8f; display: inline-block;"></span>
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
@@ -4279,7 +4516,7 @@
         <!-- BUCHTIPPS SLIDER -->
         <div class="sidebar-buchtipps-slider-wrapper" style="position: relative; overflow: hidden; min-height: 120px;">
             <!-- Buch 1 -->
-            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -4296,7 +4533,7 @@
             </div>
 
             <!-- Buch 2 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=2" alt="Das Mikrobiom-Geheimnis" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -4313,7 +4550,7 @@
             </div>
 
             <!-- Buch 3 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80&sig=3" alt="Die heilende Kraft der Natur" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -4330,7 +4567,7 @@
             </div>
 
             <!-- Buch 4 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80&sig=4" alt="Resilienz im Alltag" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -4347,7 +4584,7 @@
             </div>
 
             <!-- Buch 5 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=5" alt="Gutes Altern ist keine Kunst" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -4499,10 +4736,10 @@
             Lebenslinie frei Haus
         </h4>
         <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0 0 1rem 0;">
-            Das gedruckte Magazin 4x im Jahr per Post bequem direkt in Ihren Briefkasten.
+            Das gedruckte Magazin 2x im Jahr per Post bequem direkt in Ihren Briefkasten.
         </p>
 
-        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
+        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie (2x im Jahr frei Haus) wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
             <input type="text" placeholder="Vor- und Nachname..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="Straße und Hausnummer..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="PLZ und Ort..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
@@ -4814,6 +5051,7 @@
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
+<!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <aside class="magazin-sidebar" style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 2rem;">
     <!-- 1. AKTUELLE AUSGABE (Nur auf Unterseiten, nicht auf Home) -->
     <div class="sidebar-issue-card" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.4rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04); text-align: center;">
@@ -4828,7 +5066,7 @@
             E-Paper jetzt lesen →
         </button>
     </div>
-    <!-- 2. NEWS (Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
+    <!-- 2. NEWS (5 Meldungen Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
     <div class="sidebar-news-box" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
             <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #8F7A5C;">
@@ -4840,57 +5078,71 @@
         <div class="sidebar-news-slider-wrapper" style="position: relative; border-radius: 8px; overflow: hidden; height: 190px; background: #1A1A1A; cursor: pointer;">
             
             <!-- Slide 1 -->
-            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
+            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
                 <img src="page_imgs/schulmedizin_hero_1787167055209.jpg" alt="Kardiologie Würzburg" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #00766e; font-size: 0.62rem; padding: 2px 7px;">Schulmedizin</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Telemedizin" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #574a6d; font-size: 0.62rem; padding: 2px 7px;">Ökonomie & Fürsorge</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Videosprechstunden starten für Landarztpraxen in ganz Mainfranken +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Präventionswoche" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #006b8d; font-size: 0.62rem; padding: 2px 7px;">Prävention & Reha</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Präventionswoche Würzburg: Kostenlose Gesundheitschecks vor Ort +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 4 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
                 <img src="page_imgs/naturheilkunde_hero_1787167067231.jpg" alt="Heilkräuter" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #44a12b; font-size: 0.62rem; padding: 2px 7px;">Naturheilkunde</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Würzburger Studie: Heimische Heilkräuter belegen hohe Wirksamkeit +++
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken', 'Psyche', '#9d3c8c', 'page_imgs/psyche_hero_1787167080351.jpg', '10. April 2026');">
+                <img src="page_imgs/psyche_hero_1787167080351.jpg" alt="Seelische Gesundheit" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
+                    <span class="cat-badge" style="background: #9d3c8c; font-size: 0.62rem; padding: 2px 7px;">Psyche</span>
+                </div>
+                <!-- TICKER BANNER UNTEN AUF DEM BILD -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                        +++ Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken +++
                     </div>
                 </div>
             </div>
@@ -4900,6 +5152,7 @@
             <button onclick="if(window.prevSidebarNews) window.prevSidebarNews(this);" style="background: #F4F1EA; border: none; font-size: 0.82rem; cursor: pointer; color: #768A76; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&#10094;</button>
             <div class="sidebar-news-dots" style="display: flex; gap: 5px;">
                 <span class="active" style="width: 6px; height: 6px; border-radius: 50%; background: #8f7f8f; display: inline-block;"></span>
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
@@ -5000,7 +5253,7 @@
         <!-- BUCHTIPPS SLIDER -->
         <div class="sidebar-buchtipps-slider-wrapper" style="position: relative; overflow: hidden; min-height: 120px;">
             <!-- Buch 1 -->
-            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -5017,7 +5270,7 @@
             </div>
 
             <!-- Buch 2 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=2" alt="Das Mikrobiom-Geheimnis" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -5034,7 +5287,7 @@
             </div>
 
             <!-- Buch 3 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80&sig=3" alt="Die heilende Kraft der Natur" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -5051,7 +5304,7 @@
             </div>
 
             <!-- Buch 4 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80&sig=4" alt="Resilienz im Alltag" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -5068,7 +5321,7 @@
             </div>
 
             <!-- Buch 5 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=5" alt="Gutes Altern ist keine Kunst" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -5220,10 +5473,10 @@
             Lebenslinie frei Haus
         </h4>
         <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0 0 1rem 0;">
-            Das gedruckte Magazin 4x im Jahr per Post bequem direkt in Ihren Briefkasten.
+            Das gedruckte Magazin 2x im Jahr per Post bequem direkt in Ihren Briefkasten.
         </p>
 
-        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
+        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie (2x im Jahr frei Haus) wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
             <input type="text" placeholder="Vor- und Nachname..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="Straße und Hausnummer..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="PLZ und Ort..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
@@ -7702,6 +7955,7 @@
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
+<!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <aside class="magazin-sidebar" style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 2rem;">
     <!-- 1. AKTUELLE AUSGABE (Nur auf Unterseiten, nicht auf Home) -->
     <div class="sidebar-issue-card" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.4rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04); text-align: center;">
@@ -7716,7 +7970,7 @@
             E-Paper jetzt lesen →
         </button>
     </div>
-    <!-- 2. NEWS (Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
+    <!-- 2. NEWS (5 Meldungen Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
     <div class="sidebar-news-box" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
             <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #8F7A5C;">
@@ -7728,57 +7982,71 @@
         <div class="sidebar-news-slider-wrapper" style="position: relative; border-radius: 8px; overflow: hidden; height: 190px; background: #1A1A1A; cursor: pointer;">
             
             <!-- Slide 1 -->
-            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
+            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
                 <img src="page_imgs/schulmedizin_hero_1787167055209.jpg" alt="Kardiologie Würzburg" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #00766e; font-size: 0.62rem; padding: 2px 7px;">Schulmedizin</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Telemedizin" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #574a6d; font-size: 0.62rem; padding: 2px 7px;">Ökonomie & Fürsorge</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Videosprechstunden starten für Landarztpraxen in ganz Mainfranken +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Präventionswoche" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #006b8d; font-size: 0.62rem; padding: 2px 7px;">Prävention & Reha</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Präventionswoche Würzburg: Kostenlose Gesundheitschecks vor Ort +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 4 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
                 <img src="page_imgs/naturheilkunde_hero_1787167067231.jpg" alt="Heilkräuter" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #44a12b; font-size: 0.62rem; padding: 2px 7px;">Naturheilkunde</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Würzburger Studie: Heimische Heilkräuter belegen hohe Wirksamkeit +++
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken', 'Psyche', '#9d3c8c', 'page_imgs/psyche_hero_1787167080351.jpg', '10. April 2026');">
+                <img src="page_imgs/psyche_hero_1787167080351.jpg" alt="Seelische Gesundheit" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
+                    <span class="cat-badge" style="background: #9d3c8c; font-size: 0.62rem; padding: 2px 7px;">Psyche</span>
+                </div>
+                <!-- TICKER BANNER UNTEN AUF DEM BILD -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                        +++ Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken +++
                     </div>
                 </div>
             </div>
@@ -7788,6 +8056,7 @@
             <button onclick="if(window.prevSidebarNews) window.prevSidebarNews(this);" style="background: #F4F1EA; border: none; font-size: 0.82rem; cursor: pointer; color: #768A76; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&#10094;</button>
             <div class="sidebar-news-dots" style="display: flex; gap: 5px;">
                 <span class="active" style="width: 6px; height: 6px; border-radius: 50%; background: #8f7f8f; display: inline-block;"></span>
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
@@ -7888,7 +8157,7 @@
         <!-- BUCHTIPPS SLIDER -->
         <div class="sidebar-buchtipps-slider-wrapper" style="position: relative; overflow: hidden; min-height: 120px;">
             <!-- Buch 1 -->
-            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -7905,7 +8174,7 @@
             </div>
 
             <!-- Buch 2 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=2" alt="Das Mikrobiom-Geheimnis" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -7922,7 +8191,7 @@
             </div>
 
             <!-- Buch 3 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80&sig=3" alt="Die heilende Kraft der Natur" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -7939,7 +8208,7 @@
             </div>
 
             <!-- Buch 4 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80&sig=4" alt="Resilienz im Alltag" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -7956,7 +8225,7 @@
             </div>
 
             <!-- Buch 5 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=5" alt="Gutes Altern ist keine Kunst" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -8108,10 +8377,10 @@
             Lebenslinie frei Haus
         </h4>
         <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0 0 1rem 0;">
-            Das gedruckte Magazin 4x im Jahr per Post bequem direkt in Ihren Briefkasten.
+            Das gedruckte Magazin 2x im Jahr per Post bequem direkt in Ihren Briefkasten.
         </p>
 
-        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
+        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie (2x im Jahr frei Haus) wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
             <input type="text" placeholder="Vor- und Nachname..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="Straße und Hausnummer..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="PLZ und Ort..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
@@ -8346,6 +8615,7 @@
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <!-- ==================== UNIVERSAL SIDEBAR ==================== -->
+<!-- ==================== UNIVERSAL SIDEBAR ==================== -->
 <aside class="magazin-sidebar" style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 2rem;">
     <!-- 1. AKTUELLE AUSGABE (Nur auf Unterseiten, nicht auf Home) -->
     <div class="sidebar-issue-card" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.4rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04); text-align: center;">
@@ -8360,7 +8630,7 @@
             E-Paper jetzt lesen →
         </button>
     </div>
-    <!-- 2. NEWS (Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
+    <!-- 2. NEWS (5 Meldungen Bilder-Slider mit Ticker-Text & Artikel-Popup) -->
     <div class="sidebar-news-box" style="background: #FFFFFF; border-radius: 10px; border: 1px solid #EAE5D9; padding: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
             <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #8F7A5C;">
@@ -8372,57 +8642,71 @@
         <div class="sidebar-news-slider-wrapper" style="position: relative; border-radius: 8px; overflow: hidden; height: 190px; background: #1A1A1A; cursor: pointer;">
             
             <!-- Slide 1 -->
-            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
+            <div class="sidebar-news-slide active" style="display: block; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet', 'Schulmedizin', '#00766e', 'page_imgs/schulmedizin_hero_1787167055209.jpg', '12. Mai 2026');">
                 <img src="page_imgs/schulmedizin_hero_1787167055209.jpg" alt="Kardiologie Würzburg" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #00766e; font-size: 0.62rem; padding: 2px 7px;">Schulmedizin</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Neues Zentrum für Kardiologie am Universitätsklinikum Würzburg eröffnet +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Telemedizin-Ausbau in Mainfranken: Videosprechstunden für Landarztpraxen', 'Ökonomie & Fürsorge', '#574a6d', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80', '08. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Telemedizin" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #574a6d; font-size: 0.62rem; padding: 2px 7px;">Ökonomie & Fürsorge</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Videosprechstunden starten für Landarztpraxen in ganz Mainfranken +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Präventionswoche Würzburg: Kostenlose Gesundheitschecks im Mai', 'Prävention & Reha', '#006b8d', 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80', '02. Mai 2026');">
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Präventionswoche" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #006b8d; font-size: 0.62rem; padding: 2px 7px;">Prävention & Reha</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Präventionswoche Würzburg: Kostenlose Gesundheitschecks vor Ort +++
                     </div>
                 </div>
             </div>
 
             <!-- Slide 4 -->
-            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Heilpflanzen neu entdeckt: Heimische Kräuter im Experten-Porträt', 'Naturheilkunde & Komplementärmedizin', '#44a12b', 'page_imgs/naturheilkunde_hero_1787167067231.jpg', '18. April 2026');">
                 <img src="page_imgs/naturheilkunde_hero_1787167067231.jpg" alt="Heilkräuter" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
                     <span class="cat-badge" style="background: #44a12b; font-size: 0.62rem; padding: 2px 7px;">Naturheilkunde</span>
                 </div>
                 <!-- TICKER BANNER UNTEN AUF DEM BILD -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
-                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 8s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
                         +++ Würzburger Studie: Heimische Heilkräuter belegen hohe Wirksamkeit +++
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="sidebar-news-slide" style="display: none; position: absolute; inset: 0; transition: opacity 0.5s ease;" onclick="if(window.openArticleModal) window.openArticleModal('Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken', 'Psyche', '#9d3c8c', 'page_imgs/psyche_hero_1787167080351.jpg', '10. April 2026');">
+                <img src="page_imgs/psyche_hero_1787167080351.jpg" alt="Seelische Gesundheit" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 2;">
+                    <span class="cat-badge" style="background: #9d3c8c; font-size: 0.62rem; padding: 2px 7px;">Psyche</span>
+                </div>
+                <!-- TICKER BANNER UNTEN AUF DEM BILD -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 70%, transparent 100%); padding: 18px 10px 8px 10px; overflow: hidden; z-index: 2;">
+                    <div class="news-ticker-text" style="white-space: nowrap; display: inline-block; animation: newsTickerScroll 7.5s linear infinite; font-size: 0.82rem; font-weight: 600; color: #FFFFFF;">
+                        +++ Seelische Gesundheit im Fokus: Neue Beratungsangebote in Mainfranken +++
                     </div>
                 </div>
             </div>
@@ -8432,6 +8716,7 @@
             <button onclick="if(window.prevSidebarNews) window.prevSidebarNews(this);" style="background: #F4F1EA; border: none; font-size: 0.82rem; cursor: pointer; color: #768A76; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&#10094;</button>
             <div class="sidebar-news-dots" style="display: flex; gap: 5px;">
                 <span class="active" style="width: 6px; height: 6px; border-radius: 50%; background: #8f7f8f; display: inline-block;"></span>
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
                 <span style="width: 6px; height: 6px; border-radius: 50%; background: #CBD5E1; display: inline-block;"></span>
@@ -8532,7 +8817,7 @@
         <!-- BUCHTIPPS SLIDER -->
         <div class="sidebar-buchtipps-slider-wrapper" style="position: relative; overflow: hidden; min-height: 120px;">
             <!-- Buch 1 -->
-            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide active" style="display: flex; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=1" alt="Schamlose Neugier" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -8549,7 +8834,7 @@
             </div>
 
             <!-- Buch 2 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80&sig=2" alt="Das Mikrobiom-Geheimnis" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -8566,7 +8851,7 @@
             </div>
 
             <!-- Buch 3 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80&sig=3" alt="Die heilende Kraft der Natur" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -8583,7 +8868,7 @@
             </div>
 
             <!-- Buch 4 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80&sig=4" alt="Resilienz im Alltag" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -8600,7 +8885,7 @@
             </div>
 
             <!-- Buch 5 -->
-            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start;">
+            <div class="sidebar-buchtipps-slide" style="display: none; gap: 12px; align-items: flex-start; transition: opacity 0.4s ease;">
                 <div style="width: 75px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #EAE5D9; cursor: pointer;" onclick="return switchView('buchtipps');">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80&sig=5" alt="Gutes Altern ist keine Kunst" style="width: 100%; height: 105px; object-fit: cover; display: block;" />
                 </div>
@@ -8752,10 +9037,10 @@
             Lebenslinie frei Haus
         </h4>
         <p style="font-size: 0.8rem; color: #5A6571; line-height: 1.45; margin: 0 0 1rem 0;">
-            Das gedruckte Magazin 4x im Jahr per Post bequem direkt in Ihren Briefkasten.
+            Das gedruckte Magazin 2x im Jahr per Post bequem direkt in Ihren Briefkasten.
         </p>
 
-        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
+        <form onsubmit="event.preventDefault(); var inps = this.querySelectorAll('input'); var name = inps[0] ? inps[0].value : ''; if(name){ alert('Vielen Dank für Ihre Bestellung, ' + name + '!\n\nIhre Anfrage für das Print-Abonnement der Lebenslinie (2x im Jahr frei Haus) wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigung.'); this.reset(); }" style="display: flex; flex-direction: column; gap: 8px;">
             <input type="text" placeholder="Vor- und Nachname..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="Straße und Hausnummer..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
             <input type="text" placeholder="PLZ und Ort..." required style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #CBD5E1; border-radius: 4px; font-size: 0.8rem; font-family: inherit; outline: none; background: #FFFFFF;" onfocus="this.style.borderColor='#6B8272';" onblur="this.style.borderColor='#CBD5E1';" />
