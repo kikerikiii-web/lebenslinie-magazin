@@ -765,3 +765,9 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+
+
+@keyframes newsTickerScroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
