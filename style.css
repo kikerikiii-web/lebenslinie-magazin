@@ -771,3 +771,382 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
 }
+
+
+/* ==========================================================================
+   INTERACTIVE 3D FLIPBOOK ENGINE STYLES (STPAGEFLIP & PDF.JS INTEGRATION)
+   ========================================================================== */
+
+.flipbook-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    background: rgba(22, 33, 26, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.flipbook-header {
+    height: 60px;
+    background: rgba(18, 28, 22, 0.92);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 20;
+    color: #FFFFFF;
+}
+
+.flipbook-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flipbook-brand-badge {
+    background: #6B8272;
+    color: #FFFFFF;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.flipbook-title {
+    margin: 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #F8F6F0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 40vw;
+}
+
+.flipbook-page-count-badge {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #D6D0C4;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.flipbook-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.flipbook-action-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #F8F6F0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.flipbook-action-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+.flipbook-action-btn.active {
+    background: #6B8272;
+    border-color: #6B8272;
+    color: #FFFFFF;
+}
+
+.flipbook-download-btn {
+    background: #6B8272;
+    border-color: #6B8272;
+}
+.flipbook-download-btn:hover {
+    background: #556B5B;
+    border-color: #556B5B;
+}
+
+.flipbook-close-btn {
+    background: rgba(235, 87, 87, 0.2);
+    border: 1px solid rgba(235, 87, 87, 0.4);
+    color: #FFB3B3;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.flipbook-close-btn:hover {
+    background: rgba(235, 87, 87, 0.8);
+    color: #FFFFFF;
+}
+
+/* CENTER STAGE */
+.flipbook-stage {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.flipbook-viewport {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;
+    transform-origin: center center;
+}
+
+.flipbook-container {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+/* FLOATING NAV ARROWS */
+.flipbook-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(18, 28, 22, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    font-size: 2rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 30;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.flipbook-nav-arrow:hover {
+    background: #6B8272;
+    border-color: #6B8272;
+    transform: translateY(-50%) scale(1.08);
+}
+.flipbook-arrow-prev { left: 24px; }
+.flipbook-arrow-next { right: 24px; }
+
+/* BOTTOM FLOATING TOOLBAR */
+.flipbook-toolbar {
+    height: 54px;
+    background: rgba(18, 28, 22, 0.92);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 0 1.5rem;
+    z-index: 20;
+    color: #FFFFFF;
+}
+
+.flipbook-toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.flipbook-toolbar-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.flipbook-tool-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #F8F6F0;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+}
+.flipbook-tool-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+}
+
+.flipbook-page-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 3px 10px;
+    font-size: 0.85rem;
+    color: #D6D0C4;
+}
+
+.flipbook-page-indicator input {
+    width: 44px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 2px 4px;
+    outline: none;
+}
+.flipbook-page-indicator input:focus {
+    border-color: #6B8272;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* THUMBNAILS DRAWER */
+.flipbook-thumbnails-drawer {
+    position: absolute;
+    bottom: 54px;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background: rgba(14, 22, 17, 0.98);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    z-index: 25;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+.flipbook-thumbnails-drawer.open {
+    transform: translateY(0);
+}
+
+.flipbook-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.flipbook-drawer-header h4 {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #D6D0C4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.flipbook-drawer-header button {
+    background: none;
+    border: none;
+    color: #D6D0C4;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.flipbook-thumbnails-grid {
+    flex: 1;
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+.flipbook-thumb-item {
+    flex: 0 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.flipbook-thumb-item:hover {
+    transform: translateY(-3px);
+}
+.flipbook-thumb-item img {
+    height: 105px;
+    width: auto;
+    border-radius: 3px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    object-fit: contain;
+}
+.flipbook-thumb-item.active img {
+    border-color: #6B8272;
+    box-shadow: 0 0 0 2px #6B8272, 0 4px 14px rgba(107, 130, 114, 0.5);
+}
+.flipbook-thumb-item span {
+    font-size: 0.72rem;
+    color: #A0AEC0;
+    font-weight: 600;
+}
+
+/* LOADING STATE */
+.flipbook-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 15;
+    background: rgba(22, 33, 26, 0.85);
+}
+.flipbook-spinner {
+    width: 44px;
+    height: 44px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #6B8272;
+    border-radius: 50%;
+    animation: flipbookSpin 0.8s linear infinite;
+}
+@keyframes flipbookSpin {
+    to { transform: rotate(360deg); }
+}
+.flipbook-loading p {
+    color: #F8F6F0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .flipbook-title { max-width: 25vw; font-size: 0.95rem; }
+    .flipbook-action-btn .btn-text { display: none; }
+    .flipbook-arrow-prev { left: 8px; width: 40px; height: 40px; font-size: 1.5rem; }
+    .flipbook-arrow-next { right: 8px; width: 40px; height: 40px; font-size: 1.5rem; }
+    .flipbook-header { padding: 0 0.8rem; }
+    .flipbook-toolbar { padding: 0 0.8rem; gap: 8px; }
+}

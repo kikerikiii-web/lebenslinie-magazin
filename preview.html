@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lebenslinie Magazin — Gesundheitsmagazin für Würzburg & Mainfranken</title>
     <link rel="stylesheet" href="style.css">
+    <!-- PDF.js and StPageFlip for Interactive Flipbook -->
+    <script src="assets/js/pdf.min.js"></script>
+    <script src="assets/js/page-flip.browser.js"></script>
     
     <!-- FONTS: Editorial Serif (Cormorant Garamond & Playfair Display) + Clean Sans (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3697,677 +3700,650 @@
                 </div>
 
                 <div id="heftarchiv-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
-                    
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="LL-1-2026-Titel.png" alt="Ausgabe 1 / 2026" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+
+        <div class="heft-card" data-year="2026" data-issue-index="0" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1 / 2026', 'LL-1-2026-web.pdf', 'LL-1-2026-web.pdf', 'heftarchiv_covers/Ausgabe_1_2026.jpg', 0);">
+                <img src="heftarchiv_covers/Ausgabe_1_2026.jpg" alt="Ausgabe 1 / 2026" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1 / 2026</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1 / 2026
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2026 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1 / 2026', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1 / 2026', 'LL-1-2026-web.pdf', 'LL-1-2026-web.pdf', 'heftarchiv_covers/Ausgabe_1_2026.jpg', 0);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="LL-1-2026-web.pdf" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2025.jpg" alt="Ausgabe 2/2025" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2025" data-issue-index="1" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2025', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2025-web.pdf', 'https://www.lebenslinie-magazin.de/download/19546/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2025.jpg', 1);">
+                <img src="heftarchiv_covers/Ausgabe_2_2025.jpg" alt="Ausgabe 2/2025" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2025</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2025
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2025 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2025', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2025', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2025-web.pdf', 'https://www.lebenslinie-magazin.de/download/19546/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2025.jpg', 1);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/19546/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2025.jpg" alt="Ausgabe 1/2025" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2025" data-issue-index="2" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2025', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2025-web.pdf', 'https://www.lebenslinie-magazin.de/download/19106/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2025.jpg', 2);">
+                <img src="heftarchiv_covers/Ausgabe_1_2025.jpg" alt="Ausgabe 1/2025" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2025</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2025
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2025 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2025', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2025', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2025-web.pdf', 'https://www.lebenslinie-magazin.de/download/19106/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2025.jpg', 2);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/19106/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2024.jpg" alt="Ausgabe 2/2024" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2024" data-issue-index="3" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2024', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2024-web.pdf', 'https://www.lebenslinie-magazin.de/download/18280/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2024.jpg', 3);">
+                <img src="heftarchiv_covers/Ausgabe_2_2024.jpg" alt="Ausgabe 2/2024" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2024</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2024
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2024 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2024', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2024', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2024-web.pdf', 'https://www.lebenslinie-magazin.de/download/18280/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2024.jpg', 3);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/18280/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2024.jpg" alt="Ausgabe 1/2024" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2024" data-issue-index="4" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2024', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2024-web.pdf', 'https://www.lebenslinie-magazin.de/download/17511/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2024.jpg', 4);">
+                <img src="heftarchiv_covers/Ausgabe_1_2024.jpg" alt="Ausgabe 1/2024" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2024</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2024
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2024 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2024', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2024', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2024-web.pdf', 'https://www.lebenslinie-magazin.de/download/17511/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2024.jpg', 4);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/17511/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2023.jpg" alt="Ausgabe 2/2023" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2023" data-issue-index="5" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2023', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2023-web.pdf', 'https://www.lebenslinie-magazin.de/download/15755/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2023.jpg', 5);">
+                <img src="heftarchiv_covers/Ausgabe_2_2023.jpg" alt="Ausgabe 2/2023" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2023</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2023
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2023 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2023', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2023', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2023-web.pdf', 'https://www.lebenslinie-magazin.de/download/15755/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2023.jpg', 5);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/15755/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2023.jpg" alt="Ausgabe 1/2023" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2023" data-issue-index="6" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2023', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2023-web.pdf', 'https://www.lebenslinie-magazin.de/download/15218/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2023.jpg', 6);">
+                <img src="heftarchiv_covers/Ausgabe_1_2023.jpg" alt="Ausgabe 1/2023" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2023</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2023
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2023 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2023', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2023', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2023-web.pdf', 'https://www.lebenslinie-magazin.de/download/15218/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2023.jpg', 6);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/15218/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2022.jpg" alt="Ausgabe 2/2022" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2022" data-issue-index="7" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2022', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2-2022-web.pdf', 'https://www.lebenslinie-magazin.de/download/14626/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2022.jpg', 7);">
+                <img src="heftarchiv_covers/Ausgabe_2_2022.jpg" alt="Ausgabe 2/2022" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2022</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2022
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2022 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2022', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2022', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2-2022-web.pdf', 'https://www.lebenslinie-magazin.de/download/14626/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2022.jpg', 7);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/14626/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2022.jpg" alt="Ausgabe 1/2022" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2022" data-issue-index="8" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2022', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2022-web.pdf', 'https://www.lebenslinie-magazin.de/download/13223/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2022.jpg', 8);">
+                <img src="heftarchiv_covers/Ausgabe_1_2022.jpg" alt="Ausgabe 1/2022" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2022</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2022
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2022 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2022', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2022', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2022-web.pdf', 'https://www.lebenslinie-magazin.de/download/13223/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2022.jpg', 8);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/13223/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2021.jpg" alt="Ausgabe 2/2021" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2021" data-issue-index="9" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2021', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2021-web-Einzelseiten.pdf', 'https://www.lebenslinie-magazin.de/download/12105/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2021.jpg', 9);">
+                <img src="heftarchiv_covers/Ausgabe_2_2021.jpg" alt="Ausgabe 2/2021" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2021</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2021
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2021 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2021', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2021', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2021-web-Einzelseiten.pdf', 'https://www.lebenslinie-magazin.de/download/12105/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2021.jpg', 9);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/12105/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2021.jpg" alt="Ausgabe 1/2021" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2021" data-issue-index="10" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2021', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2021-web.pdf', 'https://www.lebenslinie-magazin.de/download/11369/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2021.jpg', 10);">
+                <img src="heftarchiv_covers/Ausgabe_1_2021.jpg" alt="Ausgabe 1/2021" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2021</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2021
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2021 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2021', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2021', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2021-web.pdf', 'https://www.lebenslinie-magazin.de/download/11369/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2021.jpg', 10);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/11369/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2020.jpg" alt="Ausgabe 2/2020" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2020" data-issue-index="11" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2020', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2020-webversion.pdf', 'https://www.lebenslinie-magazin.de/download/10581/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2020.jpg', 11);">
+                <img src="heftarchiv_covers/Ausgabe_2_2020.jpg" alt="Ausgabe 2/2020" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2020</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2020
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2020 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2020', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2020', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2020-webversion.pdf', 'https://www.lebenslinie-magazin.de/download/10581/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2020.jpg', 11);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/10581/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2020.jpg" alt="Ausgabe 1/2020" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2020" data-issue-index="12" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2020', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2020-web.pdf', 'https://www.lebenslinie-magazin.de/download/9841/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2020.jpg', 12);">
+                <img src="heftarchiv_covers/Ausgabe_1_2020.jpg" alt="Ausgabe 1/2020" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2020</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2020
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2020 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2020', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2020', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2020-web.pdf', 'https://www.lebenslinie-magazin.de/download/9841/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2020.jpg', 12);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/9841/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2019.jpg" alt="Ausgabe 2/2019" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2019" data-issue-index="13" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2019', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-02-2019-web.pdf', 'https://www.lebenslinie-magazin.de/download/9066/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2019.jpg', 13);">
+                <img src="heftarchiv_covers/Ausgabe_2_2019.jpg" alt="Ausgabe 2/2019" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2019</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2019
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2019 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2019', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2019', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-02-2019-web.pdf', 'https://www.lebenslinie-magazin.de/download/9066/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2019.jpg', 13);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/9066/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2019.jpg" alt="Ausgabe 1/2019" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2019" data-issue-index="14" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2019', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-01-2019-web Kopie.pdf', 'https://www.lebenslinie-magazin.de/download/8315/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2019.jpg', 14);">
+                <img src="heftarchiv_covers/Ausgabe_1_2019.jpg" alt="Ausgabe 1/2019" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2019</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2019
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2019 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2019', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2019', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-01-2019-web Kopie.pdf', 'https://www.lebenslinie-magazin.de/download/8315/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2019.jpg', 14);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/8315/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2018.jpg" alt="Ausgabe 2/2018" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2018" data-issue-index="15" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2018', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-10-2018-Webversion2.pdf', 'https://www.lebenslinie-magazin.de/download/7438/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2018.jpg', 15);">
+                <img src="heftarchiv_covers/Ausgabe_2_2018.jpg" alt="Ausgabe 2/2018" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2018</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2018
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2018 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2018', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2018', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-10-2018-Webversion2.pdf', 'https://www.lebenslinie-magazin.de/download/7438/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2018.jpg', 15);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/7438/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2018.jpg" alt="Ausgabe 1/2018" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2018" data-issue-index="16" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2018', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April2018_web.pdf', 'https://www.lebenslinie-magazin.de/download/6787/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2018.jpg', 16);">
+                <img src="heftarchiv_covers/Ausgabe_1_2018.jpg" alt="Ausgabe 1/2018" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2018</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2018
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2018 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2018', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2018', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April2018_web.pdf', 'https://www.lebenslinie-magazin.de/download/6787/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2018.jpg', 16);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/6787/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_2_2017.jpg" alt="Ausgabe 2/2017" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2017" data-issue-index="17" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 2/2017', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Oktober_2017_web.pdf', 'https://www.lebenslinie-magazin.de/download/5998/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2017.jpg', 17);">
+                <img src="heftarchiv_covers/Ausgabe_2_2017.jpg" alt="Ausgabe 2/2017" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 2/2017</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 2/2017
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2017 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 2/2017', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 2/2017', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Oktober_2017_web.pdf', 'https://www.lebenslinie-magazin.de/download/5998/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_2_2017.jpg', 17);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/5998/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_1_2017.jpg" alt="Ausgabe 1/2017" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2017" data-issue-index="18" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 1/2017', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April_2017_web.pdf', 'https://www.lebenslinie-magazin.de/download/5089/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2017.jpg', 18);">
+                <img src="heftarchiv_covers/Ausgabe_1_2017.jpg" alt="Ausgabe 1/2017" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 1/2017</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 1/2017
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2017 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 1/2017', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 1/2017', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April_2017_web.pdf', 'https://www.lebenslinie-magazin.de/download/5089/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_1_2017.jpg', 18);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/5089/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_02_2016.jpg" alt="Ausgabe 02/2016" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2016" data-issue-index="19" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 02/2016', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2016_web_NEU.pdf', 'https://www.lebenslinie-magazin.de/download/4114/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_02_2016.jpg', 19);">
+                <img src="heftarchiv_covers/Ausgabe_02_2016.jpg" alt="Ausgabe 02/2016" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 02/2016</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 02/2016
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2016 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 02/2016', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 02/2016', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2016_web_NEU.pdf', 'https://www.lebenslinie-magazin.de/download/4114/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_02_2016.jpg', 19);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/4114/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_01_2016.jpg" alt="Ausgabe 01/2016" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2016" data-issue-index="20" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 01/2016', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_03_2016_web.pdf', 'https://www.lebenslinie-magazin.de/download/3067/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_01_2016.jpg', 20);">
+                <img src="heftarchiv_covers/Ausgabe_01_2016.jpg" alt="Ausgabe 01/2016" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 01/2016</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 01/2016
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2016 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 01/2016', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 01/2016', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_03_2016_web.pdf', 'https://www.lebenslinie-magazin.de/download/3067/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_01_2016.jpg', 20);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/3067/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_02_2015.jpg" alt="Ausgabe 02/2015" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2015" data-issue-index="21" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 02/2015', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2015_web.pdf', 'https://www.lebenslinie-magazin.de/download/1840/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_02_2015.jpg', 21);">
+                <img src="heftarchiv_covers/Ausgabe_02_2015.jpg" alt="Ausgabe 02/2015" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 02/2015</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 02/2015
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2015 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 02/2015', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 02/2015', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2015_web.pdf', 'https://www.lebenslinie-magazin.de/download/1840/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_02_2015.jpg', 21);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/1840/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
 
-        <div class="heft-card" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative;">
-                <img src="heftarchiv_covers/Ausgabe_01_2015.jpg" alt="Ausgabe 01/2015" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px;" />
+        <div class="heft-card" data-year="2015" data-issue-index="22" style="background: #FFF; border-radius: 12px; overflow: hidden; border: 1px solid #EAE5D9; box-shadow: 0 6px 22px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+            <div style="height: 280px; background: #F8F6F0; display: flex; align-items: center; justify-content: center; padding: 1.2rem; position: relative; cursor: pointer;" onclick="window.openPdfViewerModal('Ausgabe 01/2015', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Ausgabe1_Maerz_2015.pdf', 'https://www.lebenslinie-magazin.de/download/900/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_01_2015.jpg', 22);">
+                <img src="heftarchiv_covers/Ausgabe_01_2015.jpg" alt="Ausgabe 01/2015" style="max-height: 100%; max-width: 100%; object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.18); border-radius: 4px; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';" />
                 <span style="position: absolute; top: 14px; left: 14px; background: #768A76; color: #FFF; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em;">Ausgabe 01/2015</span>
             </div>
             <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <h3 style="font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #1A1A1A; margin: 0 0 0.4rem 0; font-weight: 600;">
                         Lebenslinie Ausgabe 01/2015
                     </h3>
                     <p style="font-size: 0.85rem; color: #8F7A5C; font-weight: 600; margin-bottom: 0.6rem;">
-                        Magazin-Ausgabe für Würzburg & Mainfranken
+                        Magazin-Ausgabe 2015 für Würzburg &amp; Mainfranken
                     </p>
                     <p style="font-size: 0.88rem; color: #5A6571; line-height: 1.5; margin-bottom: 1.2rem;">
-                        Vollständige E-Paper Ausgabe mit allen Fachbeiträgen, Interviews und Praxistipps.
+                        Interaktives E-Paper Flipbook mit realistischer Blätteranimation aller Fachbeiträge und Interviews.
                     </p>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.6rem; border-top: 1px solid #F0ECE1; padding-top: 1rem;">
-                    <a href="javascript:void(0)" onclick="if(window.openPdfViewerModal) window.openPdfViewerModal('Ausgabe 01/2015', 'LL-1-2026-web.pdf');" style="background: #768A76; color: #FFF; text-align: center; text-decoration: none; padding: 9px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                        📖 E-Paper lesen
-                    </a>
-                    <a href="LL-1-2026-web.pdf" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <button type="button" onclick="window.openPdfViewerModal('Ausgabe 01/2015', 'https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Ausgabe1_Maerz_2015.pdf', 'https://www.lebenslinie-magazin.de/download/900/?tmstv=1786609317', 'heftarchiv_covers/Ausgabe_01_2015.jpg', 22);" style="background: #768A76; color: #FFF; text-align: center; border: none; padding: 10px 14px; font-size: 0.84rem; font-weight: 700; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.background='#556B5B';" onmouseout="this.style.background='#768A76';">
+                        📖 Interaktives Flipbook lesen
+                    </button>
+                    <a href="https://www.lebenslinie-magazin.de/download/900/?tmstv=1786609317" target="_blank" rel="noopener" download style="background: #F4F1EA; color: #4A5568; text-align: center; text-decoration: none; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#EAE5D9';" onmouseout="this.style.background='#F4F1EA';">
                         📥 PDF Download
                     </a>
                 </div>
             </div>
         </div>
-    
-                </div>
-
-                <div style="margin-top: 3rem; text-align: center;">
-                    <button onclick="return switchView('home');" style="background: #FFFFFF; border: 2px solid #768A76; color: #768A76; padding: 12px 28px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 0.92rem;">← Zurück zur Startseite</button>
                 </div>
             </main>
 
@@ -9244,14 +9220,89 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         </div>
     </div>
 
-    <!-- ==================== PDF FLIPBOOK MODAL ==================== -->
-    <div id="pdf-viewer-modal" style="display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); padding: 1.5rem; flex-direction: column;">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; color: #FFF;">
-            <h3 id="pdf-modal-title" style="margin: 0; font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-size: 1.7rem; font-weight: 600;">Lebenslinie Ausgabe</h3>
-            <button onclick="document.getElementById('pdf-viewer-modal').style.display='none';" style="background: rgba(255,255,255,0.2); color: #FFF; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">✕ Schließen</button>
+        <!-- ==================== INTERACTIVE 3D FLIPBOOK MODAL ==================== -->
+    <div id="pdf-viewer-modal" class="flipbook-modal-overlay" style="display: none;">
+        <!-- Top Header Bar -->
+        <div class="flipbook-header">
+            <div class="flipbook-title-group">
+                <span class="flipbook-brand-badge">LEBENSLINIE E-PAPER</span>
+                <h3 id="pdf-modal-title" class="flipbook-title">Lebenslinie Ausgabe 1 / 2026</h3>
+                <span id="flipbook-total-pages-badge" class="flipbook-page-count-badge">80 Seiten</span>
+            </div>
+            <div class="flipbook-header-actions">
+                <button id="flipbook-btn-thumbnails" class="flipbook-action-btn" onclick="window.toggleFlipbookThumbnails();" title="Seitenübersicht anzeigen">
+                    <span>📑</span> <span class="btn-text">Seiten</span>
+                </button>
+                <button id="flipbook-btn-sound" class="flipbook-action-btn active" onclick="window.toggleFlipbookSound();" title="Blätterton ein/aus">
+                    <span id="flipbook-sound-icon">🔊</span>
+                </button>
+                <a id="pdf-modal-download-btn" href="LL-1-2026-web.pdf" download class="flipbook-action-btn flipbook-download-btn" title="PDF herunterladen">
+                    <span>📥</span> <span class="btn-text">PDF Download</span>
+                </a>
+                <button class="flipbook-close-btn" onclick="window.closePdfViewerModal();" title="Schließen (Esc)">
+                    ✕
+                </button>
+            </div>
         </div>
-        <div style="flex-grow: 1; margin-top: 1rem; background: #2D3748; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-            <iframe id="pdf-modal-iframe" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+
+        <!-- Main Flipbook Center Stage -->
+        <div class="flipbook-stage" id="flipbook-stage">
+            <!-- Prev/Next floating navigation arrows -->
+            <button id="flipbook-arrow-prev" class="flipbook-nav-arrow flipbook-arrow-prev" onclick="window.flipbookPrev();" title="Vorherige Seite (←)">
+                ‹
+            </button>
+            <button id="flipbook-arrow-next" class="flipbook-nav-arrow flipbook-arrow-next" onclick="window.flipbookNext();" title="Nächste Seite (→)">
+                ›
+            </button>
+
+            <!-- Loading spinner -->
+            <div id="flipbook-loading" class="flipbook-loading">
+                <div class="flipbook-spinner"></div>
+                <p id="flipbook-loading-text">Magazin wird geladen...</p>
+            </div>
+
+            <!-- Flipbook viewport container -->
+            <div class="flipbook-viewport" id="flipbook-viewport">
+                <div id="flipbook-container" class="flipbook-container"></div>
+            </div>
+
+            <!-- Fallback container -->
+            <div id="flipbook-fallback" class="flipbook-fallback" style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center;">
+                <iframe id="pdf-modal-iframe" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+            </div>
+        </div>
+
+        <!-- Bottom Floating Toolbar -->
+        <div class="flipbook-toolbar">
+            <div class="flipbook-toolbar-group">
+                <button class="flipbook-tool-btn" onclick="window.flipbookFirst();" title="Zur ersten Seite">|‹</button>
+                <button class="flipbook-tool-btn" onclick="window.flipbookPrev();" title="Vorherige Seite">‹</button>
+                <div class="flipbook-page-indicator">
+                    <span>Seite</span>
+                    <input type="number" id="flipbook-page-input" min="1" max="80" value="1" onchange="window.flipbookGoToInput(this.value);" onkeydown="if(event.key==='Enter') window.flipbookGoToInput(this.value);" />
+                    <span id="flipbook-page-total">/ 80</span>
+                </div>
+                <button class="flipbook-tool-btn" onclick="window.flipbookNext();" title="Nächste Seite">›</button>
+                <button class="flipbook-tool-btn" onclick="window.flipbookLast();" title="Zur letzten Seite">›|</button>
+            </div>
+
+            <div class="flipbook-toolbar-divider"></div>
+
+            <div class="flipbook-toolbar-group">
+                <button class="flipbook-tool-btn" onclick="window.flipbookZoomOut();" title="Verkleinern">🔍−</button>
+                <button class="flipbook-tool-btn" id="flipbook-zoom-level" onclick="window.flipbookResetZoom();" title="Zoom zurücksetzen">100%</button>
+                <button class="flipbook-tool-btn" onclick="window.flipbookZoomIn();" title="Vergrößern">🔍+</button>
+                <button class="flipbook-tool-btn" onclick="window.flipbookToggleFullscreen();" title="Vollbildmodus">⛶</button>
+            </div>
+        </div>
+
+        <!-- Slide-up Thumbnails Drawer -->
+        <div id="flipbook-thumbnails-drawer" class="flipbook-thumbnails-drawer">
+            <div class="flipbook-drawer-header">
+                <h4>📑 Seitenübersicht (Klicken zum direkten Umblättern)</h4>
+                <button onclick="window.toggleFlipbookThumbnails();">✕</button>
+            </div>
+            <div id="flipbook-thumbnails-grid" class="flipbook-thumbnails-grid"></div>
         </div>
     </div>
 
@@ -10392,15 +10443,384 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         if (modal) modal.style.display = 'flex';
     };
 
-    // PDF FLIPBOOK MODAL
-    window.openPdfViewerModal = function(title, pdfUrl) {
+        // ==========================================================================
+    // INTERACTIVE 3D FLIPBOOK ENGINE & CONTROLLER (STPAGEFLIP + PDF.JS)
+    // ==========================================================================
+
+    window.heftarchivData = [{"title": "Ausgabe 1 / 2026", "year": "2026", "img": "heftarchiv_covers/Ausgabe_1_2026.jpg", "download_url": "LL-1-2026-web.pdf", "pdf_url": "LL-1-2026-web.pdf"}, {"title": "Ausgabe 2/2025", "year": "2025", "img": "heftarchiv_covers/Ausgabe_2_2025.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/19546/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2025-web.pdf"}, {"title": "Ausgabe 1/2025", "year": "2025", "img": "heftarchiv_covers/Ausgabe_1_2025.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/19106/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2025-web.pdf"}, {"title": "Ausgabe 2/2024", "year": "2024", "img": "heftarchiv_covers/Ausgabe_2_2024.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/18280/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2024-web.pdf"}, {"title": "Ausgabe 1/2024", "year": "2024", "img": "heftarchiv_covers/Ausgabe_1_2024.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/17511/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2024-web.pdf"}, {"title": "Ausgabe 2/2023", "year": "2023", "img": "heftarchiv_covers/Ausgabe_2_2023.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/15755/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2023-web.pdf"}, {"title": "Ausgabe 1/2023", "year": "2023", "img": "heftarchiv_covers/Ausgabe_1_2023.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/15218/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2023-web.pdf"}, {"title": "Ausgabe 2/2022", "year": "2022", "img": "heftarchiv_covers/Ausgabe_2_2022.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/14626/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2-2022-web.pdf"}, {"title": "Ausgabe 1/2022", "year": "2022", "img": "heftarchiv_covers/Ausgabe_1_2022.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/13223/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2022-web.pdf"}, {"title": "Ausgabe 2/2021", "year": "2021", "img": "heftarchiv_covers/Ausgabe_2_2021.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/12105/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2021-web-Einzelseiten.pdf"}, {"title": "Ausgabe 1/2021", "year": "2021", "img": "heftarchiv_covers/Ausgabe_1_2021.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/11369/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2021-web.pdf"}, {"title": "Ausgabe 2/2020", "year": "2020", "img": "heftarchiv_covers/Ausgabe_2_2020.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/10581/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2020-webversion.pdf"}, {"title": "Ausgabe 1/2020", "year": "2020", "img": "heftarchiv_covers/Ausgabe_1_2020.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/9841/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2020-web.pdf"}, {"title": "Ausgabe 2/2019", "year": "2019", "img": "heftarchiv_covers/Ausgabe_2_2019.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/9066/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-02-2019-web.pdf"}, {"title": "Ausgabe 1/2019", "year": "2019", "img": "heftarchiv_covers/Ausgabe_1_2019.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/8315/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-01-2019-web Kopie.pdf"}, {"title": "Ausgabe 2/2018", "year": "2018", "img": "heftarchiv_covers/Ausgabe_2_2018.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/7438/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-10-2018-Webversion2.pdf"}, {"title": "Ausgabe 1/2018", "year": "2018", "img": "heftarchiv_covers/Ausgabe_1_2018.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/6787/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April2018_web.pdf"}, {"title": "Ausgabe 2/2017", "year": "2017", "img": "heftarchiv_covers/Ausgabe_2_2017.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/5998/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Oktober_2017_web.pdf"}, {"title": "Ausgabe 1/2017", "year": "2017", "img": "heftarchiv_covers/Ausgabe_1_2017.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/5089/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April_2017_web.pdf"}, {"title": "Ausgabe 02/2016", "year": "2016", "img": "heftarchiv_covers/Ausgabe_02_2016.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/4114/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2016_web_NEU.pdf"}, {"title": "Ausgabe 01/2016", "year": "2016", "img": "heftarchiv_covers/Ausgabe_01_2016.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/3067/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_03_2016_web.pdf"}, {"title": "Ausgabe 02/2015", "year": "2015", "img": "heftarchiv_covers/Ausgabe_02_2015.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/1840/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2015_web.pdf"}, {"title": "Ausgabe 01/2015", "year": "2015", "img": "heftarchiv_covers/Ausgabe_01_2015.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/900/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Ausgabe1_Maerz_2015.pdf"}];
+
+    // 80 High-Res Pre-extracted Pages for latest Ausgabe 1/2026
+    window.ausgabe1_2026_pages = [];
+    for (var p = 1; p <= 80; p++) {
+        window.ausgabe1_2026_pages.push('pdf_pages/page_' + p + '.jpg');
+    }
+
+    var currentFlipbook = null;
+    var currentZoomScale = 1.0;
+    var flipSoundEnabled = true;
+
+    // Synthetic realistic paper turn sound via Web Audio API
+    function playPaperSound() {
+        if (!flipSoundEnabled) return;
+        try {
+            var AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContext) return;
+            if (!window._flipAudioCtx) window._flipAudioCtx = new AudioContext();
+            var ctx = window._flipAudioCtx;
+            if (ctx.state === 'suspended') ctx.resume();
+            
+            var bufferSize = Math.floor(ctx.sampleRate * 0.12);
+            var buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+            var data = buffer.getChannelData(0);
+            for (var i = 0; i < bufferSize; i++) {
+                data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.3));
+            }
+            var noise = ctx.createBufferSource();
+            noise.buffer = buffer;
+            var filter = ctx.createBiquadFilter();
+            filter.type = 'bandpass';
+            filter.frequency.setValueAtTime(1400, ctx.currentTime);
+            filter.Q.setValueAtTime(1.8, ctx.currentTime);
+            filter.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.12);
+            
+            var gain = ctx.createGain();
+            gain.gain.setValueAtTime(0.18, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.12);
+            
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(ctx.destination);
+            noise.start();
+        } catch(e) {}
+    }
+
+    window.toggleFlipbookSound = function() {
+        flipSoundEnabled = !flipSoundEnabled;
+        var btn = document.getElementById('flipbook-btn-sound');
+        var icon = document.getElementById('flipbook-sound-icon');
+        if (btn) btn.classList.toggle('active', flipSoundEnabled);
+        if (icon) icon.textContent = flipSoundEnabled ? '🔊' : '🔇';
+    };
+
+    window.toggleFlipbookThumbnails = function() {
+        var drawer = document.getElementById('flipbook-thumbnails-drawer');
+        var btn = document.getElementById('flipbook-btn-thumbnails');
+        if (drawer) {
+            var isOpen = drawer.classList.toggle('open');
+            if (btn) btn.classList.toggle('active', isOpen);
+        }
+    };
+
+    window.closePdfViewerModal = function() {
+        var modal = document.getElementById('pdf-viewer-modal');
+        if (modal) modal.style.display = 'none';
+        if (document.fullscreenElement) {
+            try { document.exitFullscreen(); } catch(e){}
+        }
+        var drawer = document.getElementById('flipbook-thumbnails-drawer');
+        if (drawer) drawer.classList.remove('open');
+    };
+
+    window.flipbookNext = function() {
+        if (currentFlipbook) currentFlipbook.flipNext();
+    };
+    window.flipbookPrev = function() {
+        if (currentFlipbook) currentFlipbook.flipPrev();
+    };
+    window.flipbookFirst = function() {
+        if (currentFlipbook) currentFlipbook.flip(0);
+    };
+    window.flipbookLast = function() {
+        if (currentFlipbook) {
+            var count = currentFlipbook.getPageCount();
+            if (count > 0) currentFlipbook.flip(count - 1);
+        }
+    };
+    window.flipbookGoToInput = function(pageVal) {
+        var pageNum = parseInt(pageVal, 10);
+        if (currentFlipbook && !isNaN(pageNum)) {
+            var targetIndex = Math.max(0, Math.min(pageNum - 1, currentFlipbook.getPageCount() - 1));
+            currentFlipbook.flip(targetIndex);
+        }
+    };
+
+    window.flipbookZoomIn = function() {
+        currentZoomScale = Math.min(2.0, currentZoomScale + 0.25);
+        updateFlipbookZoom();
+    };
+    window.flipbookZoomOut = function() {
+        currentZoomScale = Math.max(0.75, currentZoomScale - 0.25);
+        updateFlipbookZoom();
+    };
+    window.flipbookResetZoom = function() {
+        currentZoomScale = 1.0;
+        updateFlipbookZoom();
+    };
+    function updateFlipbookZoom() {
+        var vp = document.getElementById('flipbook-viewport');
+        var zoomLvl = document.getElementById('flipbook-zoom-level');
+        if (vp) vp.style.transform = 'scale(' + currentZoomScale + ')';
+        if (zoomLvl) zoomLvl.textContent = Math.round(currentZoomScale * 100) + '%';
+    }
+
+    window.flipbookToggleFullscreen = function() {
+        var modal = document.getElementById('pdf-viewer-modal');
+        if (!modal) return;
+        if (!document.fullscreenElement) {
+            if (modal.requestFullscreen) modal.requestFullscreen();
+            else if (modal.webkitRequestFullscreen) modal.webkitRequestFullscreen();
+            else if (modal.msRequestFullscreen) modal.msRequestFullscreen();
+        } else {
+            if (document.exitFullscreen) document.exitFullscreen();
+        }
+    };
+
+    function updateFlipbookControls(pageIndex) {
+        var pageNum = (typeof pageIndex === 'number') ? (pageIndex + 1) : 1;
+        var pageInput = document.getElementById('flipbook-page-input');
+        if (pageInput) pageInput.value = pageNum;
+        
+        var thumbs = document.querySelectorAll('.flipbook-thumb-item');
+        thumbs.forEach(function(th, idx) {
+            th.classList.toggle('active', idx === pageIndex);
+        });
+    }
+
+    window.openPdfViewerModal = function(title, pdfUrl, downloadUrl, coverImg, issueIndex) {
         var modal = document.getElementById('pdf-viewer-modal');
         var titleEl = document.getElementById('pdf-modal-title');
-        var iframe = document.getElementById('pdf-modal-iframe');
-        if (titleEl) titleEl.textContent = 'Lebenslinie — ' + title;
-        if (iframe) iframe.src = pdfUrl;
-        if (modal) modal.style.display = 'flex';
+        var downloadBtn = document.getElementById('pdf-modal-download-btn');
+        var loadingEl = document.getElementById('flipbook-loading');
+        var loadingText = document.getElementById('flipbook-loading-text');
+        var fallbackEl = document.getElementById('flipbook-fallback');
+        var viewportEl = document.getElementById('flipbook-viewport');
+        var container = document.getElementById('flipbook-container');
+        
+        if (!modal || !container) return;
+        
+        modal.style.display = 'flex';
+        currentZoomScale = 1.0;
+        updateFlipbookZoom();
+        
+        var resolvedTitle = title || 'Lebenslinie Ausgabe 1 / 2026';
+        var resolvedDownload = downloadUrl || pdfUrl || 'LL-1-2026-web.pdf';
+        var resolvedCover = coverImg || 'LL-1-2026-Titel.png';
+        
+        if (titleEl) titleEl.textContent = 'Lebenslinie — ' + resolvedTitle;
+        if (downloadBtn) {
+            downloadBtn.href = resolvedDownload;
+            downloadBtn.setAttribute('download', resolvedTitle.replace(/[\/\s]/g, '_') + '.pdf');
+        }
+        
+        if (fallbackEl) fallbackEl.style.display = 'none';
+        if (viewportEl) viewportEl.style.display = 'flex';
+        if (loadingEl) loadingEl.style.display = 'flex';
+        if (loadingText) loadingText.textContent = 'Bereite E-Paper Flipbook vor...';
+        
+        var isLatest = resolvedTitle.indexOf('1 / 2026') !== -1 || resolvedTitle.indexOf('1/2026') !== -1 || (pdfUrl && pdfUrl.indexOf('LL-1-2026') !== -1);
+        
+        if (isLatest) {
+            initPageFlipWithImages(window.ausgabe1_2026_pages, 80, resolvedTitle);
+        } else {
+            renderPdfPagesOrFallback(pdfUrl, resolvedCover, resolvedTitle, resolvedDownload);
+        }
     };
+
+    function initPageFlipWithImages(imageUrls, totalPages, title) {
+        var container = document.getElementById('flipbook-container');
+        var stage = document.getElementById('flipbook-stage');
+        var loadingEl = document.getElementById('flipbook-loading');
+        var pagesBadge = document.getElementById('flipbook-total-pages-badge');
+        var pageTotalEl = document.getElementById('flipbook-page-total');
+        var pageInput = document.getElementById('flipbook-page-input');
+        
+        if (pagesBadge) pagesBadge.textContent = totalPages + ' Seiten';
+        if (pageTotalEl) pageTotalEl.textContent = '/ ' + totalPages;
+        if (pageInput) {
+            pageInput.max = totalPages;
+            pageInput.value = 1;
+        }
+        
+        if (currentFlipbook) {
+            try { currentFlipbook.destroy(); } catch(e){}
+            currentFlipbook = null;
+        }
+        container.innerHTML = '';
+        
+        var stageW = stage.clientWidth || window.innerWidth;
+        var stageH = stage.clientHeight || (window.innerHeight - 120);
+        var isMobile = stageW < 768;
+        
+        var availW = Math.max(300, stageW - (isMobile ? 30 : 120));
+        var availH = Math.max(400, stageH - 30);
+        
+        var pageW = isMobile ? availW : Math.floor(availW / 2);
+        var pageH = Math.floor(pageW * 1.414);
+        
+        if (pageH > availH) {
+            pageH = availH;
+            pageW = Math.floor(pageH / 1.414);
+        }
+        
+        try {
+            if (typeof St !== 'undefined' && St.PageFlip) {
+                currentFlipbook = new St.PageFlip(container, {
+                    width: pageW,
+                    height: pageH,
+                    size: 'fixed',
+                    minWidth: 260,
+                    maxWidth: 800,
+                    minHeight: 367,
+                    maxHeight: 1130,
+                    drawShadow: true,
+                    maxShadowOpacity: 0.6,
+                    showCover: true,
+                    usePortrait: true,
+                    mobileScrollSupport: false,
+                    flippingTime: 750,
+                    startPage: 0
+                });
+                
+                currentFlipbook.loadFromImages(imageUrls);
+                
+                currentFlipbook.on('flip', function(e) {
+                    updateFlipbookControls(e.data);
+                    playPaperSound();
+                });
+                
+                currentFlipbook.on('init', function() {
+                    if (loadingEl) loadingEl.style.display = 'none';
+                    updateFlipbookControls(0);
+                    buildThumbnails(imageUrls);
+                });
+                
+                setTimeout(function() {
+                    if (loadingEl) loadingEl.style.display = 'none';
+                }, 800);
+            } else {
+                throw new Error('St.PageFlip library not ready');
+            }
+        } catch(err) {
+            console.warn('PageFlip init error:', err);
+            if (loadingEl) loadingEl.style.display = 'none';
+            showFallbackViewer(imageUrls[0] || 'LL-1-2026-Titel.png');
+        }
+    }
+
+    function buildThumbnails(imageUrls) {
+        var grid = document.getElementById('flipbook-thumbnails-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        
+        imageUrls.forEach(function(url, idx) {
+            var item = document.createElement('div');
+            item.className = 'flipbook-thumb-item ' + (idx === 0 ? 'active' : '');
+            item.innerHTML = '<img src="' + url + '" loading="lazy" alt="Seite ' + (idx + 1) + '" /><span>S. ' + (idx + 1) + '</span>';
+            item.onclick = function() {
+                if (currentFlipbook) currentFlipbook.flip(idx);
+            };
+            grid.appendChild(item);
+        });
+    }
+
+    function renderPdfPagesOrFallback(pdfUrl, coverImg, title, downloadUrl) {
+        var loadingEl = document.getElementById('flipbook-loading');
+        var loadingText = document.getElementById('flipbook-loading-text');
+        var fallbackEl = document.getElementById('flipbook-fallback');
+        var viewportEl = document.getElementById('flipbook-viewport');
+        
+        if (typeof pdfjsLib !== 'undefined' && pdfUrl) {
+            if (loadingText) loadingText.textContent = 'Lade E-Paper PDF (' + title + ')...';
+            
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/js/pdf.worker.min.js';
+            
+            var loadingTask = pdfjsLib.getDocument({
+                url: pdfUrl,
+                cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/cmaps/',
+                cMapPacked: true
+            });
+            
+            loadingTask.promise.then(function(pdfDoc) {
+                var numPages = pdfDoc.numPages;
+                if (loadingText) loadingText.textContent = 'Rendere ' + numPages + ' Magazinseiten...';
+                
+                var renderPromises = [];
+                var renderedPages = new Array(numPages);
+                var pagesRenderedCount = 0;
+                
+                for (var p = 1; p <= numPages; p++) {
+                    (function(pageNumber) {
+                        var pPromise = pdfDoc.getPage(pageNumber).then(function(page) {
+                            var viewport = page.getViewport({ scale: 1.5 });
+                            var canvas = document.createElement('canvas');
+                            var ctx = canvas.getContext('2d');
+                            canvas.width = viewport.width;
+                            canvas.height = viewport.height;
+                            
+                            return page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function() {
+                                renderedPages[pageNumber - 1] = canvas.toDataURL('image/jpeg', 0.85);
+                                pagesRenderedCount++;
+                                if (loadingText) loadingText.textContent = 'Rendere Seite ' + pagesRenderedCount + ' von ' + numPages + '...';
+                            });
+                        });
+                        renderPromises.push(pPromise);
+                    })(p);
+                }
+                
+                Promise.all(renderPromises).then(function() {
+                    initPageFlipWithImages(renderedPages, numPages, title);
+                }).catch(function(err) {
+                    console.warn('PDF page rendering fallback:', err);
+                    initFallbackFlipbook(coverImg, title, downloadUrl);
+                });
+                
+            }).catch(function(err) {
+                console.warn('PDF.js fetch/CORS fallback:', err);
+                initFallbackFlipbook(coverImg, title, downloadUrl);
+            });
+        } else {
+            initFallbackFlipbook(coverImg, title, downloadUrl);
+        }
+    }
+
+    function initFallbackFlipbook(coverImg, title, downloadUrl) {
+        var loadingEl = document.getElementById('flipbook-loading');
+        if (loadingEl) loadingEl.style.display = 'none';
+        
+        var pages = [
+            coverImg,
+            coverImg
+        ];
+        initPageFlipWithImages(pages, 2, title);
+    }
+
+    function showFallbackViewer(firstImage) {
+        var fallbackEl = document.getElementById('flipbook-fallback');
+        var viewportEl = document.getElementById('flipbook-viewport');
+        if (viewportEl) viewportEl.style.display = 'none';
+        if (fallbackEl) {
+            fallbackEl.style.display = 'flex';
+            fallbackEl.innerHTML = '<div style="text-align: center; color: #FFF; padding: 2rem;"><img src="' + firstImage + '" style="max-height: 70vh; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 1rem;" /><br/><a href="LL-1-2026-web.pdf" target="_blank" class="flipbook-action-btn flipbook-download-btn">📥 Vollständige PDF anzeigen / herunterladen</a></div>';
+        }
+    }
+
+    // Global Keyboard Listener for Flipbook
+    window.addEventListener('keydown', function(e) {
+        var modal = document.getElementById('pdf-viewer-modal');
+        if (!modal || modal.style.display !== 'flex') return;
+        
+        if (e.key === 'Escape') {
+            window.closePdfViewerModal();
+        } else if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+            window.flipbookNext();
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            window.flipbookPrev();
+        } else if (e.key === 'Home') {
+            window.flipbookFirst();
+        } else if (e.key === 'End') {
+            window.flipbookLast();
+        }
+    });
 
     // HERO SLIDER CONTROLLER
     window.initHeroSlider = function initHeroSlider() {
