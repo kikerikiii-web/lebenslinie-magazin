@@ -793,15 +793,16 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
 }
 
 .flipbook-header {
-    height: 60px;
-    background: rgba(18, 28, 22, 0.92);
+    height: 52px;
+    background: rgba(18, 28, 22, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1.5rem;
-    z-index: 20;
+    padding: 0 1.2rem;
+    z-index: 50;
     color: #FFFFFF;
+    flex-shrink: 0;
 }
 
 .flipbook-title-group {
@@ -907,7 +908,9 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 10px;
+    padding: 6px;
+    width: 100%;
+    height: calc(100vh - 100px);
 }
 
 .flipbook-viewport {
@@ -915,13 +918,17 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
     transition: transform 0.25s ease;
     transform-origin: center center;
 }
 
 .flipbook-container {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
     border-radius: 4px;
+    margin: auto;
+    display: block;
 }
 
 /* FLOATING NAV ARROWS */
@@ -955,16 +962,17 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
 
 /* BOTTOM FLOATING TOOLBAR */
 .flipbook-toolbar {
-    height: 54px;
-    background: rgba(18, 28, 22, 0.92);
+    height: 48px;
+    background: rgba(18, 28, 22, 0.95);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    padding: 0 1.5rem;
-    z-index: 20;
+    gap: 12px;
+    padding: 0 1.2rem;
+    z-index: 50;
     color: #FFFFFF;
+    flex-shrink: 0;
 }
 
 .flipbook-toolbar-group {
@@ -1147,6 +1155,29 @@ h1, h2, h3, h4, h5, h6, .editorial-heading {
     .flipbook-action-btn .btn-text { display: none; }
     .flipbook-arrow-prev { left: 8px; width: 40px; height: 40px; font-size: 1.5rem; }
     .flipbook-arrow-next { right: 8px; width: 40px; height: 40px; font-size: 1.5rem; }
-    .flipbook-header { padding: 0 0.8rem; }
-    .flipbook-toolbar { padding: 0 0.8rem; gap: 8px; }
+    .flipbook-header {
+    height: 52px;
+    background: rgba(18, 28, 22, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+    z-index: 50;
+    color: #FFFFFF;
+    flex-shrink: 0;
+}
+    .flipbook-toolbar {
+    height: 48px;
+    background: rgba(18, 28, 22, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 1.2rem;
+    z-index: 50;
+    color: #FFFFFF;
+    flex-shrink: 0;
+}
 }

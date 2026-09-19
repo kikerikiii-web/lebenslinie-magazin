@@ -10679,7 +10679,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         }
     };
 
-    function initPageFlipWithImages(imageUrls, totalPages, title, startAtPage) {
+        function initPageFlipWithImages(imageUrls, totalPages, title, startAtPage) {
         var container = document.getElementById('flipbook-container');
         var stage = document.getElementById('flipbook-stage');
         var loadingEl = document.getElementById('flipbook-loading');
@@ -10701,33 +10701,45 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         }
         container.innerHTML = '';
         
-        var stageW = stage.clientWidth || window.innerWidth;
-        var stageH = stage.clientHeight || (window.innerHeight - 120);
-        var isMobile = stageW < 650;
-        var useSingle = forceSinglePage || (isMobile && stageW < 500);
+        // Maximize spread dimensions using full window height and width
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var availW = Math.max(300, winW - 24);
+        var availH = Math.max(350, winH - 108); // Subtract header (52px) + toolbar (48px) + small margin
         
-        var maxSpreadW = Math.max(300, stageW - 40);
-        var maxSpreadH = Math.max(350, stageH - 30);
+        var isMobile = winW < 650;
+        var useSingle = forceSinglePage || (isMobile && winW < 500);
         
         var singlePageW, singlePageH;
+        var a4Ratio = 1.4146; // Exact A4 aspect ratio: height / width
         
         if (useSingle) {
-            singlePageW = Math.min(maxSpreadW, 550);
-            singlePageH = Math.floor(singlePageW * 1.4142);
-            if (singlePageH > maxSpreadH) {
-                singlePageH = maxSpreadH;
-                singlePageW = Math.floor(singlePageH / 1.4142);
+            // Single page mode (Portrait)
+            singlePageH = availH;
+            singlePageW = Math.floor(singlePageH / a4Ratio);
+            if (singlePageW > availW) {
+                singlePageW = availW;
+                singlePageH = Math.floor(singlePageW * a4Ratio);
             }
             container.style.width = singlePageW + 'px';
             container.style.height = singlePageH + 'px';
         } else {
-            // Two-page spread (Doppelseite)
-            singlePageW = Math.floor(maxSpreadW / 2);
-            singlePageH = Math.floor(singlePageW * 1.4142);
-            if (singlePageH > maxSpreadH) {
-                singlePageH = maxSpreadH;
-                singlePageW = Math.floor(singlePageH / 1.4142);
+            // Full two-page spread mode (Doppelseite: Links & Rechts)
+            // Total spread width = 2 * singlePageW, total height = singlePageH
+            // Spread aspect ratio: height / (2 * width) = a4Ratio / 2 = 0.7073
+            var maxSpreadW = availW;
+            var maxSpreadH = availH;
+            
+            // Try maximum height first
+            singlePageH = maxSpreadH;
+            singlePageW = Math.floor(singlePageH / a4Ratio);
+            
+            // If 2 pages exceed available width, scale down by width
+            if ((singlePageW * 2) > maxSpreadW) {
+                singlePageW = Math.floor(maxSpreadW / 2);
+                singlePageH = Math.floor(singlePageW * a4Ratio);
             }
+            
             container.style.width = (singlePageW * 2) + 'px';
             container.style.height = singlePageH + 'px';
         }
@@ -10737,18 +10749,18 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 currentFlipbook = new St.PageFlip(container, {
                     width: singlePageW,
                     height: singlePageH,
-                    size: 'stretch',
+                    size: 'fixed',
                     minWidth: 200,
-                    maxWidth: 900,
+                    maxWidth: 1600,
                     minHeight: 282,
-                    maxHeight: 1272,
+                    maxHeight: 2260,
                     drawShadow: true,
                     maxShadowOpacity: 0.55,
                     showCover: true,
                     usePortrait: useSingle ? true : false,
-                    autoSize: true,
+                    autoSize: false,
                     mobileScrollSupport: false,
-                    flippingTime: 750,
+                    flippingTime: 700,
                     startPage: (typeof startAtPage === 'number') ? startAtPage : 0
                 });
                 
@@ -10767,7 +10779,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 
                 setTimeout(function() {
                     if (loadingEl) loadingEl.style.display = 'none';
-                }, 700);
+                }, 600);
             } else {
                 throw new Error('St.PageFlip library not ready');
             }
