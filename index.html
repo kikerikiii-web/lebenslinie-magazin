@@ -11147,17 +11147,17 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     };
 
 
-        // ==========================================================================
-    // 5X HEARTBEAT & WIGGLE ENGINE (STARTS IMMEDIATELY ON SITE LOAD)
+            // ==========================================================================
+    // STRICT AUDIO-SYNCHRONIZED 5X HEARTBEAT & WIGGLE ENGINE
+    // (WACKELN ERST UND NUR WENN DER PULSSCHLAG VOLLSTÄNDIG GELADEN IST & ABSPIELT)
     // ==========================================================================
     (function() {
-        var audio = new Audio('herzschlag.mp3?v=6');
+        var audio = new Audio('herzschlag.mp3?v=7');
         audio.preload = 'auto';
         window.herzschlagAudio = audio;
         
-        var animStartTime = null;
         var animFrameId = null;
-        var hasWiggledOnLoad = false;
+        var hasPlayedSuccessfully = false;
         var beats = [0.70, 2.20, 3.70, 5.15, 6.65];
 
         function getHeartbeatTransform(t) {
@@ -11190,15 +11190,17 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             return { scale: scale, tx: tx, ty: ty, rot: rot };
         }
 
-        function renderHeartbeatLoop(timestamp) {
-            if (!animStartTime) animStartTime = timestamp;
-            var t = (timestamp - animStartTime) / 1000;
-            
-            // If audio is playing and producing sound, sync with audio
-            if (audio && !audio.paused && audio.currentTime > 0) {
-                t = audio.currentTime;
+        function renderAudioLockedFrame() {
+            // STRICT RULE: Wackeln NUR WENN Audio aktiv spielt
+            if (!audio || audio.paused || audio.ended) {
+                var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+                if (slide) slide.style.transform = 'none';
+                if (animFrameId) cancelAnimationFrame(animFrameId);
+                animFrameId = null;
+                return;
             }
 
+            var t = audio.currentTime;
             var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
             if (slide) {
                 var tr = getHeartbeatTransform(t);
@@ -11210,51 +11212,97 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 }
             }
 
-            if (t < 8.25) {
-                animFrameId = requestAnimationFrame(renderHeartbeatLoop);
+            if (t < 8.25 && !audio.paused && !audio.ended) {
+                animFrameId = requestAnimationFrame(renderAudioLockedFrame);
             } else {
                 if (slide) slide.style.transform = 'none';
                 if (animFrameId) cancelAnimationFrame(animFrameId);
+                animFrameId = null;
             }
         }
 
-        function startImmediateHeartbeat() {
-            if (hasWiggledOnLoad) return;
-            hasWiggledOnLoad = true;
+        function startAudioWhenReady() {
+            if (hasPlayedSuccessfully || !audio) return;
             
-            // 1. Start visual pulse immediately on load
-            animStartTime = null;
-            if (animFrameId) cancelAnimationFrame(animFrameId);
-            animFrameId = requestAnimationFrame(renderHeartbeatLoop);
-            
-            // 2. Try playing sound immediately on load
-            if (audio) {
-                audio.currentTime = 0;
-                var playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(function() {
-                        // If browser blocks unmuted audio on initial load, play on first user gesture
-                        var tryPlayOnGesture = function() {
-                            audio.play().catch(function(){});
-                            window.removeEventListener('pointerdown', tryPlayOnGesture);
-                            window.removeEventListener('click', tryPlayOnGesture);
-                            window.removeEventListener('keydown', tryPlayOnGesture);
-                        };
-                        window.addEventListener('pointerdown', tryPlayOnGesture, { once: true, passive: true });
-                        window.addEventListener('click', tryPlayOnGesture, { once: true, passive: true });
-                        window.addEventListener('keydown', tryPlayOnGesture, { once: true, passive: true });
-                    });
-                }
+            // Wait until audio is fully loaded (readyState >= 3 or 4)
+            if (audio.readyState < 3) {
+                audio.addEventListener('canplaythrough', function onCanPlay() {
+                    audio.removeEventListener('canplaythrough', onCanPlay);
+                    attemptPlayback();
+                }, { once: true });
+                audio.load();
+                return;
             }
+            
+            attemptPlayback();
+        }
+
+        function attemptPlayback() {
+            if (hasPlayedSuccessfully || !audio) return;
+            
+            audio.currentTime = 0;
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                    hasPlayedSuccessfully = true;
+                    if (animFrameId) cancelAnimationFrame(animFrameId);
+                    animFrameId = requestAnimationFrame(renderAudioLockedFrame);
+                    removeTriggers();
+                }).catch(function(err) {
+                    // Browser policy blocked unmuted autoplay -> wait for user gesture, NO wiggle until audio actually plays
+                    var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+                    if (slide) slide.style.transform = 'none';
+                });
+            }
+        }
+
+        audio.addEventListener('play', function() {
+            if (animFrameId) cancelAnimationFrame(animFrameId);
+            animFrameId = requestAnimationFrame(renderAudioLockedFrame);
+        });
+
+        audio.addEventListener('ended', function() {
+            if (animFrameId) cancelAnimationFrame(animFrameId);
+            var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+            if (slide) slide.style.transform = 'none';
+        });
+
+        audio.addEventListener('pause', function() {
+            if (animFrameId) cancelAnimationFrame(animFrameId);
+            var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+            if (slide) slide.style.transform = 'none';
+        });
+
+        var triggers = [
+            'mousemove', 'pointermove', 'mouseenter', 'mouseover', 'focus', 
+            'wheel', 'scroll', 'touchstart', 'touchend', 'touchmove', 
+            'pointerdown', 'click', 'keydown'
+        ];
+
+        function onInteraction() {
+            if (!hasPlayedSuccessfully) {
+                startAudioWhenReady();
+            }
+        }
+
+        function removeTriggers() {
+            for (var i = 0; i < triggers.length; i++) {
+                window.removeEventListener(triggers[i], onInteraction, { capture: true, passive: true });
+                document.removeEventListener(triggers[i], onInteraction, { capture: true, passive: true });
+            }
+        }
+
+        for (var i = 0; i < triggers.length; i++) {
+            window.addEventListener(triggers[i], onInteraction, { capture: true, passive: true });
+            document.addEventListener(triggers[i], onInteraction, { capture: true, passive: true });
         }
 
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', startImmediateHeartbeat);
+            document.addEventListener('DOMContentLoaded', startAudioWhenReady);
         } else {
-            startImmediateHeartbeat();
+            startAudioWhenReady();
         }
-        
-        window.addEventListener('load', startImmediateHeartbeat);
+        window.addEventListener('load', startAudioWhenReady);
     })();
 
 </script>
