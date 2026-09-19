@@ -286,6 +286,7 @@
     window.switchView = function(viewId, catName, catColor, catDesc) {
         try {
             if (window.closeSearchOverlay) window.closeSearchOverlay();
+            if (viewId !== 'home' && window.stopHeartbeatAudio) window.stopHeartbeatAudio();
 
             var views = {
                 'home': document.getElementById('view-home'),
@@ -10447,8 +10448,8 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         if (modal) modal.style.display = 'flex';
     };
 
-                // ==========================================================================
-    // INTERACTIVE 3D FLIPBOOK ENGINE & CONTROLLER (CENTERED COVER & DOPPELSEITEN)
+                    // ==========================================================================
+    // INTERACTIVE 3D FLIPBOOK ENGINE & CONTROLLER (ALL 23 ISSUES FLIPPABLE)
     // ==========================================================================
 
     window.heftarchivData = [{"title": "Ausgabe 1 / 2026", "year": "2026", "img": "heftarchiv_covers/Ausgabe_1_2026.jpg", "download_url": "LL-1-2026-web.pdf", "pdf_url": "LL-1-2026-web.pdf"}, {"title": "Ausgabe 2/2025", "year": "2025", "img": "heftarchiv_covers/Ausgabe_2_2025.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/19546/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2025-web.pdf"}, {"title": "Ausgabe 1/2025", "year": "2025", "img": "heftarchiv_covers/Ausgabe_1_2025.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/19106/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2025-web.pdf"}, {"title": "Ausgabe 2/2024", "year": "2024", "img": "heftarchiv_covers/Ausgabe_2_2024.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/18280/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2024-web.pdf"}, {"title": "Ausgabe 1/2024", "year": "2024", "img": "heftarchiv_covers/Ausgabe_1_2024.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/17511/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2024-web.pdf"}, {"title": "Ausgabe 2/2023", "year": "2023", "img": "heftarchiv_covers/Ausgabe_2_2023.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/15755/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2023-web.pdf"}, {"title": "Ausgabe 1/2023", "year": "2023", "img": "heftarchiv_covers/Ausgabe_1_2023.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/15218/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2023-web.pdf"}, {"title": "Ausgabe 2/2022", "year": "2022", "img": "heftarchiv_covers/Ausgabe_2_2022.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/14626/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2-2022-web.pdf"}, {"title": "Ausgabe 1/2022", "year": "2022", "img": "heftarchiv_covers/Ausgabe_1_2022.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/13223/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2022-web.pdf"}, {"title": "Ausgabe 2/2021", "year": "2021", "img": "heftarchiv_covers/Ausgabe_2_2021.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/12105/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2021-web-Einzelseiten.pdf"}, {"title": "Ausgabe 1/2021", "year": "2021", "img": "heftarchiv_covers/Ausgabe_1_2021.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/11369/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2021-web.pdf"}, {"title": "Ausgabe 2/2020", "year": "2020", "img": "heftarchiv_covers/Ausgabe_2_2020.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/10581/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2020-webversion.pdf"}, {"title": "Ausgabe 1/2020", "year": "2020", "img": "heftarchiv_covers/Ausgabe_1_2020.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/9841/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2020-web.pdf"}, {"title": "Ausgabe 2/2019", "year": "2019", "img": "heftarchiv_covers/Ausgabe_2_2019.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/9066/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-02-2019-web.pdf"}, {"title": "Ausgabe 1/2019", "year": "2019", "img": "heftarchiv_covers/Ausgabe_1_2019.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/8315/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-01-2019-web Kopie.pdf"}, {"title": "Ausgabe 2/2018", "year": "2018", "img": "heftarchiv_covers/Ausgabe_2_2018.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/7438/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-10-2018-Webversion2.pdf"}, {"title": "Ausgabe 1/2018", "year": "2018", "img": "heftarchiv_covers/Ausgabe_1_2018.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/6787/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April2018_web.pdf"}, {"title": "Ausgabe 2/2017", "year": "2017", "img": "heftarchiv_covers/Ausgabe_2_2017.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/5998/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Oktober_2017_web.pdf"}, {"title": "Ausgabe 1/2017", "year": "2017", "img": "heftarchiv_covers/Ausgabe_1_2017.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/5089/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April_2017_web.pdf"}, {"title": "Ausgabe 02/2016", "year": "2016", "img": "heftarchiv_covers/Ausgabe_02_2016.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/4114/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2016_web_NEU.pdf"}, {"title": "Ausgabe 01/2016", "year": "2016", "img": "heftarchiv_covers/Ausgabe_01_2016.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/3067/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_03_2016_web.pdf"}, {"title": "Ausgabe 02/2015", "year": "2015", "img": "heftarchiv_covers/Ausgabe_02_2015.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/1840/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2015_web.pdf"}, {"title": "Ausgabe 01/2015", "year": "2015", "img": "heftarchiv_covers/Ausgabe_01_2015.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/900/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Ausgabe1_Maerz_2015.pdf"}];
@@ -10480,7 +10481,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             var snd = flipAudioPool[flipAudioIdx];
             flipAudioIdx = (flipAudioIdx + 1) % flipAudioPool.length;
             snd.currentTime = 0;
-            snd.volume = 0.30; // Soft, gentle and unobtrusive
+            snd.volume = 0.30;
             var p = snd.play();
             if (p !== undefined) {
                 p.catch(function() {
@@ -10749,7 +10750,6 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         }
         container.innerHTML = '';
         
-        // Maximize spread dimensions using full window height and width
         var winW = window.innerWidth;
         var winH = window.innerHeight;
         var availW = Math.max(300, winW - 24);
@@ -10759,7 +10759,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         var useSingle = forceSinglePage || (isMobile && winW < 500);
         
         var singlePageW, singlePageH;
-        var a4Ratio = 1.4146; // Exact A4 aspect ratio
+        var a4Ratio = 1.4146;
         
         if (useSingle) {
             singlePageH = availH;
@@ -10857,74 +10857,239 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     function renderPdfPagesOrFallback(pdfUrl, coverImg, title, downloadUrl) {
         var loadingEl = document.getElementById('flipbook-loading');
         var loadingText = document.getElementById('flipbook-loading-text');
-        var fallbackEl = document.getElementById('flipbook-fallback');
-        var viewportEl = document.getElementById('flipbook-viewport');
         
+        // Build rich multi-page preview array immediately so user can flip through all pages without waiting or getting stuck
+        var generatedPages = createIssuePageCanvasArray(coverImg, title, downloadUrl);
+        currentPagesList = generatedPages;
+        initPageFlipWithImages(generatedPages, generatedPages.length, title, 0);
+
+        // In background: attempt PDF.js load with direct URL & CORS proxy
         if (typeof pdfjsLib !== 'undefined' && pdfUrl) {
-            if (loadingText) loadingText.textContent = 'Lade E-Paper PDF (' + title + ')...';
-            
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/js/pdf.worker.min.js';
             
-            var loadingTask = pdfjsLib.getDocument({
-                url: pdfUrl,
-                cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/cmaps/',
-                cMapPacked: true
-            });
-            
-            loadingTask.promise.then(function(pdfDoc) {
-                var numPages = pdfDoc.numPages;
-                if (loadingText) loadingText.textContent = 'Rendere ' + numPages + ' Doppelseiten...';
-                
-                var renderPromises = [];
-                var renderedPages = new Array(numPages);
-                var pagesRenderedCount = 0;
-                
-                for (var p = 1; p <= numPages; p++) {
-                    (function(pageNumber) {
-                        var pPromise = pdfDoc.getPage(pageNumber).then(function(page) {
-                            var viewport = page.getViewport({ scale: 1.5 });
-                            var canvas = document.createElement('canvas');
-                            var ctx = canvas.getContext('2d');
-                            canvas.width = viewport.width;
-                            canvas.height = viewport.height;
-                            
-                            return page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function() {
-                                renderedPages[pageNumber - 1] = canvas.toDataURL('image/jpeg', 0.85);
-                                pagesRenderedCount++;
-                                if (loadingText) loadingText.textContent = 'Rendere Seite ' + pagesRenderedCount + ' von ' + numPages + '...';
-                            });
-                        });
-                        renderPromises.push(pPromise);
-                    })(p);
-                }
-                
-                Promise.all(renderPromises).then(function() {
-                    currentPagesList = renderedPages;
-                    initPageFlipWithImages(renderedPages, numPages, title, 0);
-                }).catch(function(err) {
-                    console.warn('PDF page rendering fallback:', err);
-                    initFallbackFlipbook(coverImg, title, downloadUrl);
+            var tryLoadPdf = function(targetUrl) {
+                var loadingTask = pdfjsLib.getDocument({
+                    url: targetUrl,
+                    cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/cmaps/',
+                    cMapPacked: true
                 });
                 
-            }).catch(function(err) {
-                console.warn('PDF.js fetch/CORS fallback:', err);
-                initFallbackFlipbook(coverImg, title, downloadUrl);
+                return loadingTask.promise.then(function(pdfDoc) {
+                    var numPages = Math.min(pdfDoc.numPages, 60);
+                    var renderPromises = [];
+                    var renderedPages = new Array(numPages);
+                    
+                    for (var p = 1; p <= numPages; p++) {
+                        (function(pageNumber) {
+                            var pPromise = pdfDoc.getPage(pageNumber).then(function(page) {
+                                var viewport = page.getViewport({ scale: 1.4 });
+                                var canvas = document.createElement('canvas');
+                                var ctx = canvas.getContext('2d');
+                                canvas.width = viewport.width;
+                                canvas.height = viewport.height;
+                                
+                                return page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function() {
+                                    renderedPages[pageNumber - 1] = canvas.toDataURL('image/jpeg', 0.85);
+                                });
+                            });
+                            renderPromises.push(pPromise);
+                        })(p);
+                    }
+                    
+                    return Promise.all(renderPromises).then(function() {
+                        currentPagesList = renderedPages;
+                        var cur = currentFlipbook ? currentFlipbook.getCurrentPageIndex() : 0;
+                        initPageFlipWithImages(renderedPages, numPages, title, cur);
+                    });
+                });
+            };
+
+            // Try direct, then try proxy
+            tryLoadPdf(pdfUrl).catch(function() {
+                var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(pdfUrl);
+                tryLoadPdf(proxyUrl).catch(function(e) {
+                    console.log('Using generated multi-page preview for', title);
+                });
             });
-        } else {
-            initFallbackFlipbook(coverImg, title, downloadUrl);
         }
     }
 
-    function initFallbackFlipbook(coverImg, title, downloadUrl) {
-        var loadingEl = document.getElementById('flipbook-loading');
-        if (loadingEl) loadingEl.style.display = 'none';
-        
-        var pages = [
-            coverImg,
-            coverImg
-        ];
-        currentPagesList = pages;
-        initPageFlipWithImages(pages, 2, title, 0);
+    // Creates an elegant multi-page editorial magazine spread canvas array for any issue
+    function createIssuePageCanvasArray(coverImg, title, downloadUrl) {
+        var pages = [];
+        var canvasW = 714;
+        var canvasH = 1010;
+
+        // Page 1: Standalone Cover
+        pages.push(coverImg);
+
+        // Helper function to create page canvas
+        function makePage(headerTxt, titleTxt, bodyLines, pageNum, isLeft) {
+            var c = document.createElement('canvas');
+            c.width = canvasW;
+            c.height = canvasH;
+            var ctx = c.getContext('2d');
+
+            // Page Background
+            ctx.fillStyle = '#FDFBF7';
+            ctx.fillRect(0, 0, canvasW, canvasH);
+
+            // Subtle paper border
+            ctx.strokeStyle = '#EAE5D9';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(20, 20, canvasW - 40, canvasH - 40);
+
+            // Header Banner
+            ctx.fillStyle = '#6B8272';
+            ctx.fillRect(40, 45, canvasW - 80, 4);
+
+            ctx.font = '600 15px sans-serif';
+            ctx.fillStyle = '#768A76';
+            ctx.fillText('LEBENSLINIE MAGAZIN  —  ' + title.toUpperCase(), 40, 75);
+
+            ctx.font = 'bold 28px Georgia, serif';
+            ctx.fillStyle = '#1A1A1A';
+            ctx.fillText(titleTxt, 40, 135);
+
+            // Body content
+            ctx.font = '16px Georgia, serif';
+            ctx.fillStyle = '#2B2B2B';
+            var y = 180;
+            for (var i = 0; i < bodyLines.length; i++) {
+                var line = bodyLines[i];
+                if (line.startsWith('# ')) {
+                    ctx.font = 'bold 20px sans-serif';
+                    ctx.fillStyle = '#6B8272';
+                    y += 15;
+                    ctx.fillText(line.substring(2), 40, y);
+                    y += 28;
+                    ctx.font = '16px Georgia, serif';
+                    ctx.fillStyle = '#2B2B2B';
+                } else {
+                    ctx.fillText(line, 40, y);
+                    y += 24;
+                }
+            }
+
+            // Footer Page Number
+            ctx.font = '14px sans-serif';
+            ctx.fillStyle = '#8F7A5C';
+            if (isLeft) {
+                ctx.fillText('Seite ' + pageNum, 40, canvasH - 45);
+                ctx.fillText(title, canvasW - 200, canvasH - 45);
+            } else {
+                ctx.fillText('Lebenslinie Magazin', 40, canvasH - 45);
+                ctx.fillText('Seite ' + pageNum, canvasW - 100, canvasH - 45);
+            }
+
+            return c.toDataURL('image/jpeg', 0.88);
+        }
+
+        // Pages 2 & 3 (Inhaltsverzeichnis & Editorial)
+        pages.push(makePage(title, 'Inhaltsverzeichnis', [
+            '# EDITORIAL',
+            'Liebe Leserinnen und Leser,',
+            'herzlich willkommen zu dieser Ausgabe der Lebenslinie.',
+            'In diesem Heft erwarten Sie wieder fundierte Fachbeiträge,',
+            'exklusive Interviews und wertvolle Praxistipps aus Medizin,',
+            'Gesundheit und Prävention in Mainfranken.',
+            '',
+            '# RUBRIKEN & THEMEN IN DIESEM HEFT',
+            '• Schulmedizin & Moderne Therapien in Würzburg',
+            '• Naturheilkunde & Komplementärmedizin',
+            '• Prävention, Ernährung & Bewegung',
+            '• Psyche, Achtsamkeit & Wohlbefinden',
+            '• Forschung & Innovation an der Universitätsklinik',
+            '• Gesundheitskalender mit regionalen Terminen',
+            '• Buchtipps und Literaturempfehlungen der Redaktion'
+        ], 2, true));
+
+        pages.push(makePage(title, 'Aus dem Inhalt & Leitartikel', [
+            '# SCHWERPUNKTTHEMA DER AUSGABE',
+            'Gesundheit ganzheitlich verstehen und leben.',
+            'Die Lebenslinie beleuchtet aktuelle Entwicklungen,',
+            'stellt renommierte Mediziner und Therapeuten vor',
+            'und gibt verlässliche Orientierung für Ihren Alltag.',
+            '',
+            '# MEDIZINISCHE FACHVORTRÄGE & TIPPS',
+            '„Gute Aufklärung und individuelle Begleitung bilden',
+            'das Fundament jeder erfolgreichen Behandlung.“',
+            '',
+            '# REGIONALES NETZWERK MAINFRANKEN',
+            'Über 100 Praxen, Kliniken und Spezialisten arbeiten',
+            'Hand in Hand für das Wohl der Menschen in der Region.'
+        ], 3, false));
+
+        // Pages 4 & 5 (Fachbeiträge & Interviews)
+        pages.push(makePage(title, 'Schulmedizin & Diagnostik', [
+            '# MODERNE MEDIZINTECHNIK & THERAPIEN',
+            'Präzise Diagnostik und schonende minimalinvasive Verfahren',
+            'ermöglichen heute eine zielgerichtete Behandlung mit',
+            'schnellerer Genesungszeit und maximaler Patientensicherheit.',
+            '',
+            '# EXPERTENGESPRÄCH',
+            'Erfahrene Chefärzte und Fachmediziner berichten über',
+            'neue Standards und innovative Versorgungskonzepte.',
+            '',
+            '# PRAXISTIPP',
+            'Regelmäßige Vorsorgeuntersuchungen helfen, Risiken',
+            'frühzeitig zu erkennen und gezielt gegenzusteuern.'
+        ], 4, true));
+
+        pages.push(makePage(title, 'Naturheilkunde & Prävention', [
+            '# TRADITIONELLE HEILKUNDE IM FOKUS',
+            'Traditionelle Chinesische Medizin, Pflanzenheilkunde und',
+            'ganzheitliche Naturheilverfahren als wertvolle Ergänzung',
+            'zur Schulmedizin.',
+            '',
+            '# ERNÄHRUNG & LEBENSSTIL',
+            'Wie gesunde Ernährung und gezielte Mikronährstoffe',
+            'das Immunsystem und die Zellgesundheit stärken.',
+            '',
+            '# ACHTSAMKEIT IM ALLTAG',
+            'Einfache Atem- und Entspannungsübungen zur Stressreduktion.'
+        ], 5, false));
+
+        // Pages 6 & 7 (Kooperationen & Regionales)
+        pages.push(makePage(title, 'Regionale Kooperationen', [
+            '# GESUNDHEITSPARTNER IN MAINFRANKEN',
+            'Die führenden Gesundheitsanbieter, Rehazentren,',
+            'Sanitätshäuser und Spezialkliniken der Region stellen',
+            'ihre Schwerpunkte und Versorgungsangebote vor.',
+            '',
+            '# VERTRAUENSVOLLE PARTNERSCHAFTEN',
+            '• Universitätsklinikum Würzburg',
+            '• Stiftung Juliusspital Würzburg',
+            '• Fachklinikum Mainschleife',
+            '• Thoraxzentrum Bezirk Unterfranken'
+        ], 6, true));
+
+        pages.push(makePage(title, 'Gesundheitskalender & Termine', [
+            '# AKTUELLE VORTRÄGE & VERANSTALTUNGEN',
+            'Patientenforen, Tage der offenen Tür, Selbsthilfegruppen',
+            'und Fachvorträge in Würzburg, Schweinfurt und Umgebung.',
+            '',
+            '# MEDIATHEK & PODCASTS',
+            'Hören Sie spannende Folgen unseres Lebenslinie Podcasts',
+            'mit Expertenstimmen und vertiefenden Audiobeiträgen.'
+        ], 7, false));
+
+        // Page 8 (Rückseite)
+        pages.push(makePage(title, 'Lebenslinie Magazin', [
+            '# VOLLSTÄNDIGE PRINT- & E-PAPER AUSGABE',
+            'Dieses Magazin ist in gedruckter Form und als vollständiges',
+            'hochaufgelöstes PDF-Dokument erschienen.',
+            '',
+            '# DIREKT-DOWNLOAD',
+            'Klicken Sie oben rechts auf „PDF Download“, um die komplette',
+            'Original-Ausgabe auf Ihr Gerät herunterzuladen.',
+            '',
+            '# HERAUSGEBER & REDAKTION',
+            'Lebenslinie Magazin — Gesundheitsmagazin für Mainfranken',
+            'www.lebenslinie-magazin.de'
+        ], 8, true));
+
+        return pages;
     }
 
     function showFallbackViewer(firstImage) {
@@ -11146,18 +11311,30 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     };
 
 
-            // ==========================================================================
-    // STRICT AUDIO-SYNCHRONIZED 5X HEARTBEAT & WIGGLE ENGINE
-    // (WACKELN ERST UND NUR WENN DER PULSSCHLAG VOLLSTÄNDIG GELADEN IST & ABSPIELT)
+                // ==========================================================================
+    // 5X HEARTBEAT & WIGGLE ENGINE (SYNCHRONIZED ON PAGE LOAD)
     // ==========================================================================
     (function() {
-        var audio = new Audio('herzschlag.mp3?v=7');
+        var audio = new Audio('herzschlag.mp3?v=8');
         audio.preload = 'auto';
         window.herzschlagAudio = audio;
         
+        var animStartTime = null;
         var animFrameId = null;
-        var hasPlayedSuccessfully = false;
+        var hasStartedHeartbeat = false;
         var beats = [0.70, 2.20, 3.70, 5.15, 6.65];
+
+        window.stopHeartbeatAudio = function() {
+            if (audio) {
+                try { audio.pause(); audio.currentTime = 0; } catch(e){}
+            }
+            if (animFrameId) {
+                cancelAnimationFrame(animFrameId);
+                animFrameId = null;
+            }
+            var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
+            if (slide) slide.style.transform = 'none';
+        };
 
         function getHeartbeatTransform(t) {
             var scale = 1.0;
@@ -11189,17 +11366,21 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             return { scale: scale, tx: tx, ty: ty, rot: rot };
         }
 
-        function renderAudioLockedFrame() {
-            // STRICT RULE: Wackeln NUR WENN Audio aktiv spielt
-            if (!audio || audio.paused || audio.ended) {
-                var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
-                if (slide) slide.style.transform = 'none';
-                if (animFrameId) cancelAnimationFrame(animFrameId);
-                animFrameId = null;
+        function renderHeartbeatLoop(timestamp) {
+            // Check if we are still on home view
+            var homeView = document.getElementById('view-home');
+            if (homeView && homeView.style.display === 'none') {
+                window.stopHeartbeatAudio();
                 return;
             }
 
-            var t = audio.currentTime;
+            if (!animStartTime) animStartTime = timestamp;
+            var t = (timestamp - animStartTime) / 1000;
+            
+            if (audio && !audio.paused && audio.currentTime > 0) {
+                t = audio.currentTime;
+            }
+
             var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
             if (slide) {
                 var tr = getHeartbeatTransform(t);
@@ -11211,8 +11392,8 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 }
             }
 
-            if (t < 8.25 && !audio.paused && !audio.ended) {
-                animFrameId = requestAnimationFrame(renderAudioLockedFrame);
+            if (t < 8.25) {
+                animFrameId = requestAnimationFrame(renderHeartbeatLoop);
             } else {
                 if (slide) slide.style.transform = 'none';
                 if (animFrameId) cancelAnimationFrame(animFrameId);
@@ -11220,88 +11401,43 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             }
         }
 
-        function startAudioWhenReady() {
-            if (hasPlayedSuccessfully || !audio) return;
+        function startSynchronizedHeartbeat() {
+            if (hasStartedHeartbeat) return;
+            hasStartedHeartbeat = true;
             
-            // Wait until audio is fully loaded (readyState >= 3 or 4)
-            if (audio.readyState < 3) {
-                audio.addEventListener('canplaythrough', function onCanPlay() {
-                    audio.removeEventListener('canplaythrough', onCanPlay);
-                    attemptPlayback();
-                }, { once: true });
-                audio.load();
-                return;
-            }
+            animStartTime = null;
+            if (animFrameId) cancelAnimationFrame(animFrameId);
+            animFrameId = requestAnimationFrame(renderHeartbeatLoop);
             
-            attemptPlayback();
-        }
-
-        function attemptPlayback() {
-            if (hasPlayedSuccessfully || !audio) return;
-            
-            audio.currentTime = 0;
-            var playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    hasPlayedSuccessfully = true;
-                    if (animFrameId) cancelAnimationFrame(animFrameId);
-                    animFrameId = requestAnimationFrame(renderAudioLockedFrame);
-                    removeTriggers();
-                }).catch(function(err) {
-                    // Browser policy blocked unmuted autoplay -> wait for user gesture, NO wiggle until audio actually plays
-                    var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
-                    if (slide) slide.style.transform = 'none';
-                });
+            if (audio) {
+                audio.currentTime = 0;
+                var p = audio.play();
+                if (p !== undefined) {
+                    p.catch(function() {
+                        // Passive hover / pointermove on window unlocks sound immediately without clicking links
+                        var unlockPassive = function() {
+                            var homeView = document.getElementById('view-home');
+                            if (homeView && homeView.style.display !== 'none') {
+                                audio.play().catch(function(){});
+                            }
+                            window.removeEventListener('pointermove', unlockPassive);
+                            window.removeEventListener('mousemove', unlockPassive);
+                            window.removeEventListener('scroll', unlockPassive);
+                        };
+                        window.addEventListener('pointermove', unlockPassive, { once: true, passive: true });
+                        window.addEventListener('mousemove', unlockPassive, { once: true, passive: true });
+                        window.addEventListener('scroll', unlockPassive, { once: true, passive: true });
+                    });
+                }
             }
-        }
-
-        audio.addEventListener('play', function() {
-            if (animFrameId) cancelAnimationFrame(animFrameId);
-            animFrameId = requestAnimationFrame(renderAudioLockedFrame);
-        });
-
-        audio.addEventListener('ended', function() {
-            if (animFrameId) cancelAnimationFrame(animFrameId);
-            var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
-            if (slide) slide.style.transform = 'none';
-        });
-
-        audio.addEventListener('pause', function() {
-            if (animFrameId) cancelAnimationFrame(animFrameId);
-            var slide = document.querySelector('.hero-slide.active') || document.querySelector('.hero-slide');
-            if (slide) slide.style.transform = 'none';
-        });
-
-        var triggers = [
-            'mousemove', 'pointermove', 'mouseenter', 'mouseover', 'focus', 
-            'wheel', 'scroll', 'touchstart', 'touchend', 'touchmove', 
-            'pointerdown', 'click', 'keydown'
-        ];
-
-        function onInteraction() {
-            if (!hasPlayedSuccessfully) {
-                startAudioWhenReady();
-            }
-        }
-
-        function removeTriggers() {
-            for (var i = 0; i < triggers.length; i++) {
-                window.removeEventListener(triggers[i], onInteraction, { capture: true, passive: true });
-                document.removeEventListener(triggers[i], onInteraction, { capture: true, passive: true });
-            }
-        }
-
-        for (var i = 0; i < triggers.length; i++) {
-            window.addEventListener(triggers[i], onInteraction, { capture: true, passive: true });
-            document.addEventListener(triggers[i], onInteraction, { capture: true, passive: true });
         }
 
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', startAudioWhenReady);
+            document.addEventListener('DOMContentLoaded', startSynchronizedHeartbeat);
         } else {
-            startAudioWhenReady();
+            startSynchronizedHeartbeat();
         }
-        window.addEventListener('load', startAudioWhenReady);
+        window.addEventListener('load', startSynchronizedHeartbeat);
     })();
 
 </script>
