@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- PDF.js and StPageFlip for Interactive Flipbook -->
     <script src="assets/js/pdf.min.js"></script>
-    <script src="assets/js/page-flip.browser.js"></script>
+    <script src="assets/js/page-flip.browser.js?v=9"></script>
     
     <!-- FONTS: Editorial Serif (Cormorant Garamond & Playfair Display) + Clean Sans (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10466,11 +10466,11 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     var flipSoundEnabled = true;
     var forceSinglePage = false;
 
-    // Audio pool for instantaneous realistic paper flip sound
+    // Audio pool for silky smooth, quiet paper flip sound
     var flipAudioPool = [
-        new Audio('assets/page-flip.wav'),
-        new Audio('assets/page-flip.wav'),
-        new Audio('assets/page-flip.wav')
+        new Audio('assets/page-flip.wav?v=9'),
+        new Audio('assets/page-flip.wav?v=9'),
+        new Audio('assets/page-flip.wav?v=9')
     ];
     var flipAudioIdx = 0;
 
@@ -10480,7 +10480,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             var snd = flipAudioPool[flipAudioIdx];
             flipAudioIdx = (flipAudioIdx + 1) % flipAudioPool.length;
             snd.currentTime = 0;
-            snd.volume = 0.85;
+            snd.volume = 0.30; // Soft, gentle and unobtrusive
             var p = snd.play();
             if (p !== undefined) {
                 p.catch(function() {
@@ -10500,23 +10500,22 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             var ctx = window._flipAudioCtx;
             if (ctx.state === 'suspended') ctx.resume();
             
-            var bufferSize = Math.floor(ctx.sampleRate * 0.16);
+            var bufferSize = Math.floor(ctx.sampleRate * 0.12);
             var buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
             var data = buffer.getChannelData(0);
             for (var i = 0; i < bufferSize; i++) {
-                data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.28));
+                data[i] = (Math.random() * 2 - 1) * Math.sin(Math.PI * (i / bufferSize));
             }
             var noise = ctx.createBufferSource();
             noise.buffer = buffer;
             var filter = ctx.createBiquadFilter();
-            filter.type = 'bandpass';
-            filter.frequency.setValueAtTime(1600, ctx.currentTime);
-            filter.Q.setValueAtTime(1.6, ctx.currentTime);
-            filter.frequency.exponentialRampToValueAtTime(340, ctx.currentTime + 0.16);
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(800, ctx.currentTime);
+            filter.frequency.exponentialRampToValueAtTime(250, ctx.currentTime + 0.12);
             
             var gain = ctx.createGain();
-            gain.gain.setValueAtTime(0.28, ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.16);
+            gain.gain.setValueAtTime(0.08, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
             
             noise.connect(filter);
             filter.connect(gain);
