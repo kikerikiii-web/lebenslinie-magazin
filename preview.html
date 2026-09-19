@@ -9220,7 +9220,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         </div>
     </div>
 
-        <!-- ==================== INTERACTIVE 3D FLIPBOOK MODAL ==================== -->
+            <!-- ==================== INTERACTIVE 3D FLIPBOOK MODAL (DOPPELSEITEN-VIEWER) ==================== -->
     <div id="pdf-viewer-modal" class="flipbook-modal-overlay" style="display: none;">
         <!-- Top Header Bar -->
         <div class="flipbook-header">
@@ -9230,6 +9230,9 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 <span id="flipbook-total-pages-badge" class="flipbook-page-count-badge">80 Seiten</span>
             </div>
             <div class="flipbook-header-actions">
+                <button id="flipbook-btn-mode" class="flipbook-action-btn active" onclick="window.toggleFlipbookSpreadMode();" title="Zwischen Doppelseite und Einzelseite umschalten">
+                    <span>📖</span> <span id="flipbook-btn-mode-text" class="btn-text">Doppelseite</span>
+                </button>
                 <button id="flipbook-btn-thumbnails" class="flipbook-action-btn" onclick="window.toggleFlipbookThumbnails();" title="Seitenübersicht anzeigen">
                     <span>📑</span> <span class="btn-text">Seiten</span>
                 </button>
@@ -9278,9 +9281,10 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 <button class="flipbook-tool-btn" onclick="window.flipbookFirst();" title="Zur ersten Seite">|‹</button>
                 <button class="flipbook-tool-btn" onclick="window.flipbookPrev();" title="Vorherige Seite">‹</button>
                 <div class="flipbook-page-indicator">
-                    <span>Seite</span>
+                    <span id="flipbook-page-label" style="font-weight: 600; color: #FAF8F5;">Doppelseite</span>
                     <input type="number" id="flipbook-page-input" min="1" max="80" value="1" onchange="window.flipbookGoToInput(this.value);" onkeydown="if(event.key==='Enter') window.flipbookGoToInput(this.value);" />
-                    <span id="flipbook-page-total">/ 80</span>
+                    <span id="flipbook-spread-info" style="color: #FAF8F5; font-weight: 600;">– 2</span>
+                    <span id="flipbook-page-total" style="color: #A0AEC0; margin-left: 4px;">/ 80</span>
                 </div>
                 <button class="flipbook-tool-btn" onclick="window.flipbookNext();" title="Nächste Seite">›</button>
                 <button class="flipbook-tool-btn" onclick="window.flipbookLast();" title="Zur letzten Seite">›|</button>
@@ -10443,8 +10447,8 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         if (modal) modal.style.display = 'flex';
     };
 
-        // ==========================================================================
-    // INTERACTIVE 3D FLIPBOOK ENGINE & CONTROLLER (STPAGEFLIP + PDF.JS)
+            // ==========================================================================
+    // INTERACTIVE 3D FLIPBOOK ENGINE & CONTROLLER (DOPPELSEITEN-VIEWER)
     // ==========================================================================
 
     window.heftarchivData = [{"title": "Ausgabe 1 / 2026", "year": "2026", "img": "heftarchiv_covers/Ausgabe_1_2026.jpg", "download_url": "LL-1-2026-web.pdf", "pdf_url": "LL-1-2026-web.pdf"}, {"title": "Ausgabe 2/2025", "year": "2025", "img": "heftarchiv_covers/Ausgabe_2_2025.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/19546/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2025-web.pdf"}, {"title": "Ausgabe 1/2025", "year": "2025", "img": "heftarchiv_covers/Ausgabe_1_2025.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/19106/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2025-web.pdf"}, {"title": "Ausgabe 2/2024", "year": "2024", "img": "heftarchiv_covers/Ausgabe_2_2024.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/18280/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2024-web.pdf"}, {"title": "Ausgabe 1/2024", "year": "2024", "img": "heftarchiv_covers/Ausgabe_1_2024.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/17511/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2024-web.pdf"}, {"title": "Ausgabe 2/2023", "year": "2023", "img": "heftarchiv_covers/Ausgabe_2_2023.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/15755/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2023-web.pdf"}, {"title": "Ausgabe 1/2023", "year": "2023", "img": "heftarchiv_covers/Ausgabe_1_2023.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/15218/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2023-web.pdf"}, {"title": "Ausgabe 2/2022", "year": "2022", "img": "heftarchiv_covers/Ausgabe_2_2022.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/14626/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-Oktober-2-2022-web.pdf"}, {"title": "Ausgabe 1/2022", "year": "2022", "img": "heftarchiv_covers/Ausgabe_1_2022.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/13223/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-1-2022-web.pdf"}, {"title": "Ausgabe 2/2021", "year": "2021", "img": "heftarchiv_covers/Ausgabe_2_2021.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/12105/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2021-web-Einzelseiten.pdf"}, {"title": "Ausgabe 1/2021", "year": "2021", "img": "heftarchiv_covers/Ausgabe_1_2021.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/11369/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2021-web.pdf"}, {"title": "Ausgabe 2/2020", "year": "2020", "img": "heftarchiv_covers/Ausgabe_2_2020.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/10581/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-2-2020-webversion.pdf"}, {"title": "Ausgabe 1/2020", "year": "2020", "img": "heftarchiv_covers/Ausgabe_1_2020.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/9841/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-April-1-2020-web.pdf"}, {"title": "Ausgabe 2/2019", "year": "2019", "img": "heftarchiv_covers/Ausgabe_2_2019.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/9066/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-02-2019-web.pdf"}, {"title": "Ausgabe 1/2019", "year": "2019", "img": "heftarchiv_covers/Ausgabe_1_2019.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/8315/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-01-2019-web Kopie.pdf"}, {"title": "Ausgabe 2/2018", "year": "2018", "img": "heftarchiv_covers/Ausgabe_2_2018.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/7438/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/LL-10-2018-Webversion2.pdf"}, {"title": "Ausgabe 1/2018", "year": "2018", "img": "heftarchiv_covers/Ausgabe_1_2018.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/6787/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April2018_web.pdf"}, {"title": "Ausgabe 2/2017", "year": "2017", "img": "heftarchiv_covers/Ausgabe_2_2017.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/5998/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Oktober_2017_web.pdf"}, {"title": "Ausgabe 1/2017", "year": "2017", "img": "heftarchiv_covers/Ausgabe_1_2017.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/5089/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_April_2017_web.pdf"}, {"title": "Ausgabe 02/2016", "year": "2016", "img": "heftarchiv_covers/Ausgabe_02_2016.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/4114/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2016_web_NEU.pdf"}, {"title": "Ausgabe 01/2016", "year": "2016", "img": "heftarchiv_covers/Ausgabe_01_2016.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/3067/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_03_2016_web.pdf"}, {"title": "Ausgabe 02/2015", "year": "2015", "img": "heftarchiv_covers/Ausgabe_02_2015.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/1840/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Lebenslinie_Okt_2015_web.pdf"}, {"title": "Ausgabe 01/2015", "year": "2015", "img": "heftarchiv_covers/Ausgabe_01_2015.jpg", "download_url": "https://www.lebenslinie-magazin.de/download/900/?tmstv=1786609317", "pdf_url": "https://www.lebenslinie-magazin.de/wp-content/Lebenslinie-Ausgaben/Ausgabe1_Maerz_2015.pdf"}];
@@ -10456,8 +10460,11 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     }
 
     var currentFlipbook = null;
+    var currentPagesList = [];
+    var currentIssueTitle = 'Ausgabe 1 / 2026';
     var currentZoomScale = 1.0;
     var flipSoundEnabled = true;
+    var forceSinglePage = false;
 
     // Synthetic realistic paper turn sound via Web Audio API
     function playPaperSound() {
@@ -10500,6 +10507,19 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         var icon = document.getElementById('flipbook-sound-icon');
         if (btn) btn.classList.toggle('active', flipSoundEnabled);
         if (icon) icon.textContent = flipSoundEnabled ? '🔊' : '🔇';
+    };
+
+    window.toggleFlipbookSpreadMode = function() {
+        forceSinglePage = !forceSinglePage;
+        var modeBtn = document.getElementById('flipbook-btn-mode');
+        var modeText = document.getElementById('flipbook-btn-mode-text');
+        if (modeBtn) modeBtn.classList.toggle('active', !forceSinglePage);
+        if (modeText) modeText.textContent = forceSinglePage ? 'Einzelseite' : 'Doppelseite';
+        
+        if (currentPagesList && currentPagesList.length > 0) {
+            var cur = currentFlipbook ? currentFlipbook.getCurrentPageIndex() : 0;
+            initPageFlipWithImages(currentPagesList, currentPagesList.length, currentIssueTitle, cur);
+        }
     };
 
     window.toggleFlipbookThumbnails = function() {
@@ -10576,13 +10596,44 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
     };
 
     function updateFlipbookControls(pageIndex) {
-        var pageNum = (typeof pageIndex === 'number') ? (pageIndex + 1) : 1;
+        var total = (currentPagesList && currentPagesList.length) ? currentPagesList.length : 80;
+        var pageLabel = document.getElementById('flipbook-page-label');
         var pageInput = document.getElementById('flipbook-page-input');
-        if (pageInput) pageInput.value = pageNum;
-        
+        var spreadInfo = document.getElementById('flipbook-spread-info');
+        var isLandscape = currentFlipbook && currentFlipbook.getOrientation() === 'landscape';
+
+        if (isLandscape && !forceSinglePage) {
+            if (pageIndex === 0) {
+                if (pageLabel) pageLabel.textContent = 'Seite';
+                if (pageInput) pageInput.value = 1;
+                if (spreadInfo) spreadInfo.textContent = ' (Titelblatt)';
+            } else if (pageIndex >= total - 1) {
+                if (pageLabel) pageLabel.textContent = 'Seite';
+                if (pageInput) pageInput.value = total;
+                if (spreadInfo) spreadInfo.textContent = ' (Rückseite)';
+            } else {
+                var leftP = (pageIndex % 2 === 1) ? pageIndex : (pageIndex - 1);
+                var p1 = leftP + 1;
+                var p2 = Math.min(total, p1 + 1);
+                if (pageLabel) pageLabel.textContent = 'Doppelseite';
+                if (pageInput) pageInput.value = p1;
+                if (spreadInfo) spreadInfo.textContent = '–' + p2;
+            }
+        } else {
+            if (pageLabel) pageLabel.textContent = 'Seite';
+            if (pageInput) pageInput.value = (typeof pageIndex === 'number') ? (pageIndex + 1) : 1;
+            if (spreadInfo) spreadInfo.textContent = '';
+        }
+
+        // Highlight thumbnails
         var thumbs = document.querySelectorAll('.flipbook-thumb-item');
         thumbs.forEach(function(th, idx) {
-            th.classList.toggle('active', idx === pageIndex);
+            if (isLandscape && !forceSinglePage && pageIndex > 0 && pageIndex < total - 1) {
+                var leftIdx = (pageIndex % 2 === 1) ? pageIndex : (pageIndex - 1);
+                th.classList.toggle('active', idx === leftIdx || idx === leftIdx + 1);
+            } else {
+                th.classList.toggle('active', idx === pageIndex);
+            }
         });
     }
 
@@ -10605,6 +10656,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         var resolvedTitle = title || 'Lebenslinie Ausgabe 1 / 2026';
         var resolvedDownload = downloadUrl || pdfUrl || 'LL-1-2026-web.pdf';
         var resolvedCover = coverImg || 'LL-1-2026-Titel.png';
+        currentIssueTitle = resolvedTitle;
         
         if (titleEl) titleEl.textContent = 'Lebenslinie — ' + resolvedTitle;
         if (downloadBtn) {
@@ -10615,18 +10667,19 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         if (fallbackEl) fallbackEl.style.display = 'none';
         if (viewportEl) viewportEl.style.display = 'flex';
         if (loadingEl) loadingEl.style.display = 'flex';
-        if (loadingText) loadingText.textContent = 'Bereite E-Paper Flipbook vor...';
+        if (loadingText) loadingText.textContent = 'Bereite E-Paper Doppelseiten vor...';
         
         var isLatest = resolvedTitle.indexOf('1 / 2026') !== -1 || resolvedTitle.indexOf('1/2026') !== -1 || (pdfUrl && pdfUrl.indexOf('LL-1-2026') !== -1);
         
         if (isLatest) {
-            initPageFlipWithImages(window.ausgabe1_2026_pages, 80, resolvedTitle);
+            currentPagesList = window.ausgabe1_2026_pages;
+            initPageFlipWithImages(window.ausgabe1_2026_pages, 80, resolvedTitle, 0);
         } else {
             renderPdfPagesOrFallback(pdfUrl, resolvedCover, resolvedTitle, resolvedDownload);
         }
     };
 
-    function initPageFlipWithImages(imageUrls, totalPages, title) {
+    function initPageFlipWithImages(imageUrls, totalPages, title, startAtPage) {
         var container = document.getElementById('flipbook-container');
         var stage = document.getElementById('flipbook-stage');
         var loadingEl = document.getElementById('flipbook-loading');
@@ -10634,11 +10687,12 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         var pageTotalEl = document.getElementById('flipbook-page-total');
         var pageInput = document.getElementById('flipbook-page-input');
         
+        currentPagesList = imageUrls;
         if (pagesBadge) pagesBadge.textContent = totalPages + ' Seiten';
         if (pageTotalEl) pageTotalEl.textContent = '/ ' + totalPages;
         if (pageInput) {
             pageInput.max = totalPages;
-            pageInput.value = 1;
+            pageInput.value = (typeof startAtPage === 'number') ? (startAtPage + 1) : 1;
         }
         
         if (currentFlipbook) {
@@ -10649,36 +10703,53 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         
         var stageW = stage.clientWidth || window.innerWidth;
         var stageH = stage.clientHeight || (window.innerHeight - 120);
-        var isMobile = stageW < 768;
+        var isMobile = stageW < 650;
+        var useSingle = forceSinglePage || (isMobile && stageW < 500);
         
-        var availW = Math.max(300, stageW - (isMobile ? 30 : 120));
-        var availH = Math.max(400, stageH - 30);
+        var maxSpreadW = Math.max(300, stageW - 40);
+        var maxSpreadH = Math.max(350, stageH - 30);
         
-        var pageW = isMobile ? availW : Math.floor(availW / 2);
-        var pageH = Math.floor(pageW * 1.414);
+        var singlePageW, singlePageH;
         
-        if (pageH > availH) {
-            pageH = availH;
-            pageW = Math.floor(pageH / 1.414);
+        if (useSingle) {
+            singlePageW = Math.min(maxSpreadW, 550);
+            singlePageH = Math.floor(singlePageW * 1.4142);
+            if (singlePageH > maxSpreadH) {
+                singlePageH = maxSpreadH;
+                singlePageW = Math.floor(singlePageH / 1.4142);
+            }
+            container.style.width = singlePageW + 'px';
+            container.style.height = singlePageH + 'px';
+        } else {
+            // Two-page spread (Doppelseite)
+            singlePageW = Math.floor(maxSpreadW / 2);
+            singlePageH = Math.floor(singlePageW * 1.4142);
+            if (singlePageH > maxSpreadH) {
+                singlePageH = maxSpreadH;
+                singlePageW = Math.floor(singlePageH / 1.4142);
+            }
+            container.style.width = (singlePageW * 2) + 'px';
+            container.style.height = singlePageH + 'px';
         }
         
         try {
             if (typeof St !== 'undefined' && St.PageFlip) {
                 currentFlipbook = new St.PageFlip(container, {
-                    width: pageW,
-                    height: pageH,
-                    size: 'fixed',
-                    minWidth: 260,
-                    maxWidth: 800,
-                    minHeight: 367,
-                    maxHeight: 1130,
+                    width: singlePageW,
+                    height: singlePageH,
+                    size: 'stretch',
+                    minWidth: 200,
+                    maxWidth: 900,
+                    minHeight: 282,
+                    maxHeight: 1272,
                     drawShadow: true,
-                    maxShadowOpacity: 0.6,
+                    maxShadowOpacity: 0.55,
                     showCover: true,
-                    usePortrait: true,
+                    usePortrait: useSingle ? true : false,
+                    autoSize: true,
                     mobileScrollSupport: false,
                     flippingTime: 750,
-                    startPage: 0
+                    startPage: (typeof startAtPage === 'number') ? startAtPage : 0
                 });
                 
                 currentFlipbook.loadFromImages(imageUrls);
@@ -10690,13 +10761,13 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 
                 currentFlipbook.on('init', function() {
                     if (loadingEl) loadingEl.style.display = 'none';
-                    updateFlipbookControls(0);
+                    updateFlipbookControls(typeof startAtPage === 'number' ? startAtPage : 0);
                     buildThumbnails(imageUrls);
                 });
                 
                 setTimeout(function() {
                     if (loadingEl) loadingEl.style.display = 'none';
-                }, 800);
+                }, 700);
             } else {
                 throw new Error('St.PageFlip library not ready');
             }
@@ -10742,7 +10813,7 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             
             loadingTask.promise.then(function(pdfDoc) {
                 var numPages = pdfDoc.numPages;
-                if (loadingText) loadingText.textContent = 'Rendere ' + numPages + ' Magazinseiten...';
+                if (loadingText) loadingText.textContent = 'Rendere ' + numPages + ' Doppelseiten...';
                 
                 var renderPromises = [];
                 var renderedPages = new Array(numPages);
@@ -10768,7 +10839,8 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
                 }
                 
                 Promise.all(renderPromises).then(function() {
-                    initPageFlipWithImages(renderedPages, numPages, title);
+                    currentPagesList = renderedPages;
+                    initPageFlipWithImages(renderedPages, numPages, title, 0);
                 }).catch(function(err) {
                     console.warn('PDF page rendering fallback:', err);
                     initFallbackFlipbook(coverImg, title, downloadUrl);
@@ -10791,7 +10863,8 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
             coverImg,
             coverImg
         ];
-        initPageFlipWithImages(pages, 2, title);
+        currentPagesList = pages;
+        initPageFlipWithImages(pages, 2, title, 0);
     }
 
     function showFallbackViewer(firstImage) {
@@ -10820,6 +10893,20 @@ Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webse
         } else if (e.key === 'End') {
             window.flipbookLast();
         }
+    });
+
+    // Resize Debounce
+    var flipbookResizeTimeout = null;
+    window.addEventListener('resize', function() {
+        var modal = document.getElementById('pdf-viewer-modal');
+        if (!modal || modal.style.display !== 'flex' || !currentFlipbook) return;
+        if (flipbookResizeTimeout) clearTimeout(flipbookResizeTimeout);
+        flipbookResizeTimeout = setTimeout(function() {
+            if (currentPagesList && currentPagesList.length > 0) {
+                var cur = currentFlipbook.getCurrentPageIndex();
+                initPageFlipWithImages(currentPagesList, currentPagesList.length, currentIssueTitle, cur);
+            }
+        }, 250);
     });
 
     // HERO SLIDER CONTROLLER
